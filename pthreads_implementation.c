@@ -8,7 +8,7 @@
 #define ARRAY_SIZE 2000000
 #define MAX_STRING_SIZE 2001
 #define ALPHABET_SIZE 26
-#define BATCH_SIZE = 1000;
+#define BATCH_SIZE 1000
 
 pthread_mutex_t mutexmax;			// mutex for char_max
 
@@ -40,13 +40,13 @@ int find_max(const char* line, int length) {
     for (i = 0; i < length; i++) {
         int char_val = (int)line[i];
 
-        if(char_val ==  (int)'\0')
+        if(char_val == (int)'\0')
         {
             break;
         }
 
         if (char_val > max_val) {
-            max_val = char_val;
+            max_val = char_val;+
         }
     }
     
@@ -55,13 +55,13 @@ int find_max(const char* line, int length) {
 
 
 // Reading lines into memory, batched so it only does the batch
-void read_file(FILE* fd) {
+int read_file(FILE* fd) {
     
-    char buffer[MAX_LINE_LEN];
+    char buffer[MAX_STRING_SIZE];
     int count = 0;
 
-    while (count < BATCH_SIZE && fgets(buffer, MAX_LINE_LEN, fd)) {
-        size_t len = strnlen(buffer, MAX_LINE_LEN);
+    while (count < BATCH_SIZE && fgets(buffer, MAX_STRING_SIZE, fd)) {
+        size_t len = strnlen(buffer, MAX_STRING_SIZE);
         if (len > 0 && buffer[len - 1] == '\n') {
             buffer[len - 1] = '\0';
         }
@@ -103,12 +103,12 @@ void *count_array(void *myID)
         local_max[i - startPos] = find_max(lines[i], MAX_STRING_SIZE);
 	}
   
-					// sum up the partial counts into the global arrays
-  pthread_mutex_lock (&mutexsum);
+					// add local maxes into the global arrays
+  pthread_mutex_lock (&mutexmax);
   for ( i = startPos; i < endPos; i++ ) {
      max_ascii[i] = local_max[i - startPos];
   }
-  pthread_mutex_unlock (&mutexsum);
+  pthread_mutex_unlock (&mutexmax);
 
   pthread_exit(NULL);
 }
@@ -119,21 +119,25 @@ void *count_array(void *myID)
 void print_results(int offset)
 {
   int i,j, total = 0;
-  					// then print out the totals
+  					// prints out maxes
   for ( i = 0; i < BATCH_SIZE; i++ ) {
      printf(" Line %d: %d\n", i + offset, max_ascii[i]);
   }
 }
 
+
+
 main() {
-	int i, rc, total_lines = 0;
+
+    //initialize some variables+
+	int i, rc, total_lines, lines_in_batch = 0;
 	pthread_t threads[NUM_THREADS];
 	pthread_attr_t attr;
 	void *status;
 
     const char* filepath = "/homes/dan/625/wiki_dump.txt";
 
-
+    //opens the file for reading+
     FILE* fd = fopen(filepath, "r");
     if (!fd) {
         perror("Error opening file");
@@ -144,8 +148,8 @@ main() {
 	pthread_attr_init(&attr);
 	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
 
-	init_arrays();
-    while((lines_in_batch = read_batch(fd)) > 0){
+    //reads files 1000 lines at a time, which is batched.
+    while((lines_in_batch = read_file(fd)) > 0){
         for (i = 0; i < NUM_THREADS; i++ ) {
             rc = pthread_create(&threads[i], &attr, count_array, (void *)i);
             if (rc) {
@@ -155,7 +159,7 @@ main() {
         }
 
         /* Free attribute and wait for the other threads */
-        pthread_attr_destroy(&attr);
+        
         for(i=0; i<NUM_THREADS; i++) {
             rc = pthread_join(threads[i], &status);
             if (rc) {
@@ -167,9 +171,10 @@ main() {
         print_results(total_lines);      
         total_lines += lines_in_batch;
     }
-	
+	fclose(fd);
 
-	pthread_mutex_destroy(&mutexsum);
+    pthread_attr_destroy(&attr);
+	pthread_mutex_destroy(&mutexmax);
 	printf("Main: program completed. Exiting.\n");
 	pthread_exit(NULL);
 }
