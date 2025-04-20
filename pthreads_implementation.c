@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdint.h> // C
+
 
 #define NUM_THREADS 4
 
@@ -38,17 +40,19 @@ int find_max(const char* line, int length) {
     int max_val = 0;
     
     for (i = 0; i < length; i++) {
-        int char_val = (int)line[i];
 
+        int char_val = (int)line[i];
+        printf("%c",line[i]);
         if(char_val == (int)'\0')
         {
             break;
         }
 
         if (char_val > max_val) {
-            max_val = char_val;+
+            max_val = char_val;
         }
     }
+    printf("\n");
     
     return max_val;
 }
@@ -87,12 +91,12 @@ void *count_array(void *myID)
   int i, j, charLoc;
   
 
-  int startPos = ((int) myID) * (BATCH_SIZE / NUM_THREADS);
+  int startPos = (uintptr_t) myID * (BATCH_SIZE / NUM_THREADS);
   int endPos = startPos + (BATCH_SIZE / NUM_THREADS);
 
   int local_max[endPos - startPos];
 
-  printf("myID = %d startPos = %d endPos = %d \n", (int) myID, startPos, endPos);
+  printf("myID = %d startPos = %d endPos = %d \n", (uintptr_t) myID, startPos, endPos);
 
 					// init local count array
   for ( i = 0; i < endPos - startPos; i++ ) {
@@ -127,10 +131,11 @@ void print_results(int offset)
 
 
 
-main() {
+int main() {
 
     //initialize some variables+
-	int i, rc, total_lines, lines_in_batch = 0;
+    uintptr_t i = 0;
+	int rc, total_lines, lines_in_batch = 0;
 	pthread_t threads[NUM_THREADS];
 	pthread_attr_t attr;
 	void *status;
@@ -176,5 +181,7 @@ main() {
     pthread_attr_destroy(&attr);
 	pthread_mutex_destroy(&mutexmax);
 	printf("Main: program completed. Exiting.\n");
+    
 	pthread_exit(NULL);
+    return 0;
 }
