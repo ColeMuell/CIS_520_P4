@@ -42,7 +42,6 @@ int find_max(const char* line, int length) {
     for (i = 0; i < length; i++) {
 
         int char_val = (int)line[i];
-        printf("%c",line[i]);
         if(char_val == (int)'\0')
         {
             break;
@@ -52,7 +51,6 @@ int find_max(const char* line, int length) {
             max_val = char_val;
         }
     }
-    printf("\n");
     
     return max_val;
 }
@@ -123,9 +121,13 @@ void *count_array(void *myID)
 void print_results(int offset)
 {
   int i,j, total = 0;
+
   					// prints out maxes
   for ( i = 0; i < BATCH_SIZE; i++ ) {
-     printf(" Line %d: %d\n", i + offset, max_ascii[i]);
+     printf("%d %d\n",i,offset);
+    printf("Char[%d]: %c (%d)\n", i, max_ascii[i+offset], (int)max_ascii[i + offset]);
+
+     printf(" Line %d: %d\n", i + offset, max_ascii[i + offset]);
   }
 }
 
@@ -133,12 +135,20 @@ void print_results(int offset)
 
 int main() {
 
+    	pthread_attr_t attr;
+
+    /* Initialize and set thread detached attribute */
+	pthread_attr_init(&attr);
+	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
+
     //initialize some variables+
     uintptr_t i = 0;
-	int rc, total_lines, lines_in_batch = 0;
+	int rc = 0;
+    int total_lines = 0;
+    int  lines_in_batch = 0;
 	pthread_t threads[NUM_THREADS];
-	pthread_attr_t attr;
 	void *status;
+    int round = 0 ;
 
     const char* filepath = "/homes/dan/625/wiki_dump.txt";
 
@@ -148,20 +158,29 @@ int main() {
         perror("Error opening file");
         exit(1);
     }
+    for(int k = 0; k < BATCH_SIZE;k++){
+        max_ascii[k] = 0;
+    }
 
-	/* Initialize and set thread detached attribute */
-	pthread_attr_init(&attr);
-	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
+     for(int m = 0; m < BATCH_SIZE;m++){
+        lines[m] = 0;
+    }
+
+
+	
 
     //reads files 1000 lines at a time, which is batched.
     while((lines_in_batch = read_file(fd)) > 0){
         for (i = 0; i < NUM_THREADS; i++ ) {
+            uintptr_t ind = round * 4 + i;
             rc = pthread_create(&threads[i], &attr, count_array, (void *)i);
             if (rc) {
                 printf("ERROR; return code from pthread_create() is %d\n", rc);
             exit(-1);
             }
         }
+        
+        round += 1;
 
         /* Free attribute and wait for the other threads */
         
@@ -172,6 +191,7 @@ int main() {
             exit(-1);
             }
         }
+        printf("total lines %d",total_lines);
 
         print_results(total_lines);      
         total_lines += lines_in_batch;
