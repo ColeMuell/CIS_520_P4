@@ -5,13 +5,12 @@
 #include <stdint.h> // C
 
 
-#define NUM_THREADS 4
 
+#define NUM_THREADS 20
 #define ARRAY_SIZE 2000000
 #define MAX_STRING_SIZE 2001
 #define ALPHABET_SIZE 26
 #define BATCH_SIZE 1000
-
 pthread_mutex_t mutexmax;			// mutex for char_max
 
 
@@ -34,174 +33,211 @@ int max_ascii[BATCH_SIZE];
 	return randChar;
 }*/
 
+void print_string_ascii(const char* str) {
+    printf("String: ");
+    printf("%s", str);
+}
 //Finds the max ascii value in a given line
-int find_max(const char* line, int length) {
-    int i;
-    int max_val = 0;
-    
-    for (i = 0; i < length; i++) {
+char find_max(const char* line, int length) {
 
-        int char_val = (int)line[i];
-        if(char_val == (int)'\0')
-        {
-            break;
-        }
-
-        if (char_val > max_val) {
-            max_val = char_val;
+    int max_ascii = -1; 
+    int len = strnlen(line, length);
+    for (int i = 0; i < len; i++) {
+        if (line[i] > max_ascii) {
+        max_ascii = line[i];
         }
     }
+
+
     
-    return max_val;
+    return max_ascii;
+}
+float find_avg(char* line, int nchars) {
+   int i, j;
+   float sum = 0;
+
+   for ( i = 0; i < nchars; i++ ) {
+      sum += ((int) line[i]);
+   }
+
+   if (nchars > 0) 
+	return sum / (float) nchars;
+   else
+	return 0.0;
 }
 
 
 // Reading lines into memory, batched so it only does the batch
 int read_file(FILE* fd) {
-    
     char buffer[MAX_STRING_SIZE];
     int count = 0;
-
-    while (count < BATCH_SIZE && fgets(buffer, MAX_STRING_SIZE, fd)) {
-        size_t len = strnlen(buffer, MAX_STRING_SIZE);
+    size_t len;
+    
+    while (count < BATCH_SIZE && fgets(buffer, MAX_STRING_SIZE, fd) != NULL) {
+        //print_string_ascii(buffer);
+        len = strnlen(buffer, MAX_STRING_SIZE);
+        
         if (len > 0 && buffer[len - 1] == '\n') {
+            //printf("Line 75");
             buffer[len - 1] = '\0';
+            len--;
         }
+        if(len == 0) {
+            //printf("line 80");
+            continue;
+        }
+        
         char* copy = malloc(len + 1);
         
         if (!copy) {
             fprintf(stderr, "Memory allocation failed.\n");
             exit(1);
         }
-        snprintf(copy, len + 1, "%s", buffer); 
+        snprintf(copy, len + 1, "%s", buffer);
+        //print_string_ascii(copy);
         lines[count] = copy;
-
         count++;
     }
-
+    
     return count;
 }
 
 //Modify to use file io instead of random data
-void *count_array(void *myID)
-{
-  char theChar;
-  int i, j, charLoc;
-  
-
-  int startPos = (uintptr_t) myID * (BATCH_SIZE / NUM_THREADS);
-  int endPos = startPos + (BATCH_SIZE / NUM_THREADS);
-
-  int local_max[endPos - startPos];
-
-  printf("myID = %d startPos = %d endPos = %d \n", (uintptr_t) myID, startPos, endPos);
-
-					// init local count array
-  for ( i = 0; i < endPos - startPos; i++ ) {
-  	local_max[i] = 0;
-  }
-					// count up our section of the global array
-  for ( i = startPos; i < endPos; i++) {
-        local_max[i - startPos] = find_max(lines[i], MAX_STRING_SIZE);
-	}
-  
-					// add local maxes into the global arrays
-  pthread_mutex_lock (&mutexmax);
-  for ( i = startPos; i < endPos; i++ ) {
-     max_ascii[i] = local_max[i - startPos];
-  }
-  pthread_mutex_unlock (&mutexmax);
-
-  pthread_exit(NULL);
+void *count_array(void *myID) {
+    printf("my id is %d\n", myID);
+    int i;
+    uintptr_t id = (uintptr_t)myID;
+    int startPos = id * (BATCH_SIZE / NUM_THREADS);
+    int endPos = startPos + (BATCH_SIZE / NUM_THREADS) - 1;
+    int segment_size = endPos - startPos + 1;
+    // Make sure endPos doesn't exceed BATCH_SIZE
+    if (endPos > BATCH_SIZE) {
+        endPos = BATCH_SIZE;
+    }
+    
+    
+    int local_max[segment_size]; 
+    
+    //printf("myID = %lu startPos = %d endPos = %d \n", id, startPos, endPos);
+    
+    // Calculate max values for our section
+    for (i = 0; i < segment_size; i++) {
+        if (startPos + i < BATCH_SIZE && lines[startPos + i] != NULL) {
+            
+            char max = find_max(lines[startPos + i], MAX_STRING_SIZE);
+            local_max[i] = max;
+        }
+    }
+    
+    // Add local maxes into the global arrays
+    pthread_mutex_lock(&mutexmax);
+    for (i = 0; i < segment_size; i++) {
+        printf("start Pos +i %d\n", startPos + i);
+        max_ascii[startPos + i] = local_max[i];
+    }
+    pthread_mutex_unlock(&mutexmax);
+    
+    pthread_exit(NULL);
 }
 
 
 
 //prints results. The param offset says how far off of 0 the batched lines are
-void print_results(int offset)
-{
-  int i,j, total = 0;
+void print_results(int offset, int count) {
+    int i;
+    // prints out maxes
+    printf("count %d",count);
 
-  					// prints out maxes
-  for ( i = 0; i < BATCH_SIZE; i++ ) {
-     printf("%d %d\n",i,offset);
-    printf("Char[%d]: %c (%d)\n", i, max_ascii[i+offset], (int)max_ascii[i + offset]);
+    for (i = 0; i < count; i++) {
+        
+        printf("Line %d: %d\n", i + offset, max_ascii[i]);
+    }
+}
 
-     printf(" Line %d: %d\n", i + offset, max_ascii[i + offset]);
-  }
+void free_lines() {
+    int i;
+    for (i = 0; i < BATCH_SIZE; i++) {
+        if (lines[i] != NULL) {
+            free(lines[i]);
+            lines[i] = NULL;
+        }
+    }
 }
 
 
-
 int main() {
-
-    	pthread_attr_t attr;
-
-    /* Initialize and set thread detached attribute */
-	pthread_attr_init(&attr);
-	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
-
-    //initialize some variables+
     uintptr_t i = 0;
-	int rc = 0;
-    int total_lines = 0;
-    int  lines_in_batch = 0;
-	pthread_t threads[NUM_THREADS];
-	void *status;
-    int round = 0 ;
-
-    const char* filepath = "/homes/dan/625/wiki_dump.txt";
-
-    //opens the file for reading+
-    FILE* fd = fopen(filepath, "r");
+    int rc, total_lines = 0, lines_in_batch = 0;
+    pthread_t threads[NUM_THREADS];
+    pthread_attr_t attr;
+    void *status;
+    uintptr_t round = 0;
+    
+    //const char* filepath = "/homes/dan/625/wiki_dump.txt";
+    
+    // Initialize mutex
+    if (pthread_mutex_init(&mutexmax, NULL) != 0) {
+        printf("Mutex initialization failed\n");
+        return 1;
+    }
+    
+    // Opens the file for reading
+    FILE* fd = fopen( "/homes/dan/625/wiki_dump.txt", "r" );
     if (!fd) {
         perror("Error opening file");
         exit(1);
     }
-    for(int k = 0; k < BATCH_SIZE;k++){
-        max_ascii[k] = 0;
+    
+    /* Initialize and set thread detached attribute */
+    pthread_attr_init(&attr);
+    pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
+    
+    // Initialize lines array
+    for (i = 0; i < BATCH_SIZE; i++) {
+        lines[i] = NULL;
     }
+    
+    // Reads files 1000 lines at a time, which is batched
+    while ((lines_in_batch = read_file(fd)) > 0) {
+        // Reset max_ascii array for new batch
+        memset(max_ascii, 0, sizeof(max_ascii));
+        
+        for (i = 0; i < NUM_THREADS; i++) {
 
-     for(int m = 0; m < BATCH_SIZE;m++){
-        lines[m] = 0;
-    }
-
-
-	
-
-    //reads files 1000 lines at a time, which is batched.
-    while((lines_in_batch = read_file(fd)) > 0){
-        for (i = 0; i < NUM_THREADS; i++ ) {
-            uintptr_t ind = round * 4 + i;
-            rc = pthread_create(&threads[i], &attr, count_array, (void *)i);
+            uintptr_t id = round * 20 + i;
+            rc = pthread_create(&threads[i], &attr, count_array, (void *)id);
+            //printf("I created thread %d\n",i);
             if (rc) {
                 printf("ERROR; return code from pthread_create() is %d\n", rc);
-            exit(-1);
+                exit(-1);
             }
         }
         
-        round += 1;
-
-        /* Free attribute and wait for the other threads */
-        
-        for(i=0; i<NUM_THREADS; i++) {
+        /* Wait for the threads */
+        for (i = 0; i < NUM_THREADS; i++) {
             rc = pthread_join(threads[i], &status);
+            //printf("I joined thread %d\n",i);
             if (rc) {
-            printf("ERROR; return code from pthread_join() is %d\n", rc);
-            exit(-1);
+                printf("ERROR; return code from pthread_join() is %d\n", rc);
+                exit(-1);
             }
         }
-        printf("total lines %d",total_lines);
-
-        print_results(total_lines);      
+        round +=1;
+        
+        print_results(total_lines, lines_in_batch);
+        
+        // Free memory before processing next batch
+        free_lines();
+        
         total_lines += lines_in_batch;
     }
-	fclose(fd);
-
-    pthread_attr_destroy(&attr);
-	pthread_mutex_destroy(&mutexmax);
-	printf("Main: program completed. Exiting.\n");
     
-	pthread_exit(NULL);
+    fclose(fd);
+    
+    pthread_attr_destroy(&attr);
+    pthread_mutex_destroy(&mutexmax);
+    printf("Main: program completed. Exiting.\n");
+    
+    pthread_exit(NULL);
     return 0;
 }
