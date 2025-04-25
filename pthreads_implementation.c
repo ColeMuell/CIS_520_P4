@@ -7,7 +7,7 @@
 
 #define NUM_THREADS 4
 #define ARRAY_SIZE 2000000
-#define MAX_STRING_SIZE 4000
+#define MAX_STRING_SIZE 2200
 //?
 #define ALPHABET_SIZE 26
 #define BATCH_SIZE 1000
@@ -20,6 +20,7 @@ pthread_mutex_t mutexmax;			// mutex for char_max
 int max_ascii[BATCH_SIZE];
 uintptr_t rounds = 0;
 char **lines;
+int total_read;
 
 
 void print_string_ascii(const char* str) {
@@ -68,10 +69,20 @@ int read_file(FILE* fd) {
                 buffer[strcspn(buffer, "\n")] = 0;
                 
                 lines[count] = strdup(buffer);
+                if(total_read >= 999000){
+                    printf("%s",buffer);
+                }
                 
+               
                 count++;
         }
+        total_read +=count;
+        return count;
+
+
+        
 }
+
 
 //Modify to use file io instead of random data
 void *count_array(void *myID) {
@@ -83,6 +94,7 @@ void *count_array(void *myID) {
     
     for (int i = startPos; i < endPos; i++) {
        
+            if(! lines[(int) i]) {pthread_exit(NULL);};
             max_ascii[i] = find_max(lines[(int)i], MAX_STRING_SIZE);
     }
     
@@ -154,9 +166,12 @@ int main() {
         
         for(int k = 0;k < 1000;k++){
             lines = (char **)calloc(BATCH_SIZE,  sizeof(char *));
-             read_file(fd);
+             int read = read_file(fd);
+            
+             printf("read file again %d",read);
+             printf("total read %d\n",total_read);
                 for (i = 0; i < THREAD_COUNT; i++) {
-                    // printf("new thread\n");
+                    printf("new thread %d\n",i);
                     uintptr_t id = (k * THREAD_COUNT) + i;
 
                     rc = pthread_create(&threads[i], &attr, count_array, (void *)i);
@@ -167,7 +182,6 @@ int main() {
                     }
                 }
 
-                /* Wait for the threads */
                 for (i = 0; i < THREAD_COUNT; i++) {
                     rc = pthread_join(threads[i], &status);
                     //printf("I joined thread %d\n",i);
@@ -176,6 +190,7 @@ int main() {
                         exit(-1);
                     }
                 }
+                
                 printf("printing results  %d\n", rounds) ;
                
                 print_results(lines_read, BATCH_SIZE);
