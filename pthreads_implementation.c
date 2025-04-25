@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdint.h> // C
+#include <stdint.h> 
 
 
 #define NUM_THREADS 4
@@ -56,13 +56,6 @@ int read_file(FILE* fd) {
     char buffer[MAX_STRING_SIZE];
     int count = 0;
     size_t len;
-  
-    //     while (fgets(buffer, sizeof(buffer), fd) ) {
-    //         buffer[strcspn(buffer, "\n")] = 0;
-    //         lines[count] = strdup(buffer);
-    //         // snprintf(copy, MAX_STRING_SIZE, "%s", buffer);
-    //     count++;
-    // }
 
         while (fgets(buffer, MAX_STRING_SIZE, fd) && count < BATCH_SIZE) {
        
@@ -77,10 +70,7 @@ int read_file(FILE* fd) {
                 count++;
         }
         total_read +=count;
-        return count;
-
-
-        
+        return count;        
 }
 
 
@@ -155,9 +145,6 @@ int main() {
     pthread_attr_init(&attr);
     pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
     
-   
-        
-
 
         // Reset max_ascii array for new batch
         memset(max_ascii, 0, sizeof(max_ascii));
