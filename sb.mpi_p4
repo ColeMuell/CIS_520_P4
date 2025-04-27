@@ -7,5 +7,7 @@
 ##SBATCH --constraint=dwarves
 
 module load foss
+module load CMake/3.23.1-GCCcore-11.3.0 foss/2022a OpenMPI/4.1.4-GCC-11.3.0 CUDA/11.7.0
 
-mpirun -n 8 /homes/sekabanj/CIS_520_P4/mpi_version
+
+mpirun -n 11 /homes/sekabanj/CIS_520_P4/mpi_version

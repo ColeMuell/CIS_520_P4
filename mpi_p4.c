@@ -135,14 +135,14 @@ int main(int argc, char **argv)
 
 		int buffer[elements_per_process] ;
         memset(buffer,0,sizeof(buffer));
-		for (i = 1; i < ntasks; i++) {
-			MPI_Recv(&buffer, elements_per_process,MPI_INT,
-					i, 0,
-					MPI_COMM_WORLD,
-					&status);
-                printf("received results\n");
-                print_results(buffer,(i - 1) * PROCESS_PARTITION, PROCESS_PARTITION);
-		}       
+		// for (i = 1; i < ntasks; i++) {
+		// 	MPI_Recv(&buffer, elements_per_process,MPI_INT,
+		// 			i, 0,
+		// 			MPI_COMM_WORLD,
+		// 			&status);
+        //         printf("received results\n");
+        //         print_results(buffer,(i - 1) * PROCESS_PARTITION, PROCESS_PARTITION);
+		// }       
     }
     else{
     
@@ -160,8 +160,8 @@ int main(int argc, char **argv)
 				MPI_COMM_WORLD,
 				&status);
 	    kernel(myid, receivedLines, max_local);
-         MPI_Send(&max_local, PROCESS_PARTITION, MPI_INT,
-				0, 0, MPI_COMM_WORLD);
+        //  MPI_Send(&max_local, PROCESS_PARTITION, MPI_INT,
+		// 		0, 0, MPI_COMM_WORLD);
          printf("finised sending my id is %d\n",myid);
         
     }

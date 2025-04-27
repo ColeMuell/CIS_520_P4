@@ -57,7 +57,7 @@ int read_file(FILE* fd) {
     int count = 0;
     size_t len;
 
-        while (fgets(buffer, MAX_STRING_SIZE, fd) && count < BATCH_SIZE) {
+        while (count < BATCH_SIZE && fgets(buffer, MAX_STRING_SIZE, fd)) {
        
                 buffer[strcspn(buffer, "\n")] = 0;
                 
