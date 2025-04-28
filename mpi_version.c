@@ -116,7 +116,7 @@ int main(int argc, char **argv)
                 exit(1);
             }
     }
-    while(read_lines >0 ){
+    while(total_lines < BATCH_SIZE * 1000 ){
 
     if(myid == 0){
 
@@ -152,7 +152,7 @@ int main(int argc, char **argv)
 					MPI_COMM_WORLD,
 					&status);
                 printf("received results\n");
-                int offset = (i - 1) * PROCESS_PARTITION + (PROCESS_PARTITION * rounds);
+                int offset = (i - 1) * PROCESS_PARTITION + (BATCH_SIZE * rounds);
                 print_results(buffer, offset, PROCESS_PARTITION);
 		}       
     }
