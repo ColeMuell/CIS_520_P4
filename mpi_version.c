@@ -89,6 +89,9 @@ int main(int argc, char **argv)
 {
      int  myid;
      int ntasks;
+     int rounds = 0;
+     int read_lines = 10;
+     int total_lines = 0;
     //  int max_local[BATCH_SIZE/10];
    
     MPI_Status status;
@@ -97,8 +100,8 @@ int main(int argc, char **argv)
     MPI_Comm_rank(MPI_COMM_WORLD, &myid);
     // char ** lines = (char **)calloc(BATCH_SIZE,  sizeof(char *));
     
-
-   
+    
+    FILE* fd;
 
     printf("starting program\n");
 
@@ -107,13 +110,21 @@ int main(int argc, char **argv)
     if(myid == 0){
 
         char lines [BATCH_SIZE][MAX_STRING_SIZE];
-     
-        FILE* fd = fopen( "/homes/dan/625/wiki_dump.txt", "r" );
+          fd = fopen( "/homes/dan/625/wiki_dump.txt", "r" );
             if (!fd) {
                 perror("Error opening file");
                 exit(1);
             }
-        read_file(fd,lines);
+    }
+    while(read_lines >0 ){
+
+    if(myid == 0){
+
+        char lines [BATCH_SIZE][MAX_STRING_SIZE];
+          
+        read_lines = read_file(fd,lines);
+        total_lines += read_lines;
+        printf("total lines %d\n",total_lines);
                
         int index,i;
         int elements_per_process;
@@ -141,7 +152,8 @@ int main(int argc, char **argv)
 					MPI_COMM_WORLD,
 					&status);
                 printf("received results\n");
-                print_results(buffer,(i - 1) * PROCESS_PARTITION, PROCESS_PARTITION);
+                int offset = (i - 1) * PROCESS_PARTITION + (PROCESS_PARTITION * rounds);
+                print_results(buffer, offset, PROCESS_PARTITION);
 		}       
     }
     else{
@@ -164,6 +176,9 @@ int main(int argc, char **argv)
 				0, 0, MPI_COMM_WORLD);
          printf("finised sending my id is %d\n",myid);
         
+    }
+    rounds += 1;
+
     }
         double t2 = MPI_Wtime();
 

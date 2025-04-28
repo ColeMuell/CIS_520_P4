@@ -77,3 +77,4 @@ done sending
 my id is 10
 finised sending my id is 10
 Process 10 finished in 0.174 s
+slurmstepd: error: *** JOB 21617762 ON mole049 CANCELLED AT 2025-04-27T18:47:58 DUE TO TIME LIMIT ***

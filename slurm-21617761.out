@@ -77,3 +77,15 @@ done sending
 my id is 10
 finised sending my id is 10
 Process 10 finished in 0.084 s
+slurmstepd: error: *** JOB 21617761 ON mole041 CANCELLED AT 2025-04-27T18:46:25 DUE TO TIME LIMIT ***
+--------------------------------------------------------------------------
+ORTE has lost communication with a remote daemon.
+
+  HNP daemon   : [[32209,0],0] on node mole041
+  Remote daemon: [[32209,0],3] on node mole048
+
+This is usually due to either a failure of the TCP network
+connection to the node, or possibly an internal failure of
+the daemon itself. We cannot recover from this failure, and
+therefore will terminate the job.
+--------------------------------------------------------------------------
