@@ -258,7 +258,7 @@ int main(int argc, char **argv) {
     fclose(fd);
     pthread_attr_destroy(&attr);
     pthread_mutex_destroy(&mutexmax);
-    printf("%f, ", (float)(timeTwo - timeOne / CLOCKS_PER_SEC));
+    printf("%Lf, ", (long double)(timeTwo - timeOne / CLOCKS_PER_SEC));
     
     pthread_exit(NULL);
     return 0;

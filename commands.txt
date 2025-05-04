@@ -12,7 +12,7 @@ MPI:
         mpicc -o mpi MPI_C_SAMPLE.c
 
     Run:
-
+        sbatch full-mpi.sh
 
 Open MPI:
 
@@ -20,4 +20,5 @@ Open MPI:
         mpicc /opmpi/opmpi_imp.c -o opmpi_imp.exe
 
     Run:
+        sbatch full-opmpi.sh
         
