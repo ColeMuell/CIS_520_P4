@@ -13,35 +13,14 @@
 #define ALPHABET_SIZE 26
 #define BATCH_SIZE 1000
 pthread_mutex_t mutexmax;			// mutex for char_max
-
-
-
-
+uint8_t numThreads;
 
 char* lines[BATCH_SIZE]; 
 int max_ascii[BATCH_SIZE];
-uint8_t numThreads;
 
-/*char getRandomChar()
-{
-	int randNum = 0;
-	char randChar = ' ';
-
-	randNum = ALPHABET_SIZE * (rand() / (RAND_MAX + 1.0)); 	// pick number 0 < # < 25
-	randNum = randNum + 97;				// scale to 'a'
-	randChar = (char) randNum;
-
-	// printf("%c", randChar);
-	return randChar;
-}*/
-
-void print_string_ascii(const char* str) {
-    printf("String: ");
-    printf("%s", str);
-}
 //Finds the max ascii value in a given line
-char find_max(const char* line, int length) {
-
+char find_max(const char* line, int length) 
+{
     int max_ascii = -1; 
     int len = strnlen(line, length);
     for (int i = 0; i < len; i++) {
@@ -49,28 +28,12 @@ char find_max(const char* line, int length) {
         max_ascii = line[i];
         }
     }
-
-
-    
     return max_ascii;
 }
-float find_avg(char* line, int nchars) {
-   int i, j;
-   float sum = 0;
-
-   for ( i = 0; i < nchars; i++ ) {
-      sum += ((int) line[i]);
-   }
-
-   if (nchars > 0) 
-	return sum / (float) nchars;
-   else
-	return 0.0;
-}
-
 
 // Reading lines into memory, batched so it only does the batch
-int read_file(FILE* fd) {
+int read_file(FILE* fd) 
+{
     char buffer[MAX_STRING_SIZE];
     int count = 0;
     size_t len;
@@ -140,17 +103,6 @@ void *count_array(void *myID) {
     pthread_exit(NULL);
 }
 
-
-
-//prints results. The param offset says how far off of 0 the batched lines are
-void print_results(int offset, int count) {
-    int i;
-    // prints out maxes
-    for (i = 0; i < count; i++) {
-        printf("Line %d: %d\n", i + offset, max_ascii[i]);
-    }
-}
-
 void free_lines() {
     int i;
     for (i = 0; i < BATCH_SIZE; i++) {
@@ -202,13 +154,7 @@ int main(int argc, char **argv) {
     }
     
     // Opens the file for reading
-    FILE* fd = fopen(filename, "r");
 
-    if (fd == NULL) 
-    {
-        perror("fopen Failed: ");
-        return EXIT_FAILURE;
-    }
     
     /* Initialize and set thread detached attribute */
     pthread_attr_init(&attr);
@@ -254,11 +200,13 @@ int main(int argc, char **argv) {
     }
 
     clock_t timeTwo = clock();
+
+    long double timeDiff = (long double)(timeTwo - timeOne);
     
     fclose(fd);
     pthread_attr_destroy(&attr);
     pthread_mutex_destroy(&mutexmax);
-    printf("%Lf, ", ((long double)(timeTwo - timeOne)) / CLOCKS_PER_SEC);
+    printf("%Lf, ", timeDiff / CLOCKS_PER_SEC);
     
     pthread_exit(NULL);
     return 0;

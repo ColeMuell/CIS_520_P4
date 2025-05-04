@@ -1,3 +1,9 @@
+/* 
+ * This example is based on the code of Andrew V. Adinetz
+ * https://github.com/canonizer/mandelbrot-dyn
+ * Licensed under The MIT License
+ */
+
 #include <mpi.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,7 +17,6 @@
 #define TARGET_LINE 1000
 #define PROCESS_PARTITION BATCH_SIZE/10
 
-uint16_t numThreads;
 int total_read = 0;
 // static char ** receivedLines = NULL;
 // int max_ascii[BATCH_SIZE];
@@ -82,31 +87,6 @@ int read_file(FILE* fd,char linesArray[][MAX_STRING_SIZE]) {
 
 int main(int argc, char **argv)
 {
-    if (argc < 2) 
-	{
-		printf("%s <file> <cores>", argv[0]);
-		return EXIT_FAILURE;
-	}
-
-    char* filename = argv[1];
-
-    for (size_t i = 0; filename[i] != '\0'; i++) 
-	{
-        if (filename[i] == 60 ||filename[i] == 62 ||filename[i] == 58 ||filename[i] == 34 ||filename[i] == 92 ||filename[i] == 124 ||filename[i] == 63 ||filename[i] == 42)
-            return EXIT_FAILURE;
-
-		if(filename[i] < 31)
-			return EXIT_FAILURE;
-
-		if(i > 255)
-			return EXIT_FAILURE;
-    }
-
-    numThreads = atoi(argv[2]);
-
-    if(numThreads > 100 || numThreads < 1)
-        return EXIT_FAILURE;
-
      int  myid;
      int ntasks;
      int rounds = 0;
@@ -123,16 +103,18 @@ int main(int argc, char **argv)
     
     FILE* fd;
 
-    double t1 = MPI_Wtime();
+    printf("starting program\n");
+
+        double t1 = MPI_Wtime();
 
     if(myid == 0){
 
         char lines [BATCH_SIZE][MAX_STRING_SIZE];
-        fd = fopen( filename, "r" );
-        if (!fd) {
-            perror("Error opening file");
-            exit(1);
-        }
+          fd = fopen( "/homes/dan/625/wiki_dump.txt", "r" );
+            if (!fd) {
+                perror("Error opening file");
+                exit(1);
+            }
     }
     while(total_lines < BATCH_SIZE * 1000 ){
 
@@ -205,7 +187,7 @@ int main(int argc, char **argv)
 	// printf("Mandelbrot set computed in %.3lf s, at %.3lf Mpix/s\n",
 	//        walltime, h * w * 1e-6 / walltime );
     // }
-    printf("%.3lf, ", myid, t2-t1);
+    printf("Process %d finished in %.3lf s\n", myid, t2-t1);
 
     MPI_Finalize();
 

@@ -11,7 +11,7 @@
 # -I and -L for MPI stuff is not necessary
 #
 
-CC        = gcc
+CC = gcc
 
 #
 # Modify TOPDIR if you use your own include files and library files

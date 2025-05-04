@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdint.h>
 #include <omp.h>
 
 #define MAX_STRING_SIZE 2200
@@ -88,9 +89,11 @@ int main(int argc, char **argv) {
     }
     
 
-    double t1 = omp_get_wtime();
+    
     int total_lines = 0;
     int read_lines;
+    double t1 = omp_get_wtime();
+
 
     while ((read_lines = read_file(fd, lines)) > 0) {
         kernel(lines, max_local, read_lines);
