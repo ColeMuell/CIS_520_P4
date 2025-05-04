@@ -9,7 +9,7 @@ Pthreads:
 MPI:
 
     Build:
-        mpicc -o mpi MPI_C_SAMPLE.c
+        mpicc ./mpi/mpi-imp.c -o mpi/mpi-imp
 
     Run:
         sbatch full-mpi.sh
@@ -17,7 +17,7 @@ MPI:
 Open MPI:
 
     Build:
-        mpicc /opmpi/opmpi_imp.c -o opmpi_imp.exe
+        mpicc ./opmpi/opmpi-imp.c -lgomp -o opmpi/opmpi-imp
 
     Run:
         sbatch full-opmpi.sh

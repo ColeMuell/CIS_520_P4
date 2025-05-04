@@ -253,13 +253,13 @@ int main(int argc, char **argv) {
         total_lines += lines_in_batch;
     }
 
-    clock_t timeTwo= clock();
+    clock_t timeTwo = clock();
     
     fclose(fd);
     pthread_attr_destroy(&attr);
     pthread_mutex_destroy(&mutexmax);
-    printf("%Lf, ", (long double)(timeTwo - timeOne / CLOCKS_PER_SEC));
+    printf("%Lf, ", ((long double)(timeTwo - timeOne)) / CLOCKS_PER_SEC);
     
     pthread_exit(NULL);
     return 0;
-}
+} 

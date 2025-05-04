@@ -53,7 +53,7 @@ int main(int argc, char **argv) {
 
     if (argc < 1) 
 	{
-		printf("%s <file>", argv[0]);
+		printf("%s <file> <core>", argv[0]);
 		return EXIT_FAILURE;
 	}
 
@@ -78,8 +78,6 @@ int main(int argc, char **argv) {
         perror("fopen Failed: ");
         return EXIT_FAILURE;
     }
-
-    MPI_Init(Null, Null);
 
     char (*lines)[MAX_STRING_SIZE] = malloc(sizeof(char) * BATCH_SIZE * MAX_STRING_SIZE);
     int *max_local = malloc(sizeof(int) * BATCH_SIZE);
