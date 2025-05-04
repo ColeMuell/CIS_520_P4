@@ -1,0 +1,69 @@
+Running "module reset". Resetting modules to system default. The following $MODULEPATH directories have been removed: None
+Running Gromacs on dwarf38
+                :-) GROMACS - gmx mdrun, 2023.3-plumed_2.9.0 (-:
+
+Executable:   /opt/software/software/GROMACS/2023.3-foss-2023a-CUDA-12.1.1-PLUMED-2.9.0/bin/gmx_mpi
+Data prefix:  /opt/software/software/GROMACS/2023.3-foss-2023a-CUDA-12.1.1-PLUMED-2.9.0
+Working dir:  /homes/cmuelle/CIS_520_P4
+Command line:
+  gmx_mpi mdrun -nsteps 500000 -ntomp 1 -v -deffnm 1ns -c 1ns.pdb -nice 0
+
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+Program:     gmx mdrun, version 2023.3-plumed_2.9.0
+Source file: src/gromacs/options/options.cpp (line 177)
+Function:    void gmx::internal::OptionSectionImpl::finish()
+MPI rank:    0 (out of 4)
+
+Error in user input:
+Invalid input values
+  In option s
+    Required option was not provided, and the default file 'topol' does not
+    exist or is not accessible.
+    The following extensions were tried to complete the file name:
+      .tpr
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+Program:     gmx mdrun, version 2023.3-plumed_2.9.0
+Source file: src/gromacs/options/options.cpp (line 177)
+Function:    void gmx::internal::OptionSectionImpl::finish()
+MPI rank:    1 (out of 4)
+
+
+-------------------------------------------------------
+Program:     gmx mdrun, version 2023.3-plumed_2.9.0
+Source file: src/gromacs/options/options.cpp (line 177)
+Function:    void gmx::internal::OptionSectionImpl::finish()
+Error in user input:
+MPI rank:    3 (out of 4)
+Invalid input values
+
+Error in user input:
+Invalid input values
+  In option s
+    Required option was not provided, and the default file 'topol' does not
+    exist or is not accessible.
+    The following extensions were tried to complete the file name:
+      .tpr
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+  In option s
+    Required option was not provided, and the default file 'topol' does not
+    exist or is not accessible.
+    The following extensions were tried to complete the file name:
+      .tpr
+
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+
+real	0m2.006s
+user	0m0.085s
+sys	0m0.133s
+Finished run on 4 dwarf38 cores

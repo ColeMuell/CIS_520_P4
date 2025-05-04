@@ -1,0 +1,4 @@
+sbatch sb.gromacs
+
+mpicc -o mpi MPI_C_SAMPLE.c
+

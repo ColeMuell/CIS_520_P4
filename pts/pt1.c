@@ -110,6 +110,7 @@ main() {
 	      }
 	}
 
+
 	/* Free attribute and wait for the other threads */
 	pthread_attr_destroy(&attr);
 	for(i=0; i<NUM_THREADS; i++) {

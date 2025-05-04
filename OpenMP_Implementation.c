@@ -51,7 +51,33 @@ int read_file(FILE* fd, char linesArray[][MAX_STRING_SIZE]) {
 
 int main(int argc, char **argv) {
 
-    FILE* fd = fopen(argv[1], "r");
+    if (argc < 1) 
+	{
+		printf("%s <file>", argv[0]);
+		return EXIT_FAILURE;
+	}
+
+    char* filename = argv[1];
+
+    for (size_t i = 0; filename[i] != '\0'; i++) 
+	{
+        if (filename[i] == 60 ||filename[i] == 62 ||filename[i] == 58 ||filename[i] == 34 ||filename[i] == 92 ||filename[i] == 124 ||filename[i] == 63 ||filename[i] == 42)
+            return 0;
+
+		if(filename[i] < 31)
+			return 0;
+
+		if(i > 255)
+			return 0;
+    }
+
+    FILE* fd = fopen(filename, "r");
+
+    if (fd == NULL) 
+    {
+        perror("fopen Failed: ");
+        return EXIT_FAILURE;
+    }
 
     char (*lines)[MAX_STRING_SIZE] = malloc(sizeof(char) * BATCH_SIZE * MAX_STRING_SIZE);
     int *max_local = malloc(sizeof(int) * BATCH_SIZE);
