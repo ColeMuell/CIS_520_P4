@@ -1,4 +1,5 @@
-sbatch sb.gromacs
+module load foss
 
 mpicc -o mpi MPI_C_SAMPLE.c
 
+sbatch --ntasks-per-node=4 --nodes=1 mpi_sbatch.sh

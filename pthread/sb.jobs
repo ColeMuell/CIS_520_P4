@@ -1,0 +1,7 @@
+#!/bin/bash -l
+
+for i in $(seq 0 2 10); do
+  nodes=$((20 + i))
+  sbatch --nodes=$nodes pthreads.sh
+
+done
