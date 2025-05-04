@@ -1,5 +1,23 @@
-module load foss
+Pthreads:
 
-mpicc -o mpi MPI_C_SAMPLE.c
+    Build:
+        gcc pthread/pth-imp.c -o pthread/pth-imp
 
-sbatch --ntasks-per-node=4 --nodes=1 mpi_sbatch.sh
+    Run:
+        sbatch full-pth.sh
+
+MPI:
+
+    Build:
+        mpicc -o mpi MPI_C_SAMPLE.c
+
+    Run:
+
+
+Open MPI:
+
+    Build:
+        mpicc /opmpi/opmpi_imp.c -o opmpi_imp.exe
+
+    Run:
+        
