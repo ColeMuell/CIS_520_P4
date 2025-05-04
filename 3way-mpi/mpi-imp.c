@@ -1,195 +1,119 @@
-/* 
- * This example is based on the code of Andrew V. Adinetz
- * https://github.com/canonizer/mandelbrot-dyn
- * Licensed under The MIT License
- */
-
 #include <mpi.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdint.h> 
 
-#define ARRAY_SIZE 2000000
-#define MAX_STRING_SIZE 2200
-#define ALPHABET_SIZE 26
-#define BATCH_SIZE 1000
-#define TARGET_LINE 1000
-#define PROCESS_PARTITION BATCH_SIZE/10
+#define MAX_LINE_LEN 1024
+#define BATCH_SIZE 10000
 
-int total_read = 0;
-// static char ** receivedLines = NULL;
-// int max_ascii[BATCH_SIZE];
-
-
-
-//prints results. The param offset says how far off of 0 the batched lines are
-void print_results(int max_ascii[],int offset, int count) {
-    int i;
-    // prints out maxes
-    printf("offset %d count %d\n",offset, count);
-
-    for (i = 0; i < count; i++) {
-        printf("Line %d: %d\n", i + offset, max_ascii[i]);
-    }
+int max_ascii_in_line(const char *line) {
+    int max_val = 0;
+    for (int i = 0; line[i] != '\0' && line[i] != '\n'; ++i)
+        if ((unsigned char)line[i] > max_val)
+            max_val = (unsigned char)line[i];
+    return max_val;
 }
 
-//Finds the max ascii value in a given line
-char find_max(const char* line, int length) {
-    int max_int = -1; 
-    int len = strnlen(line, length);
-    for (int i = 0; i < len; i++) {
-        if (line[i] > max_int) {
+int main(int argc, char *argv[]) {
+    int rank, size;
+    FILE *fp = NULL;
+    int global_line_num = 0;
 
-        max_int = line[i];
-        }
-    }
-  
-    return max_int;
-}
-
-
-// The kernel to 
-int kernel(int id, char linesArray[][MAX_STRING_SIZE],int max_local[])
-{
-    printf("my id is %d\n",id);
-    for (int i = 0; i < 100; i++) {      
-            if(! linesArray[(int) i]) {
-                printf("array was null\n");
-                return 0;}
-            max_local[i] = find_max(linesArray[(int)i], MAX_STRING_SIZE);
-            // printf("%s",linesArray[(int)i]);
-        //   printf("%d",max_local[i]);
-    }
-   
-        return 0;
-}
-
-int read_file(FILE* fd,char linesArray[][MAX_STRING_SIZE]) {
-
-    
-    char buffer[MAX_STRING_SIZE];
-    int count = 0;
-    size_t len;
-
-        while (count <BATCH_SIZE && fgets(buffer, MAX_STRING_SIZE, fd) ) {
-       
-            buffer[strcspn(buffer, "\n")] = 0;
-            
-            // linesArray[count] = strdup(buffer);
-            snprintf(linesArray[count], MAX_STRING_SIZE,"%s",buffer);
-            
-            count++;
-        }
-        total_read +=count;
-        return count;        
-}
-
-int main(int argc, char **argv)
-{
-     int  myid;
-     int ntasks;
-     int rounds = 0;
-     int read_lines = 10;
-     int total_lines = 0;
-    //  int max_local[BATCH_SIZE/10];
-   
-    MPI_Status status;
     MPI_Init(&argc, &argv);
-    MPI_Comm_size(MPI_COMM_WORLD, &ntasks);
-    MPI_Comm_rank(MPI_COMM_WORLD, &myid);
-    // char ** lines = (char **)calloc(BATCH_SIZE,  sizeof(char *));
-    
-    
-    FILE* fd;
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
 
-    printf("starting program\n");
-
-        double t1 = MPI_Wtime();
-
-    if(myid == 0){
-
-        char lines [BATCH_SIZE][MAX_STRING_SIZE];
-          fd = fopen( "/homes/dan/625/wiki_dump.txt", "r" );
-            if (!fd) {
-                perror("Error opening file");
-                exit(1);
-            }
+    if (argc < 2) {
+        if (rank == 0) fprintf(stderr, "Usage: %s <filename>\n", argv[0]);
+        MPI_Finalize();
+        return EXIT_FAILURE;
     }
-    while(total_lines < BATCH_SIZE * 1000 ){
 
-    if(myid == 0){
+    char (*buffer)[MAX_LINE_LEN] = NULL;
+    if (rank == 0) {
+        fp = fopen(argv[1], "r");
 
-        char lines [BATCH_SIZE][MAX_STRING_SIZE];
-          
-        read_lines = read_file(fd,lines);
-        total_lines += read_lines;
-        printf("total lines %d\n",total_lines);
-               
-        int index,i;
-        int elements_per_process;
-		elements_per_process = BATCH_SIZE / (ntasks-1);
-
-        for (i = 1; i < ntasks; i++) {
-            index = (i -1 ) * elements_per_process;
-
-            MPI_Send(&elements_per_process,
-                    1, MPI_INT, i, 0,
-                    MPI_COMM_WORLD);
-            
-            MPI_Send(&lines[index],
-                    elements_per_process * MAX_STRING_SIZE,
-                    MPI_CHAR, i, 0,
-                    MPI_COMM_WORLD);
+        if (fp == NULL) {
+            perror("Error opening file");
+            MPI_Abort(MPI_COMM_WORLD, 1);
         }
-        printf("done sending\n");
-
-		int buffer[elements_per_process] ;
-        memset(buffer,0,sizeof(buffer));
-		for (i = 1; i < ntasks; i++) {
-			MPI_Recv(&buffer, elements_per_process,MPI_INT,
-					i, 0,
-					MPI_COMM_WORLD,
-					&status);
-                printf("received results\n");
-                int offset = (i - 1) * PROCESS_PARTITION + (BATCH_SIZE * rounds);
-                print_results(buffer, offset, PROCESS_PARTITION);
-		}       
+        buffer = malloc(BATCH_SIZE * MAX_LINE_LEN);
     }
-    else{
-    
-        static char receivedLines[PROCESS_PARTITION][MAX_STRING_SIZE];
-        int max_local[PROCESS_PARTITION];
 
-       int num_of_elements_recieved = 0;
-       MPI_Recv(&num_of_elements_recieved,
-				1, MPI_INT, 0, 0,
-				MPI_COMM_WORLD,
-				&status);
+    int *sendcounts = malloc(size * sizeof(int));
+    int *displs = malloc(size * sizeof(int));
 
-        MPI_Recv(&receivedLines, num_of_elements_recieved * MAX_STRING_SIZE,
-				MPI_CHAR, 0, 0,
-				MPI_COMM_WORLD,
-				&status);
-	    kernel(myid, receivedLines, max_local);
-         MPI_Send(&max_local, PROCESS_PARTITION, MPI_INT,
-				0, 0, MPI_COMM_WORLD);
-         printf("finised sending my id is %d\n",myid);
-        
+    while (1) {
+        int lines_read = 0;
+
+        if (rank == 0) {
+            for (lines_read = 0; lines_read < BATCH_SIZE; ++lines_read) {
+                if (!fgets(buffer[lines_read], MAX_LINE_LEN, fp))
+                    break;
+            }
+        }
+
+        MPI_Bcast(&lines_read, 1, MPI_INT, 0, MPI_COMM_WORLD);
+        if (lines_read == 0) break;
+
+        int offset = 0;
+        for (int i = 0; i < size; ++i) {
+            int count = lines_read / size + (i < (lines_read % size));
+            sendcounts[i] = count * MAX_LINE_LEN;
+            displs[i] = offset;
+            offset += sendcounts[i];
+        }
+
+        int my_bytes = sendcounts[rank];
+        int my_lines = my_bytes / MAX_LINE_LEN;
+
+        char *my_buffer = malloc(my_bytes);
+        int *my_results = malloc(my_lines * sizeof(int));
+
+        MPI_Scatterv(rank == 0 ? buffer : NULL, sendcounts, displs, MPI_CHAR,
+                     my_buffer, my_bytes, MPI_CHAR, 0, MPI_COMM_WORLD);
+
+        for (int i = 0; i < my_lines; ++i)
+            my_results[i] = max_ascii_in_line(&my_buffer[i * MAX_LINE_LEN]);
+
+        int *recvcounts = NULL, *recvdispls = NULL, *batch_results = NULL;
+        if (rank == 0) {
+            recvcounts = malloc(size * sizeof(int));
+            recvdispls = malloc(size * sizeof(int));
+            batch_results = malloc(lines_read * sizeof(int));
+
+            for (int i = 0, pos = 0; i < size; ++i) {
+                recvcounts[i] = sendcounts[i] / MAX_LINE_LEN;
+                recvdispls[i] = pos;
+                pos += recvcounts[i];
+            }
+        }
+
+        MPI_Gatherv(my_results, my_lines, MPI_INT,
+                    batch_results, recvcounts, recvdispls, MPI_INT,
+                    0, MPI_COMM_WORLD);
+
+        if (rank == 0) {
+            /*for (int i = 0; i < lines_read; ++i)
+                printf("Line %d: %d\n", global_line_num + i + 1, batch_results[i]);
+            */
+            global_line_num += lines_read;
+            free(recvcounts);
+            free(recvdispls);
+            free(batch_results);
+        }
+
+        free(my_buffer);
+        free(my_results);
     }
-    rounds += 1;
 
+    if (rank == 0) {
+        fclose(fp);
+        free(buffer);
     }
-        double t2 = MPI_Wtime();
 
-	double walltime = t2 - t1;
-	// Print the timings
-	// printf("Mandelbrot set computed in %.3lf s, at %.3lf Mpix/s\n",
-	//        walltime, h * w * 1e-6 / walltime );
-    // }
-    printf("Process %d finished in %.3lf s\n", myid, t2-t1);
-
+    free(sendcounts);
+    free(displs);
     MPI_Finalize();
-
     return 0;
 }

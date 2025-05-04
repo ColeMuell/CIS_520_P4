@@ -4,7 +4,7 @@ Pthreads:
         gcc 3way-pthread/pth-imp.c -o 3way-pthread/pth-imp
 
     Run:
-        sbatch full-pth.sh
+        sbatch ./3way-pthread/pth-imp.sh
 
 MPI:
 
@@ -12,7 +12,7 @@ MPI:
         mpicc ./3way-mpi/mpi-imp.c -o 3way-mpi/mpi-imp
 
     Run:
-        sbatch full-mpi.sh
+        sbatch ./3way-mpi/mpi-imp.sh
 
 Open MPI:
 
@@ -20,5 +20,5 @@ Open MPI:
         mpicc ./3way-openmp/openmp-imp.c -lgomp -o 3way-openmp/openmp-imp
 
     Run:
-        sbatch full-opmpi.sh
+        sbatch ./3way-openmp/openmp-imp.sh
         

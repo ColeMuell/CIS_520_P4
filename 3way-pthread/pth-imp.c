@@ -154,7 +154,13 @@ int main(int argc, char **argv) {
     }
     
     // Opens the file for reading
+    FILE* fd = fopen(filename, "r");
 
+    if (fd == NULL) 
+    {
+        perror("fopen Failed: ");
+        return EXIT_FAILURE;
+    }
     
     /* Initialize and set thread detached attribute */
     pthread_attr_init(&attr);
