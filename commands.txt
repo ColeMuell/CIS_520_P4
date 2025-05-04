@@ -1,7 +1,7 @@
 Pthreads:
 
     Build:
-        gcc pthread/pth-imp.c -o pthread/pth-imp
+        gcc 3way-pthread/pth-imp.c -o 3way-pthread/pth-imp
 
     Run:
         sbatch full-pth.sh
@@ -9,7 +9,7 @@ Pthreads:
 MPI:
 
     Build:
-        mpicc ./mpi/mpi-imp.c -o mpi/mpi-imp
+        mpicc ./3way-mpi/mpi-imp.c -o 3way-mpi/mpi-imp
 
     Run:
         sbatch full-mpi.sh
@@ -17,7 +17,7 @@ MPI:
 Open MPI:
 
     Build:
-        mpicc ./opmpi/opmpi-imp.c -lgomp -o opmpi/opmpi-imp
+        mpicc ./3way-openmp/openmp-imp.c -lgomp -o 3way-openmp/openmp-imp
 
     Run:
         sbatch full-opmpi.sh
