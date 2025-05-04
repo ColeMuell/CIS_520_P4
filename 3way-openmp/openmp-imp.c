@@ -30,10 +30,10 @@ char find_max(const char* line, int length) {
 
 // Kernel that computes max ASCII value per line using OpenMP. opm parallel for means that the for loop is automatically split between different threads
 void kernel(char linesArray[][MAX_STRING_SIZE], int max_local[], int count) {
-    #pragma omp parallel for
-    for (int i = 0; i < count; i++) {      
-        max_local[i] = find_max(linesArray[i], MAX_STRING_SIZE);
-    }
+    #pragma omp parallel for schedule(dynamic, 64) 
+        for (int i = 0; i < count; i++) {      
+            max_local[i] = find_max(linesArray[i], MAX_STRING_SIZE);
+        }
 }
 
 // Reads a batch of lines from file
@@ -97,7 +97,7 @@ int main(int argc, char **argv) {
 
     while ((read_lines = read_file(fd, lines)) > 0) {
         kernel(lines, max_local, read_lines);
-        //print_results(max_local, total_lines, read_lines);
+        print_results(max_local, total_lines, read_lines);
         total_lines += read_lines;
     }
 

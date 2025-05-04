@@ -12,9 +12,9 @@ module load CMake/3.23.1-GCCcore-11.3.0 foss/2022a OpenMPI/4.1.4-GCC-11.3.0
 
 for i in $(seq 1 20); do
 
-    export OMP_NUM_THREADS=$i
-    mpirun -x OMP_NUM_THREADS=$i ./3way-openmp/openmp-imp ~dan/625/wiki_dump.txt mdrun -nsteps 500000 -ntomp 1 -v -deffnm 1ns -c 1ns.pdb -nice 0  
-    
-    echo -n ""
-
-done 
+export OMP_NUM_THREADS=$1
+./3way-openmp/openmp-imp ~dan/625/wiki_dump.txt 
+./3way-openmp/openmp-imp ~dan/625/wiki_dump.txt 
+./3way-openmp/openmp-imp ~dan/625/wiki_dump.txt 
+./3way-openmp/openmp-imp ~dan/625/wiki_dump.txt 
+./3way-openmp/openmp-imp ~dan/625/wiki_dump.txt 

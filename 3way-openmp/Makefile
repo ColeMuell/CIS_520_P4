@@ -12,7 +12,7 @@
 #
 
 CC        = mpicc
-CFLAGS 	  = -fopenmp
+CFLAGS    = -fopenmp
 
 #
 # Modify TOPDIR if you use your own include files and library files
@@ -31,7 +31,7 @@ default: all
 all: $(PROGRAM) 
 
 $(PROGRAM): $(OBJS)
-	$(CC) $CFLAGS $(OBJS) -o $(PROGRAM) $(LDFLAGS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(PROGRAM) $(LDFLAGS)
 
 clean:
 	/bin/rm -f $(OBJS) $(PROGRAM)
