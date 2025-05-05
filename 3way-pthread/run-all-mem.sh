@@ -16,14 +16,14 @@ batchSize=10000
 
 for i in {1..20}
 do
-    perf stat ./pth-imp ~dan/625/wiki_dump.txt $i $batches $batchSize
+    perf stat ./pth-imp /homes/dan/625/wiki_dump.txt $i $batches $batchSize
 done 
 
 echo -e ""
 
 for ((i=100;i<1001;i+=100))
 do
-    perf stat ./pth-imp ~dan/625/wiki_dump.txt $threads $i $batchSize
+    perf stat ./pth-imp /homes/dan/625/wiki_dump.txt $threads $i $batchSize
 done 
 
 echo -e ""
@@ -31,6 +31,6 @@ echo -e ""
 for ((i=100;i<1001;i+=100))
 do
 
-    perf stat ./pth-imp ~dan/625/wiki_dump.txt $threads $batches $i
+    perf stat ./pth-imp /homes/dan/625/wiki_dump.txt $threads $batches $i
     
 done 

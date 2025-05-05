@@ -14,4 +14,4 @@ threads=10
 batches=1000
 batchSize=1000
 
-./pth-imp ~dan/625/wiki_dump.txt $threads $batches $batchSize
+./pth-imp /homes/dan/625/wiki_dump.txt $threads $batches $batchSize

@@ -22,7 +22,7 @@ int numReq = -1;
 
 void read_file() {
 	// open file
-	int fd = fopen("/homes/dan/625/wiki_dump.txt", O_RDONLY);
+	int fd = open("/homes/dan/625/wiki_dump.txt", O_RDONLY);
 
     if (fd == -1) {
         perror("Error opening file");
@@ -51,7 +51,7 @@ void read_file() {
 	// loop through file byte by byte
     for (off_t i = 0; i < fSize; i++) {
         if (mFile[i] == '\n') {
-            if (numLines < MAX_LINES) {
+            if (numLines < LINE_MAX) {
                 lineOff[numLines++] = i + 1;
                 if (numReq > 0 && numLines >= numReq) // used for varying input lines testing
                 {
@@ -60,7 +60,7 @@ void read_file() {
             } 
             else 
             {
-                fprintf(stderr, "Reached max line limit (%d)\n", MAX_LINES);
+                fprintf(stderr, "Reached max line limit (%d)\n", LINE_MAX);
                 break;
             }
         }
@@ -148,7 +148,7 @@ int main(int argc, char* argv[])
         }
     }
 
-    numReq = argv[2];
+    numReq = atoi(argv[2]);
 
     if(numReq > LINE_MAX || numThreads < 10)
     {

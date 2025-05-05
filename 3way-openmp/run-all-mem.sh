@@ -17,7 +17,7 @@ batchSize=1000
 for i in {1..20}
 do
     export OMP_NUM_THREADS=$i
-    perf stat ./openmp-imp ~dan/625/wiki_dump.txt $i $batches $batchSize
+    perf stat ./openmp-imp /homes/dan/625/wiki_dump.txt $i $batches $batchSize
 done
 
 echo -e ""
@@ -25,7 +25,7 @@ echo -e ""
 for ((i=100;i<1001;i+=100))
 do
     export OMP_NUM_THREADS=$threads
-    perf stat ./openmp-imp ~dan/625/wiki_dump.txt $threads $i $batchSize
+    perf stat ./openmp-imp /homes/dan/625/wiki_dump.txt $threads $i $batchSize
 done 
 
 echo -e ""
@@ -33,5 +33,5 @@ echo -e ""
 for ((i=100;i<1001;i+=100))
 do
     export OMP_NUM_THREADS=$threads
-    perf stat ./openmp-imp ~dan/625/wiki_dump.txt $threads $batches $i
+    perf stat ./openmp-imp /homes/dan/625/wiki_dump.txt $threads $batches $i
 done 
