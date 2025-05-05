@@ -1,0 +1,732 @@
+/usr/bin/id: cannot find name for user ID 5191
+
+The following have been reloaded with a version change:
+  1) GCCcore/13.2.0 => GCCcore/11.3.0
+  2) XZ/5.4.4-GCCcore-13.2.0 => XZ/5.2.5-GCCcore-11.3.0
+  3) cURL/8.3.0-GCCcore-13.2.0 => cURL/7.83.0-GCCcore-11.3.0
+  4) libxml2/2.11.5-GCCcore-13.2.0 => libxml2/2.9.13-GCCcore-11.3.0
+  5) ncurses/6.4-GCCcore-13.2.0 => ncurses/6.3-GCCcore-11.3.0
+  6) zlib/1.2.13-GCCcore-13.2.0 => zlib/1.2.12-GCCcore-11.3.0
+
+16.329213, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 1 1000 1000':
+
+          7,501.00 msec task-clock:u                     #    0.455 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               106      page-faults:u                    #   14.131 /sec                      
+    16,861,176,228      cycles:u                         #    2.248 GHz                       
+    24,750,535,693      instructions:u                   #    1.47  insn per cycle            
+     4,171,544,586      branches:u                       #  556.132 M/sec                     
+        10,056,048      branch-misses:u                  #    0.24% of all branches           
+
+      16.473354824 seconds time elapsed
+
+       6.539290000 seconds user
+       0.905045000 seconds sys
+
+
+9.177438, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 2 1000 1000':
+
+          4,882.28 msec task-clock:u                     #    0.531 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             1,723      page-faults:u                    #  352.909 /sec                      
+     9,476,083,106      cycles:u                         #    1.941 GHz                       
+    14,359,761,456      instructions:u                   #    1.52  insn per cycle            
+     2,442,321,181      branches:u                       #  500.242 M/sec                     
+         6,947,793      branch-misses:u                  #    0.28% of all branches           
+
+       9.186233373 seconds time elapsed
+
+       3.704503000 seconds user
+       1.140531000 seconds sys
+
+
+7.902687, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 3 1000 1000':
+
+          3,935.63 msec task-clock:u                     #    0.405 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               154      page-faults:u                    #   39.130 /sec                      
+     6,992,345,726      cycles:u                         #    1.777 GHz                       
+    10,887,673,157      instructions:u                   #    1.56  insn per cycle            
+     1,864,417,798      branches:u                       #  473.728 M/sec                     
+         5,912,466      branch-misses:u                  #    0.32% of all branches           
+
+       9.724327238 seconds time elapsed
+
+       2.673720000 seconds user
+       1.222871000 seconds sys
+
+
+8.690458, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 4 1000 1000':
+
+          3,537.33 msec task-clock:u                     #    0.407 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             1,184      page-faults:u                    #  334.716 /sec                      
+     5,872,247,720      cycles:u                         #    1.660 GHz                       
+     9,174,916,228      instructions:u                   #    1.56  insn per cycle            
+     1,579,282,126      branches:u                       #  446.462 M/sec                     
+         5,533,793      branch-misses:u                  #    0.35% of all branches           
+
+       8.700268150 seconds time elapsed
+
+       2.332940000 seconds user
+       1.176683000 seconds sys
+
+
+8.259960, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 5 1000 1000':
+
+          3,146.29 msec task-clock:u                     #    0.377 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               164      page-faults:u                    #   52.125 /sec                      
+     4,952,153,837      cycles:u                         #    1.574 GHz                       
+     8,133,152,030      instructions:u                   #    1.64  insn per cycle            
+     1,406,010,542      branches:u                       #  446.880 M/sec                     
+         5,231,748      branch-misses:u                  #    0.37% of all branches           
+
+       8.344659710 seconds time elapsed
+
+       1.920964000 seconds user
+       1.202549000 seconds sys
+
+
+9.415820, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 6 1000 1000':
+
+          2,989.25 msec task-clock:u                     #    0.316 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               170      page-faults:u                    #   56.871 /sec                      
+     4,498,798,393      cycles:u                         #    1.505 GHz                       
+     7,431,650,075      instructions:u                   #    1.65  insn per cycle            
+     1,290,114,407      branches:u                       #  431.585 M/sec                     
+         4,879,869      branch-misses:u                  #    0.38% of all branches           
+
+       9.459638476 seconds time elapsed
+
+       1.744926000 seconds user
+       1.218377000 seconds sys
+
+
+9.827347, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 7 1000 1000':
+
+          2,849.32 msec task-clock:u                     #    0.290 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             1,196      page-faults:u                    #  419.749 /sec                      
+     4,127,722,918      cycles:u                         #    1.449 GHz                       
+     6,941,679,627      instructions:u                   #    1.68  insn per cycle            
+     1,208,738,440      branches:u                       #  424.220 M/sec                     
+         4,806,552      branch-misses:u                  #    0.40% of all branches           
+
+       9.835218524 seconds time elapsed
+
+       1.616959000 seconds user
+       1.209779000 seconds sys
+
+
+8.742437, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 8 1000 1000':
+
+          2,922.03 msec task-clock:u                     #    0.319 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               177      page-faults:u                    #   60.574 /sec                      
+     4,122,426,820      cycles:u                         #    1.411 GHz                       
+     6,570,243,278      instructions:u                   #    1.59  insn per cycle            
+     1,146,567,021      branches:u                       #  392.388 M/sec                     
+         4,600,433      branch-misses:u                  #    0.40% of all branches           
+
+       9.147213041 seconds time elapsed
+
+       1.591698000 seconds user
+       1.303697000 seconds sys
+
+
+7.790833, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 9 1000 1000':
+
+          2,769.55 msec task-clock:u                     #    0.355 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               183      page-faults:u                    #   66.076 /sec                      
+     3,771,479,422      cycles:u                         #    1.362 GHz                       
+     6,283,114,189      instructions:u                   #    1.67  insn per cycle            
+     1,098,601,469      branches:u                       #  396.671 M/sec                     
+         4,572,550      branch-misses:u                  #    0.42% of all branches           
+
+       7.798733376 seconds time elapsed
+
+       1.478215000 seconds user
+       1.263043000 seconds sys
+
+
+8.132846, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 10 1000 1000':
+
+          2,704.91 msec task-clock:u                     #    0.332 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               188      page-faults:u                    #   69.503 /sec                      
+     3,607,449,911      cycles:u                         #    1.334 GHz                       
+     6,058,285,674      instructions:u                   #    1.68  insn per cycle            
+     1,061,572,408      branches:u                       #  392.462 M/sec                     
+         4,454,386      branch-misses:u                  #    0.42% of all branches           
+
+       8.152056887 seconds time elapsed
+
+       1.424227000 seconds user
+       1.256981000 seconds sys
+
+
+7.849034, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 11 1000 1000':
+
+          2,679.35 msec task-clock:u                     #    0.341 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               192      page-faults:u                    #   71.659 /sec                      
+     3,493,092,180      cycles:u                         #    1.304 GHz                       
+     5,868,758,356      instructions:u                   #    1.68  insn per cycle            
+     1,030,217,090      branches:u                       #  384.502 M/sec                     
+         4,466,331      branch-misses:u                  #    0.43% of all branches           
+
+       7.857550812 seconds time elapsed
+
+       1.369391000 seconds user
+       1.282862000 seconds sys
+
+
+10.554539, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 12 1000 1000':
+
+          2,617.50 msec task-clock:u                     #    0.248 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               196      page-faults:u                    #   74.881 /sec                      
+     3,327,239,582      cycles:u                         #    1.271 GHz                       
+     5,708,906,874      instructions:u                   #    1.72  insn per cycle            
+     1,003,793,217      branches:u                       #  383.493 M/sec                     
+         4,408,834      branch-misses:u                  #    0.44% of all branches           
+
+      10.563447397 seconds time elapsed
+
+       1.270284000 seconds user
+       1.324077000 seconds sys
+
+
+8.908653, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 13 1000 1000':
+
+          2,622.89 msec task-clock:u                     #    0.294 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             1,222      page-faults:u                    #  465.899 /sec                      
+     3,306,050,061      cycles:u                         #    1.260 GHz                       
+     5,580,323,898      instructions:u                   #    1.69  insn per cycle            
+       982,307,641      branches:u                       #  374.514 M/sec                     
+         4,430,712      branch-misses:u                  #    0.45% of all branches           
+
+       8.917388116 seconds time elapsed
+
+       1.307262000 seconds user
+       1.286918000 seconds sys
+
+
+9.233690, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 14 1000 1000':
+
+          2,624.36 msec task-clock:u                     #    0.284 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             1,226      page-faults:u                    #  467.162 /sec                      
+     3,221,026,595      cycles:u                         #    1.227 GHz                       
+     5,467,074,545      instructions:u                   #    1.70  insn per cycle            
+       963,885,657      branches:u                       #  367.284 M/sec                     
+         4,332,063      branch-misses:u                  #    0.45% of all branches           
+
+       9.241586408 seconds time elapsed
+
+       1.249413000 seconds user
+       1.345333000 seconds sys
+
+
+10.201260, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 15 1000 1000':
+
+          2,567.38 msec task-clock:u                     #    0.251 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               208      page-faults:u                    #   81.017 /sec                      
+     3,140,485,535      cycles:u                         #    1.223 GHz                       
+     5,371,659,834      instructions:u                   #    1.71  insn per cycle            
+       947,950,629      branches:u                       #  369.229 M/sec                     
+         4,354,770      branch-misses:u                  #    0.46% of all branches           
+
+      10.209714583 seconds time elapsed
+
+       1.259642000 seconds user
+       1.279589000 seconds sys
+
+
+8.830698, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 16 1000 1000':
+
+          2,488.47 msec task-clock:u                     #    0.267 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             1,234      page-faults:u                    #  495.887 /sec                      
+     2,996,481,367      cycles:u                         #    1.204 GHz                       
+     5,289,896,668      instructions:u                   #    1.77  insn per cycle            
+       934,658,311      branches:u                       #  375.595 M/sec                     
+         4,431,985      branch-misses:u                  #    0.47% of all branches           
+
+       9.303190838 seconds time elapsed
+
+       1.177166000 seconds user
+       1.289894000 seconds sys
+
+
+9.174164, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 17 1000 1000':
+
+          2,465.08 msec task-clock:u                     #    0.260 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               215      page-faults:u                    #   87.218 /sec                      
+     2,920,369,047      cycles:u                         #    1.185 GHz                       
+     5,208,805,249      instructions:u                   #    1.78  insn per cycle            
+       921,149,513      branches:u                       #  373.679 M/sec                     
+         4,295,606      branch-misses:u                  #    0.47% of all branches           
+
+       9.496112080 seconds time elapsed
+
+       1.155102000 seconds user
+       1.288966000 seconds sys
+
+
+8.557232, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 18 1000 1000':
+
+          2,491.97 msec task-clock:u                     #    0.266 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               219      page-faults:u                    #   87.882 /sec                      
+     2,930,600,850      cycles:u                         #    1.176 GHz                       
+     5,140,419,629      instructions:u                   #    1.75  insn per cycle            
+       910,192,497      branches:u                       #  365.250 M/sec                     
+         4,246,450      branch-misses:u                  #    0.47% of all branches           
+
+       9.363336581 seconds time elapsed
+
+       1.146892000 seconds user
+       1.319860000 seconds sys
+
+
+10.286430, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 19 1000 1000':
+
+          2,480.06 msec task-clock:u                     #    0.235 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             1,244      page-faults:u                    #  501.601 /sec                      
+     2,896,482,090      cycles:u                         #    1.168 GHz                       
+     5,084,780,244      instructions:u                   #    1.76  insn per cycle            
+       901,143,862      branches:u                       #  363.356 M/sec                     
+         4,208,812      branch-misses:u                  #    0.47% of all branches           
+
+      10.533419600 seconds time elapsed
+
+       1.147717000 seconds user
+       1.312047000 seconds sys
+
+
+8.082170, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 20 1000 1000':
+
+          2,366.81 msec task-clock:u                     #    0.275 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             1,252      page-faults:u                    #  528.981 /sec                      
+     2,710,855,853      cycles:u                         #    1.145 GHz                       
+     5,031,524,402      instructions:u                   #    1.86  insn per cycle            
+       892,191,414      branches:u                       #  376.959 M/sec                     
+         4,234,000      branch-misses:u                  #    0.47% of all branches           
+
+       8.598364668 seconds time elapsed
+
+       1.116511000 seconds user
+       1.232273000 seconds sys
+
+
+
+0.694836, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 10 100 1000':
+
+            268.89 msec task-clock:u                     #    0.237 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               631      page-faults:u                    #    2.347 K/sec                     
+       350,376,177      cycles:u                         #    1.303 GHz                       
+       606,520,551      instructions:u                   #    1.73  insn per cycle            
+       106,495,094      branches:u                       #  396.060 M/sec                     
+           511,832      branch-misses:u                  #    0.48% of all branches           
+
+       1.132165833 seconds time elapsed
+
+       0.141964000 seconds user
+       0.125397000 seconds sys
+
+
+0.785379, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 10 200 1000':
+
+            459.86 msec task-clock:u                     #    0.579 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               122      page-faults:u                    #  265.299 /sec                      
+       701,641,848      cycles:u                         #    1.526 GHz                       
+     1,208,672,174      instructions:u                   #    1.72  insn per cycle            
+       212,222,496      branches:u                       #  461.495 M/sec                     
+           926,057      branch-misses:u                  #    0.44% of all branches           
+
+       0.794031404 seconds time elapsed
+
+       0.258363000 seconds user
+       0.197953000 seconds sys
+
+
+1.148027, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 10 300 1000':
+
+            663.18 msec task-clock:u                     #    0.570 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               123      page-faults:u                    #  185.471 /sec                      
+     1,062,472,800      cycles:u                         #    1.602 GHz                       
+     1,819,365,938      instructions:u                   #    1.71  insn per cycle            
+       318,872,191      branches:u                       #  480.826 M/sec                     
+         1,324,860      branch-misses:u                  #    0.42% of all branches           
+
+       1.163717103 seconds time elapsed
+
+       0.418418000 seconds user
+       0.240371000 seconds sys
+
+
+1.817568, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 10 400 1000':
+
+            857.06 msec task-clock:u                     #    0.466 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               123      page-faults:u                    #  143.514 /sec                      
+     1,389,311,124      cycles:u                         #    1.621 GHz                       
+     2,423,431,576      instructions:u                   #    1.74  insn per cycle            
+       424,704,911      branches:u                       #  495.536 M/sec                     
+         1,772,199      branch-misses:u                  #    0.42% of all branches           
+
+       1.838759720 seconds time elapsed
+
+       0.515444000 seconds user
+       0.334336000 seconds sys
+
+
+1.573601, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 10 500 1000':
+
+          1,044.96 msec task-clock:u                     #    0.582 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               121      page-faults:u                    #  115.793 /sec                      
+     1,742,036,613      cycles:u                         #    1.667 GHz                       
+     3,031,478,223      instructions:u                   #    1.74  insn per cycle            
+       531,175,618      branches:u                       #  508.320 M/sec                     
+         2,184,037      branch-misses:u                  #    0.41% of all branches           
+
+       1.795351249 seconds time elapsed
+
+       0.674892000 seconds user
+       0.364346000 seconds sys
+
+
+1.873254, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 10 600 1000':
+
+          1,216.38 msec task-clock:u                     #    0.613 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               122      page-faults:u                    #  100.297 /sec                      
+     2,035,416,476      cycles:u                         #    1.673 GHz                       
+     3,635,286,208      instructions:u                   #    1.79  insn per cycle            
+       637,184,501      branches:u                       #  523.835 M/sec                     
+         2,651,942      branch-misses:u                  #    0.42% of all branches           
+
+       1.985233002 seconds time elapsed
+
+       0.815610000 seconds user
+       0.394434000 seconds sys
+
+
+2.209178, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 10 700 1000':
+
+          1,629.03 msec task-clock:u                     #    0.595 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               188      page-faults:u                    #  115.406 /sec                      
+     2,388,640,542      cycles:u                         #    1.466 GHz                       
+     4,232,821,023      instructions:u                   #    1.77  insn per cycle            
+       742,507,784      branches:u                       #  455.798 M/sec                     
+         3,171,002      branch-misses:u                  #    0.43% of all branches           
+
+       2.735703988 seconds time elapsed
+
+       0.950344000 seconds user
+       0.671205000 seconds sys
+
+
+3.568843, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 10 800 1000':
+
+          1,742.27 msec task-clock:u                     #    0.450 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               190      page-faults:u                    #  109.053 /sec                      
+     2,761,945,022      cycles:u                         #    1.585 GHz                       
+     4,838,662,677      instructions:u                   #    1.75  insn per cycle            
+       848,415,226      branches:u                       #  486.959 M/sec                     
+         3,782,576      branch-misses:u                  #    0.45% of all branches           
+
+       3.871603498 seconds time elapsed
+
+       1.086494000 seconds user
+       0.645534000 seconds sys
+
+
+4.929457, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 10 900 1000':
+
+          1,981.75 msec task-clock:u                     #    0.378 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               189      page-faults:u                    #   95.370 /sec                      
+     3,015,984,961      cycles:u                         #    1.522 GHz                       
+     5,452,955,793      instructions:u                   #    1.81  insn per cycle            
+       955,374,375      branches:u                       #  482.086 M/sec                     
+         3,949,771      branch-misses:u                  #    0.41% of all branches           
+
+       5.241843089 seconds time elapsed
+
+       1.190245000 seconds user
+       0.776620000 seconds sys
+
+
+6.139504, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 10 1000 1000':
+
+          2,412.77 msec task-clock:u                     #    0.392 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               186      page-faults:u                    #   77.090 /sec                      
+     3,396,081,881      cycles:u                         #    1.408 GHz                       
+     6,053,956,269      instructions:u                   #    1.78  insn per cycle            
+     1,060,709,352      branches:u                       #  439.622 M/sec                     
+         4,481,397      branch-misses:u                  #    0.42% of all branches           
+
+       6.147712996 seconds time elapsed
+
+       1.378894000 seconds user
+       1.013812000 seconds sys
+
+
+
+0.253611, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 10 1000 100':
+
+            256.39 msec task-clock:u                     #    0.936 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               146      page-faults:u                    #  569.437 /sec                      
+       345,950,675      cycles:u                         #    1.349 GHz                       
+       621,095,236      instructions:u                   #    1.80  insn per cycle            
+       110,012,522      branches:u                       #  429.077 M/sec                     
+           540,631      branch-misses:u                  #    0.49% of all branches           
+
+       0.273786720 seconds time elapsed
+
+       0.145911000 seconds user
+       0.109966000 seconds sys
+
+
+1.533161, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 10 1000 200':
+
+            484.27 msec task-clock:u                     #    0.314 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               200      page-faults:u                    #  412.995 /sec                      
+       656,467,854      cycles:u                         #    1.356 GHz                       
+     1,224,964,535      instructions:u                   #    1.87  insn per cycle            
+       215,812,484      branches:u                       #  445.647 M/sec                     
+           995,285      branch-misses:u                  #    0.46% of all branches           
+
+       1.539877788 seconds time elapsed
+
+       0.264544000 seconds user
+       0.216980000 seconds sys
+
+
+1.331693, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 10 1000 300':
+
+            669.29 msec task-clock:u                     #    0.492 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               255      page-faults:u                    #  381.004 /sec                      
+       972,235,027      cycles:u                         #    1.453 GHz                       
+     1,827,585,985      instructions:u                   #    1.88  insn per cycle            
+       321,439,752      branches:u                       #  480.273 M/sec                     
+         1,408,572      branch-misses:u                  #    0.44% of all branches           
+
+       1.359411012 seconds time elapsed
+
+       0.400057000 seconds user
+       0.266032000 seconds sys
+
+
+1.499203, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 10 1000 400':
+
+            831.34 msec task-clock:u                     #    0.552 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               308      page-faults:u                    #  370.484 /sec                      
+     1,289,104,709      cycles:u                         #    1.551 GHz                       
+     2,427,011,642      instructions:u                   #    1.88  insn per cycle            
+       426,438,269      branches:u                       #  512.951 M/sec                     
+         2,090,382      branch-misses:u                  #    0.49% of all branches           
+
+       1.505933446 seconds time elapsed
+
+       0.481388000 seconds user
+       0.346446000 seconds sys
+
+
+2.613207, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 10 1000 500':
+
+          1,046.24 msec task-clock:u                     #    0.347 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               360      page-faults:u                    #  344.090 /sec                      
+     1,630,109,301      cycles:u                         #    1.558 GHz                       
+     3,034,032,593      instructions:u                   #    1.86  insn per cycle            
+       532,407,801      branches:u                       #  508.878 M/sec                     
+         2,458,174      branch-misses:u                  #    0.46% of all branches           
+
+       3.017067511 seconds time elapsed
+
+       0.629948000 seconds user
+       0.410665000 seconds sys
+
+
+1.830433, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 10 1000 600':
+
+          1,218.50 msec task-clock:u                     #    0.662 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               418      page-faults:u                    #  343.044 /sec                      
+     1,973,738,413      cycles:u                         #    1.620 GHz                       
+     3,646,167,999      instructions:u                   #    1.85  insn per cycle            
+       639,399,446      branches:u                       #  524.742 M/sec                     
+         2,727,768      branch-misses:u                  #    0.43% of all branches           
+
+       1.841975729 seconds time elapsed
+
+       0.784394000 seconds user
+       0.427036000 seconds sys
+
+
+1.914888, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 10 1000 700':
+
+          1,393.75 msec task-clock:u                     #    0.618 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               469      page-faults:u                    #  336.503 /sec                      
+     2,265,715,957      cycles:u                         #    1.626 GHz                       
+     4,243,561,944      instructions:u                   #    1.87  insn per cycle            
+       744,099,873      branches:u                       #  533.884 M/sec                     
+         3,198,244      branch-misses:u                  #    0.43% of all branches           
+
+       2.254311909 seconds time elapsed
+
+       0.925843000 seconds user
+       0.460286000 seconds sys
+
+
+3.201109, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 10 1000 800':
+
+          1,660.10 msec task-clock:u                     #    0.518 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               991      page-faults:u                    #  596.951 /sec                      
+     2,652,977,003      cycles:u                         #    1.598 GHz                       
+     4,841,924,879      instructions:u                   #    1.83  insn per cycle            
+       849,113,516      branches:u                       #  511.483 M/sec                     
+         3,682,668      branch-misses:u                  #    0.43% of all branches           
+
+       3.207850444 seconds time elapsed
+
+       1.067883000 seconds user
+       0.582990000 seconds sys
+
+
+4.685558, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 10 1000 900':
+
+          2,026.83 msec task-clock:u                     #    0.430 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             1,099      page-faults:u                    #  542.226 /sec                      
+     3,102,620,489      cycles:u                         #    1.531 GHz                       
+     5,452,294,599      instructions:u                   #    1.76  insn per cycle            
+       955,437,674      branches:u                       #  471.395 M/sec                     
+         3,985,888      branch-misses:u                  #    0.42% of all branches           
+
+       4.718529490 seconds time elapsed
+
+       1.254057000 seconds user
+       0.759031000 seconds sys
+
+
+8.327132, 
+ Performance counter stats for './openmp-imp ~dan/625/wiki_dump.txt 10 1000 1000':
+
+          2,496.44 msec task-clock:u                     #    0.285 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+               186      page-faults:u                    #   74.506 /sec                      
+     3,442,518,320      cycles:u                         #    1.379 GHz                       
+     6,057,794,831      instructions:u                   #    1.76  insn per cycle            
+     1,061,479,851      branches:u                       #  425.197 M/sec                     
+         4,455,869      branch-misses:u                  #    0.42% of all branches           
+
+       8.759112017 seconds time elapsed
+
+       1.386032000 seconds user
+       1.090219000 seconds sys
+
+

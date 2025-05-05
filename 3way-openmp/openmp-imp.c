@@ -8,11 +8,12 @@
 #define BATCH_SIZE 15000
 
 int total_read = 0;
+size_t numThreads;
 
 // Prints results. The param offset says how far off of 0 the batched lines are
-void print_results(int max_ascii[], int offset, int count) {
+void print_results(FILE* fout, int max_ascii[], int offset, int count) {
     for (int i = 0; i < count; i++) {
-        printf("Line %d: %d\n", i + offset, max_ascii[i]);
+        fprintf(fout, "Line %d: %d\n", i + offset, max_ascii[i]);
     }
 }
 
@@ -29,19 +30,21 @@ char find_max(const char* line, int length) {
 }
 
 // Kernel that computes max ASCII value per line using OpenMP. opm parallel for means that the for loop is automatically split between different threads
-void kernel(char linesArray[][MAX_STRING_SIZE], int max_local[], int count) {
-    #pragma omp parallel for schedule(dynamic, 64) 
-        for (int i = 0; i < count; i++) {      
+void kernel(char linesArray[][MAX_STRING_SIZE], int max_local[], int count) 
+{
+    #pragma omp parallel for schedule(guided) num_threads(numThreads)
+        for (int i = omp_get_thread_num(); i < count; i += numThreads) 
+        {      
             max_local[i] = find_max(linesArray[i], MAX_STRING_SIZE);
         }
 }
 
 // Reads a batch of lines from file
-int read_file(FILE* fd, char linesArray[][MAX_STRING_SIZE]) {
+int read_file(FILE* fd, char linesArray[][MAX_STRING_SIZE], size_t batchSize) {
     char buffer[MAX_STRING_SIZE];
     int count = 0;
 
-    while (count < BATCH_SIZE && fgets(buffer, MAX_STRING_SIZE, fd)) {
+    while (count < batchSize && fgets(buffer, MAX_STRING_SIZE, fd)) {
         buffer[strcspn(buffer, "\n")] = 0;
         snprintf(linesArray[count], MAX_STRING_SIZE, "%s", buffer);
         count++;
@@ -52,9 +55,9 @@ int read_file(FILE* fd, char linesArray[][MAX_STRING_SIZE]) {
 
 int main(int argc, char **argv) {
 
-    if (argc < 1) 
+    if (argc < 3) 
 	{
-		printf("%s <file>", argv[0]);
+		printf("%s <file> <cores> <batches> <batchsize>", argv[0]);
 		return EXIT_FAILURE;
 	}
 
@@ -72,16 +75,53 @@ int main(int argc, char **argv) {
 			return 0;
     }
 
-    FILE* fd = fopen(filename, "r");
+    numThreads = atoi(argv[2]);
+
+    if(numThreads > 100 || numThreads < 1)
+    {
+        printf("%d is an invalid number of threads\n", numThreads);
+        return EXIT_FAILURE;
+    }
+
+    int batches = atoi(argv[3]);
+
+    if(batches > 1000 || batches < 1)
+    {
+        printf("%d is an invalid number of batches\n", batches);
+        return EXIT_FAILURE;
+    }
+
+    int batchSize = atoi(argv[4]);
+
+    if(batchSize > 10000 || batchSize < 10)
+    {
+        printf("%d is an invalid size of batches\n", batchSize);
+        return EXIT_FAILURE;   
+    }
+
+    //printf("Requested: %d\n", numThreads);
+
+    FILE* fd = fopen("/homes/dan/625/wiki_dump.txt", "r");
 
     if (fd == NULL) 
     {
+        printf(filename);
         perror("fopen Failed: ");
         return EXIT_FAILURE;
     }
 
-    char (*lines)[MAX_STRING_SIZE] = malloc(sizeof(char) * BATCH_SIZE * MAX_STRING_SIZE);
-    int *max_local = malloc(sizeof(int) * BATCH_SIZE);
+    // Opens the file for output
+    FILE* fout = fopen("./OpenMPOut.txt", "w");
+
+    if (fout == NULL) 
+    {
+        printf("./OpenMPOut.txt");
+        perror("fopen Failed for : ");
+        return EXIT_FAILURE;
+    }
+
+    char (*lines)[MAX_STRING_SIZE] = malloc(sizeof(char) * batchSize * MAX_STRING_SIZE);
+    int *max_local = malloc(sizeof(int) * batchSize);
 
     if (lines == NULL || max_local == NULL) {
         fprintf(stderr, "Memory allocation failed!\n");
@@ -95,17 +135,20 @@ int main(int argc, char **argv) {
     double t1 = omp_get_wtime();
 
 
-    while ((read_lines = read_file(fd, lines)) > 0) {
+    while ((read_lines = read_file(fd, lines, batchSize)) > 0 && total_lines < batches * batchSize) 
+    {
         kernel(lines, max_local, read_lines);
-        //print_results(max_local, total_lines, read_lines);
+        print_results(fout, max_local, total_lines, read_lines);
         total_lines += read_lines;
     }
 
     double t2 = omp_get_wtime();
 
-    printf("Total lines processed: %d\n", total_lines);
-    printf("Program finished in %.3lf seconds.\n", t2 - t1);
+    //printf("Total lines processed: %d\n", total_lines);
+    //printf("Program finished in %.3lf seconds.\n", t2 - t1);
+    printf("%lf, ", t2 - t1);
     fclose(fd);
+    fclose(fout);
     free(lines);
     free(max_local);
     return 0;

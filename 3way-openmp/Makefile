@@ -11,7 +11,7 @@
 # -I and -L for MPI stuff is not necessary
 #
 
-CC        = mpicc
+CC        = gcc
 CFLAGS    = -fopenmp
 
 #

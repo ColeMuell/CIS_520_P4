@@ -1,24 +1,24 @@
 Pthreads:
 
     Build:
-        gcc 3way-pthread/pth-imp.c -o 3way-pthread/pth-imp
+        make -C ./3way-pthread/
 
     Run:
-        sbatch ./3way-pthread/pth-imp.sh
+        (cd 3way-pthread/ && sbatch ./run-all.sh)
 
 MPI:
 
     Build:
-        mpicc ./3way-mpi/mpi-imp.c -o 3way-mpi/mpi-imp
+        make -C ./3way-mpi/
 
     Run:
-        sbatch ./3way-mpi/mpi-imp.sh
+        (cd 3way-mpi/ && sbatch ./run-once.sh)
 
 Open MPI:
 
     Build:
-        mpicc ./3way-openmp/openmp-imp.c -lgomp -o 3way-openmp/openmp-imp
+        make -C ./3way-openmp/
 
     Run:
-        sbatch ./3way-openmp/openmp-imp.sh
+        (cd 3way-openmp/ && sbatch ./run-all.sh)
         

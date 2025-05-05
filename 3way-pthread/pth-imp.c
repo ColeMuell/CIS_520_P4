@@ -188,19 +188,21 @@ int main(int argc, char **argv) {
     }
     
     // Opens the file for reading
-    FILE* fd = fopen(filename, "r");
+    FILE* fd = fopen("/homes/dan/625/wiki_dump.txt", "r");
 
     if (fd == NULL) 
     {
-        perror("fopen Failed for : ");
+        printf(filename);
+        perror(" fopen Failed for : ");
         return EXIT_FAILURE;
     }
 
     // Opens the file for output
-    FILE* fout = fopen("PthreadOut.txt", "w");
+    FILE* fout = fopen("./PthreadOut.txt", "w");
 
     if (fout == NULL) 
     {
+        printf("./PthreadOut.txt");
         perror("fopen Failed for : ");
         return EXIT_FAILURE;
     }

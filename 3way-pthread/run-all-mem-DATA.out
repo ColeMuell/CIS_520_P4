@@ -1,0 +1,731 @@
+
+The following have been reloaded with a version change:
+  1) GCCcore/13.2.0 => GCCcore/11.3.0
+  2) XZ/5.4.4-GCCcore-13.2.0 => XZ/5.2.5-GCCcore-11.3.0
+  3) cURL/8.3.0-GCCcore-13.2.0 => cURL/7.83.0-GCCcore-11.3.0
+  4) libxml2/2.11.5-GCCcore-13.2.0 => libxml2/2.9.13-GCCcore-11.3.0
+  5) ncurses/6.4-GCCcore-13.2.0 => ncurses/6.3-GCCcore-11.3.0
+  6) zlib/1.2.13-GCCcore-13.2.0 => zlib/1.2.12-GCCcore-11.3.0
+
+8.953601, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 1 100 10000':
+
+          9,031.71 msec task-clock:u                     #    0.053 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             6,919      page-faults:u                    #  766.079 /sec                      
+    17,168,088,441      cycles:u                         #    1.901 GHz                       
+    24,638,799,430      instructions:u                   #    1.44  insn per cycle            
+     4,207,061,866      branches:u                       #  465.810 M/sec                     
+        11,295,147      branch-misses:u                  #    0.27% of all branches           
+
+     171.511762466 seconds time elapsed
+
+       8.214791000 seconds user
+       0.744414000 seconds sys
+
+
+8.959894, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 2 100 10000':
+
+          9,074.62 msec task-clock:u                     #    0.059 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             6,535      page-faults:u                    #  720.140 /sec                      
+    17,241,803,932      cycles:u                         #    1.900 GHz                       
+    24,639,851,191      instructions:u                   #    1.43  insn per cycle            
+     4,207,281,434      branches:u                       #  463.631 M/sec                     
+        11,319,161      branch-misses:u                  #    0.27% of all branches           
+
+     153.262530522 seconds time elapsed
+
+       8.213247000 seconds user
+       0.751922000 seconds sys
+
+
+8.996655, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 3 100 10000':
+
+          9,166.23 msec task-clock:u                     #    0.103 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             6,342      page-faults:u                    #  691.888 /sec                      
+    17,371,867,383      cycles:u                         #    1.895 GHz                       
+    24,634,454,567      instructions:u                   #    1.42  insn per cycle            
+     4,206,123,684      branches:u                       #  458.872 M/sec                     
+        11,242,383      branch-misses:u                  #    0.27% of all branches           
+
+      89.020461977 seconds time elapsed
+
+       8.221084000 seconds user
+       0.780493000 seconds sys
+
+
+8.782107, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 4 100 10000':
+
+          8,983.32 msec task-clock:u                     #    0.087 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             6,348      page-faults:u                    #  706.643 /sec                      
+    17,135,352,763      cycles:u                         #    1.907 GHz                       
+    24,645,162,585      instructions:u                   #    1.44  insn per cycle            
+     4,207,304,164      branches:u                       #  468.346 M/sec                     
+        11,313,159      branch-misses:u                  #    0.27% of all branches           
+
+     103.797508819 seconds time elapsed
+
+       8.104257000 seconds user
+       0.682873000 seconds sys
+
+
+8.747350, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 5 100 10000':
+
+          8,976.56 msec task-clock:u                     #    0.056 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             5,574      page-faults:u                    #  620.951 /sec                      
+    17,074,565,614      cycles:u                         #    1.902 GHz                       
+    24,656,731,947      instructions:u                   #    1.44  insn per cycle            
+     4,209,840,326      branches:u                       #  468.982 M/sec                     
+        11,437,177      branch-misses:u                  #    0.27% of all branches           
+
+     159.327390981 seconds time elapsed
+
+       8.019319000 seconds user
+       0.732781000 seconds sys
+
+
+8.722487, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 6 100 10000':
+
+          9,011.42 msec task-clock:u                     #    0.059 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             5,878      page-faults:u                    #  652.283 /sec                      
+    17,082,433,823      cycles:u                         #    1.896 GHz                       
+    24,635,827,420      instructions:u                   #    1.44  insn per cycle            
+     4,206,759,375      branches:u                       #  466.825 M/sec                     
+        11,419,047      branch-misses:u                  #    0.27% of all branches           
+
+     153.672620312 seconds time elapsed
+
+       7.962081000 seconds user
+       0.765343000 seconds sys
+
+
+8.592372, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 7 100 10000':
+
+          8,925.63 msec task-clock:u                     #    0.056 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             6,275      page-faults:u                    #  703.032 /sec                      
+    16,964,753,495      cycles:u                         #    1.901 GHz                       
+    24,628,615,160      instructions:u                   #    1.45  insn per cycle            
+     4,205,924,076      branches:u                       #  471.219 M/sec                     
+        11,429,367      branch-misses:u                  #    0.27% of all branches           
+
+     158.901010944 seconds time elapsed
+
+       7.892657000 seconds user
+       0.704710000 seconds sys
+
+
+8.538776, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 8 100 10000':
+
+          8,942.52 msec task-clock:u                     #    0.071 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             6,387      page-faults:u                    #  714.228 /sec                      
+    16,997,549,096      cycles:u                         #    1.901 GHz                       
+    24,653,089,068      instructions:u                   #    1.45  insn per cycle            
+     4,208,928,051      branches:u                       #  470.664 M/sec                     
+        11,490,504      branch-misses:u                  #    0.27% of all branches           
+
+     126.141673399 seconds time elapsed
+
+       7.830941000 seconds user
+       0.712673000 seconds sys
+
+
+8.749559, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 9 100 10000':
+
+          9,200.68 msec task-clock:u                     #    0.062 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             6,646      page-faults:u                    #  722.338 /sec                      
+    17,303,017,269      cycles:u                         #    1.881 GHz                       
+    24,649,799,546      instructions:u                   #    1.42  insn per cycle            
+     4,209,602,320      branches:u                       #  457.532 M/sec                     
+        11,408,973      branch-misses:u                  #    0.27% of all branches           
+
+     147.985620240 seconds time elapsed
+
+       7.938549000 seconds user
+       0.815429000 seconds sys
+
+
+8.737544, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 10 100 10000':
+
+          9,180.93 msec task-clock:u                     #    0.071 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             6,910      page-faults:u                    #  752.647 /sec                      
+    17,246,522,067      cycles:u                         #    1.879 GHz                       
+    24,649,085,900      instructions:u                   #    1.43  insn per cycle            
+     4,209,352,552      branches:u                       #  458.489 M/sec                     
+        11,340,530      branch-misses:u                  #    0.27% of all branches           
+
+     128.952296198 seconds time elapsed
+
+       7.936798000 seconds user
+       0.805835000 seconds sys
+
+
+8.568406, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 11 100 10000':
+
+          9,088.65 msec task-clock:u                     #    0.062 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             7,140      page-faults:u                    #  785.595 /sec                      
+    17,130,561,295      cycles:u                         #    1.885 GHz                       
+    24,661,473,058      instructions:u                   #    1.44  insn per cycle            
+     4,211,020,841      branches:u                       #  463.327 M/sec                     
+        11,447,868      branch-misses:u                  #    0.27% of all branches           
+
+     146.364092225 seconds time elapsed
+
+       7.794448000 seconds user
+       0.779174000 seconds sys
+
+
+8.470327, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 12 100 10000':
+
+          9,055.84 msec task-clock:u                     #    0.070 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             7,557      page-faults:u                    #  834.490 /sec                      
+    17,066,930,593      cycles:u                         #    1.885 GHz                       
+    24,641,941,258      instructions:u                   #    1.44  insn per cycle            
+     4,208,100,919      branches:u                       #  464.684 M/sec                     
+        11,353,218      branch-misses:u                  #    0.27% of all branches           
+
+     130.261171931 seconds time elapsed
+
+       7.699098000 seconds user
+       0.776065000 seconds sys
+
+
+8.526052, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 13 100 10000':
+
+          9,125.09 msec task-clock:u                     #    0.074 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             7,373      page-faults:u                    #  807.992 /sec                      
+    17,143,337,265      cycles:u                         #    1.879 GHz                       
+    24,657,323,907      instructions:u                   #    1.44  insn per cycle            
+     4,210,305,339      branches:u                       #  461.399 M/sec                     
+        11,448,333      branch-misses:u                  #    0.27% of all branches           
+
+     123.094330139 seconds time elapsed
+
+       7.716251000 seconds user
+       0.814783000 seconds sys
+
+
+8.383140, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 14 100 10000':
+
+          9,006.69 msec task-clock:u                     #    0.074 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             7,994      page-faults:u                    #  887.562 /sec                      
+    16,987,165,317      cycles:u                         #    1.886 GHz                       
+    24,647,395,592      instructions:u                   #    1.45  insn per cycle            
+     4,209,295,496      branches:u                       #  467.352 M/sec                     
+        11,419,216      branch-misses:u                  #    0.27% of all branches           
+
+     121.097384421 seconds time elapsed
+
+       7.612275000 seconds user
+       0.776145000 seconds sys
+
+
+8.316416, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 15 100 10000':
+
+          9,029.79 msec task-clock:u                     #    0.067 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             7,582      page-faults:u                    #  839.665 /sec                      
+    17,019,815,503      cycles:u                         #    1.885 GHz                       
+    24,635,159,500      instructions:u                   #    1.45  insn per cycle            
+     4,207,260,977      branches:u                       #  465.931 M/sec                     
+        11,375,984      branch-misses:u                  #    0.27% of all branches           
+
+     135.395887144 seconds time elapsed
+
+       7.518589000 seconds user
+       0.803203000 seconds sys
+
+
+8.494049, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 16 100 10000':
+
+          9,145.92 msec task-clock:u                     #    0.075 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             8,818      page-faults:u                    #  964.146 /sec                      
+    17,140,576,194      cycles:u                         #    1.874 GHz                       
+    24,659,089,766      instructions:u                   #    1.44  insn per cycle            
+     4,211,537,741      branches:u                       #  460.483 M/sec                     
+        11,448,228      branch-misses:u                  #    0.27% of all branches           
+
+     121.792968907 seconds time elapsed
+
+       7.668486000 seconds user
+       0.830993000 seconds sys
+
+
+8.644994, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 17 100 10000':
+
+          9,134.70 msec task-clock:u                     #    0.069 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             8,572      page-faults:u                    #  938.400 /sec                      
+    17,110,898,210      cycles:u                         #    1.873 GHz                       
+    24,659,126,118      instructions:u                   #    1.44  insn per cycle            
+     4,210,724,686      branches:u                       #  460.959 M/sec                     
+        11,505,058      branch-misses:u                  #    0.27% of all branches           
+
+     132.227590210 seconds time elapsed
+
+       7.806911000 seconds user
+       0.843643000 seconds sys
+
+
+8.500009, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 18 100 10000':
+
+          9,234.29 msec task-clock:u                     #    0.072 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             9,277      page-faults:u                    #    1.005 K/sec                     
+    17,219,957,603      cycles:u                         #    1.865 GHz                       
+    24,643,762,381      instructions:u                   #    1.43  insn per cycle            
+     4,208,153,297      branches:u                       #  455.709 M/sec                     
+        11,388,351      branch-misses:u                  #    0.27% of all branches           
+
+     127.589695416 seconds time elapsed
+
+       7.547465000 seconds user
+       0.957908000 seconds sys
+
+
+8.305982, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 19 100 10000':
+
+          9,275.78 msec task-clock:u                     #    0.091 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             9,316      page-faults:u                    #    1.004 K/sec                     
+    17,248,959,032      cycles:u                         #    1.860 GHz                       
+    24,654,627,782      instructions:u                   #    1.43  insn per cycle            
+     4,210,033,301      branches:u                       #  453.874 M/sec                     
+        11,459,800      branch-misses:u                  #    0.27% of all branches           
+
+     101.656300121 seconds time elapsed
+
+       7.456417000 seconds user
+       0.854808000 seconds sys
+
+
+8.323697, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 20 100 10000':
+
+          9,178.48 msec task-clock:u                     #    0.074 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             9,099      page-faults:u                    #  991.341 /sec                      
+    17,171,483,309      cycles:u                         #    1.871 GHz                       
+    24,657,859,459      instructions:u                   #    1.44  insn per cycle            
+     4,211,939,741      branches:u                       #  458.893 M/sec                     
+        11,453,819      branch-misses:u                  #    0.27% of all branches           
+
+     123.545760935 seconds time elapsed
+
+       7.522285000 seconds user
+       0.805695000 seconds sys
+
+
+
+8.650105, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 10 100 10000':
+
+          9,046.15 msec task-clock:u                     #    0.991 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             6,910      page-faults:u                    #  763.861 /sec                      
+    17,226,459,462      cycles:u                         #    1.904 GHz                       
+    24,649,075,126      instructions:u                   #    1.43  insn per cycle            
+     4,209,350,825      branches:u                       #  465.320 M/sec                     
+        11,268,229      branch-misses:u                  #    0.27% of all branches           
+
+       9.127599086 seconds time elapsed
+
+       7.939363000 seconds user
+       0.716137000 seconds sys
+
+
+8.651273, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 10 200 10000':
+
+          9,040.71 msec task-clock:u                     #    0.992 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             6,910      page-faults:u                    #  764.321 /sec                      
+    17,227,321,999      cycles:u                         #    1.906 GHz                       
+    24,656,217,237      instructions:u                   #    1.43  insn per cycle            
+     4,209,870,946      branches:u                       #  465.657 M/sec                     
+        11,347,925      branch-misses:u                  #    0.27% of all branches           
+
+       9.109914829 seconds time elapsed
+
+       7.963458000 seconds user
+       0.694892000 seconds sys
+
+
+8.622987, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 10 300 10000':
+
+          9,029.89 msec task-clock:u                     #    0.994 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             6,910      page-faults:u                    #  765.237 /sec                      
+    17,214,609,588      cycles:u                         #    1.906 GHz                       
+    24,649,461,110      instructions:u                   #    1.43  insn per cycle            
+     4,209,444,142      branches:u                       #  466.168 M/sec                     
+        11,343,315      branch-misses:u                  #    0.27% of all branches           
+
+       9.081364790 seconds time elapsed
+
+       7.871924000 seconds user
+       0.758358000 seconds sys
+
+
+8.568693, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 10 400 10000':
+
+          8,950.08 msec task-clock:u                     #    0.978 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             6,910      page-faults:u                    #  772.060 /sec                      
+    17,104,859,156      cycles:u                         #    1.911 GHz                       
+    24,656,697,426      instructions:u                   #    1.44  insn per cycle            
+     4,209,960,539      branches:u                       #  470.383 M/sec                     
+        11,410,894      branch-misses:u                  #    0.27% of all branches           
+
+       9.152420328 seconds time elapsed
+
+       7.876039000 seconds user
+       0.700510000 seconds sys
+
+
+8.626475, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 10 500 10000':
+
+          9,023.67 msec task-clock:u                     #    0.994 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             6,909      page-faults:u                    #  765.653 /sec                      
+    17,202,566,820      cycles:u                         #    1.906 GHz                       
+    24,641,805,953      instructions:u                   #    1.43  insn per cycle            
+     4,208,533,925      branches:u                       #  466.388 M/sec                     
+        11,335,165      branch-misses:u                  #    0.27% of all branches           
+
+       9.074681138 seconds time elapsed
+
+       7.901252000 seconds user
+       0.732138000 seconds sys
+
+
+8.574271, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 10 600 10000':
+
+          8,961.50 msec task-clock:u                     #    0.993 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             6,912      page-faults:u                    #  771.299 /sec                      
+    17,122,925,416      cycles:u                         #    1.911 GHz                       
+    24,649,462,336      instructions:u                   #    1.44  insn per cycle            
+     4,209,446,247      branches:u                       #  469.726 M/sec                     
+        11,520,639      branch-misses:u                  #    0.27% of all branches           
+
+       9.026084454 seconds time elapsed
+
+       7.878781000 seconds user
+       0.701458000 seconds sys
+
+
+8.532716, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 10 700 10000':
+
+          8,926.55 msec task-clock:u                     #    0.988 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             6,910      page-faults:u                    #  774.095 /sec                      
+    17,075,067,747      cycles:u                         #    1.913 GHz                       
+    24,649,072,182      instructions:u                   #    1.44  insn per cycle            
+     4,209,350,063      branches:u                       #  471.554 M/sec                     
+        11,240,469      branch-misses:u                  #    0.27% of all branches           
+
+       9.030434823 seconds time elapsed
+
+       7.839811000 seconds user
+       0.699801000 seconds sys
+
+
+8.483136, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 10 800 10000':
+
+          8,895.19 msec task-clock:u                     #    0.994 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             6,910      page-faults:u                    #  776.825 /sec                      
+    17,014,530,665      cycles:u                         #    1.913 GHz                       
+    24,653,369,955      instructions:u                   #    1.45  insn per cycle            
+     4,210,373,771      branches:u                       #  473.332 M/sec                     
+        11,453,557      branch-misses:u                  #    0.27% of all branches           
+
+       8.949225209 seconds time elapsed
+
+       7.789390000 seconds user
+       0.700765000 seconds sys
+
+
+8.466709, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 10 900 10000':
+
+          8,863.93 msec task-clock:u                     #    0.991 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             6,910      page-faults:u                    #  779.564 /sec                      
+    16,981,045,358      cycles:u                         #    1.916 GHz                       
+    24,653,372,300      instructions:u                   #    1.45  insn per cycle            
+     4,210,374,282      branches:u                       #  475.001 M/sec                     
+        11,941,014      branch-misses:u                  #    0.28% of all branches           
+
+       8.940949439 seconds time elapsed
+
+       7.788052000 seconds user
+       0.685431000 seconds sys
+
+
+8.406499, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 10 1000 10000':
+
+          8,824.95 msec task-clock:u                     #    0.995 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             6,910      page-faults:u                    #  783.008 /sec                      
+    16,930,677,846      cycles:u                         #    1.919 GHz                       
+    24,663,355,294      instructions:u                   #    1.46  insn per cycle            
+     4,211,437,955      branches:u                       #  477.220 M/sec                     
+        11,505,270      branch-misses:u                  #    0.27% of all branches           
+
+       8.869185555 seconds time elapsed
+
+       7.720571000 seconds user
+       0.692594000 seconds sys
+
+
+
+0.091212, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 10 100 100':
+
+            177.11 msec task-clock:u                     #    0.897 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             1,256      page-faults:u                    #    7.092 K/sec                     
+       174,219,548      cycles:u                         #    0.984 GHz                       
+       253,498,406      instructions:u                   #    1.46  insn per cycle            
+        43,594,204      branches:u                       #  246.144 M/sec                     
+           222,789      branch-misses:u                  #    0.51% of all branches           
+
+       0.197510212 seconds time elapsed
+
+       0.046253000 seconds user
+       0.050628000 seconds sys
+
+
+0.141224, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 10 100 200':
+
+            278.92 msec task-clock:u                     #    0.904 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             1,304      page-faults:u                    #    4.675 K/sec                     
+       342,776,588      cycles:u                         #    1.229 GHz                       
+       499,072,450      instructions:u                   #    1.46  insn per cycle            
+        85,341,069      branches:u                       #  305.972 M/sec                     
+           391,309      branch-misses:u                  #    0.46% of all branches           
+
+       0.308495102 seconds time elapsed
+
+       0.080756000 seconds user
+       0.063748000 seconds sys
+
+
+0.185399, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 10 100 300':
+
+            374.21 msec task-clock:u                     #    0.855 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             1,366      page-faults:u                    #    3.650 K/sec                     
+       512,319,732      cycles:u                         #    1.369 GHz                       
+       746,818,526      instructions:u                   #    1.46  insn per cycle            
+       127,461,597      branches:u                       #  340.613 M/sec                     
+           527,777      branch-misses:u                  #    0.41% of all branches           
+
+       0.437888980 seconds time elapsed
+
+       0.114068000 seconds user
+       0.074595000 seconds sys
+
+
+0.218187, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 10 100 400':
+
+            446.06 msec task-clock:u                     #    0.842 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             1,420      page-faults:u                    #    3.183 K/sec                     
+       669,196,631      cycles:u                         #    1.500 GHz                       
+       989,791,828      instructions:u                   #    1.48  insn per cycle            
+       168,814,096      branches:u                       #  378.454 M/sec                     
+           681,788      branch-misses:u                  #    0.40% of all branches           
+
+       0.529704094 seconds time elapsed
+
+       0.153842000 seconds user
+       0.067698000 seconds sys
+
+
+0.270260, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 10 100 500':
+
+            542.62 msec task-clock:u                     #    0.544 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             1,594      page-faults:u                    #    2.938 K/sec                     
+       838,954,173      cycles:u                         #    1.546 GHz                       
+     1,235,333,689      instructions:u                   #    1.47  insn per cycle            
+       210,478,202      branches:u                       #  387.895 M/sec                     
+           859,253      branch-misses:u                  #    0.41% of all branches           
+
+       0.997493184 seconds time elapsed
+
+       0.197748000 seconds user
+       0.075927000 seconds sys
+
+
+0.330507, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 10 100 600':
+
+            641.35 msec task-clock:u                     #    0.946 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             1,588      page-faults:u                    #    2.476 K/sec                     
+     1,013,126,620      cycles:u                         #    1.580 GHz                       
+     1,478,838,264      instructions:u                   #    1.46  insn per cycle            
+       251,902,318      branches:u                       #  392.769 M/sec                     
+           981,892      branch-misses:u                  #    0.39% of all branches           
+
+       0.678039436 seconds time elapsed
+
+       0.251354000 seconds user
+       0.082638000 seconds sys
+
+
+0.397447, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 10 100 700':
+
+            733.40 msec task-clock:u                     #    0.968 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             1,591      page-faults:u                    #    2.169 K/sec                     
+     1,184,290,348      cycles:u                         #    1.615 GHz                       
+     1,724,706,571      instructions:u                   #    1.46  insn per cycle            
+       293,841,254      branches:u                       #  400.658 M/sec                     
+         1,124,011      branch-misses:u                  #    0.38% of all branches           
+
+       0.757261876 seconds time elapsed
+
+       0.310410000 seconds user
+       0.090458000 seconds sys
+
+
+0.455903, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 10 100 800':
+
+            823.93 msec task-clock:u                     #    0.971 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             1,816      page-faults:u                    #    2.204 K/sec                     
+     1,356,044,826      cycles:u                         #    1.646 GHz                       
+     1,971,955,680      instructions:u                   #    1.45  insn per cycle            
+       335,776,261      branches:u                       #  407.528 M/sec                     
+         1,235,727      branch-misses:u                  #    0.37% of all branches           
+
+       0.848560922 seconds time elapsed
+
+       0.361839000 seconds user
+       0.097469000 seconds sys
+
+
+0.534067, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 10 100 900':
+
+            930.04 msec task-clock:u                     #    0.965 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             1,703      page-faults:u                    #    1.831 K/sec                     
+     1,543,304,436      cycles:u                         #    1.659 GHz                       
+     2,217,439,150      instructions:u                   #    1.44  insn per cycle            
+       377,772,127      branches:u                       #  406.187 M/sec                     
+         1,389,345      branch-misses:u                  #    0.37% of all branches           
+
+       0.963391426 seconds time elapsed
+
+       0.415100000 seconds user
+       0.122575000 seconds sys
+
+
+0.593375, 
+ Performance counter stats for './pth-imp /homes/dan/625/wiki_dump.txt 10 100 1000':
+
+          1,013.57 msec task-clock:u                     #    0.867 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             1,769      page-faults:u                    #    1.745 K/sec                     
+     1,710,559,318      cycles:u                         #    1.688 GHz                       
+     2,462,496,606      instructions:u                   #    1.44  insn per cycle            
+       419,384,702      branches:u                       #  413.771 M/sec                     
+         1,532,801      branch-misses:u                  #    0.37% of all branches           
+
+       1.168818644 seconds time elapsed
+
+       0.488070000 seconds user
+       0.109141000 seconds sys
+
+

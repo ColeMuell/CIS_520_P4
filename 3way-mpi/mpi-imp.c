@@ -1,108 +1,136 @@
-/* 
- * This example is based on the code of Andrew V. Adinetz
- * https://github.com/canonizer/mandelbrot-dyn
- * Licensed under The MIT License
- */
-
 #include <mpi.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdint.h> 
+#include <fcntl.h>   
+#include <sys/stat.h> 
+#include <sys/mman.h>  
+#include <unistd.h> 
 
-#define ARRAY_SIZE 2000000
-#define MAX_STRING_SIZE 2200
-#define ALPHABET_SIZE 26
-#define BATCH_SIZE 1000
-#define TARGET_LINE 1000
-#define PROCESS_PARTITION BATCH_SIZE/10
+#define LINE_MAX 1000001
 
-int total_read = 0;
-// static char ** receivedLines = NULL;
-// int max_ascii[BATCH_SIZE];
+int numThreads;
+int numLines = 0;
+char* mFile;
+off_t fSize;
+off_t lineOff[LINE_MAX];
 
+int* max_ascii;
+int* rankMax;
 
+int numReq = -1;
 
-//prints results. The param offset says how far off of 0 the batched lines are
-void print_results(int max_ascii[],int offset, int count) {
-    int i;
-    // prints out maxes
-    printf("offset %d count %d\n",offset, count);
+void read_file() {
+	// open file
+	int fd = fopen("/homes/dan/625/wiki_dump.txt", O_RDONLY);
 
-    for (i = 0; i < count; i++) {
-        printf("Line %d: %d\n", i + offset, max_ascii[i]);
+    if (fd == -1) {
+        perror("Error opening file");
+        exit(EXIT_FAILURE);
     }
-}
 
-//Finds the max ascii value in a given line
-char find_max(const char* line, int length) {
-    int max_int = -1; 
-    int len = strnlen(line, length);
-    for (int i = 0; i < len; i++) {
-        if (line[i] > max_int) {
+	// get file info using fstat()
+    struct stat sb;
+    if (fstat(fd, &sb) == -1) {
+        perror("fstat failed");
+        exit(EXIT_FAILURE);
+    }
+    fSize = sb.st_size;
 
-        max_int = line[i];
+	// map file into memory
+	// had to rework logic from previous 'line-by-line' code
+    mFile = mmap(NULL, fSize, PROT_READ, MAP_PRIVATE, fd, 0);
+    if (mFile == MAP_FAILED) {
+        perror("mmap failed");
+        exit(EXIT_FAILURE);
+    }
+
+    // need to start scanning mapped file to find where each line begins. (Line 0 will always start at 0)
+    lineOff[numLines++] = 0;
+
+	// loop through file byte by byte
+    for (off_t i = 0; i < fSize; i++) {
+        if (mFile[i] == '\n') {
+            if (numLines < MAX_LINES) {
+                lineOff[numLines++] = i + 1;
+                if (numReq > 0 && numLines >= numReq) // used for varying input lines testing
+                {
+                    break;
+                }
+            } 
+            else 
+            {
+                fprintf(stderr, "Reached max line limit (%d)\n", MAX_LINES);
+                break;
+            }
         }
     }
-  
-    return max_int;
+	// lineOff holds the starting byte positions of each line in the memory-mapped file.
+
+    close(fd);
 }
 
-
-// The kernel to 
-int kernel(int id, char linesArray[][MAX_STRING_SIZE],int max_local[])
+void *max_per_line(void *rank)
 {
-    printf("my id is %d\n",id);
-    for (int i = 0; i < 100; i++) {      
-            if(! linesArray[(int) i]) {
-                printf("array was null\n");
-                return 0;}
-            max_local[i] = find_max(linesArray[(int)i], MAX_STRING_SIZE);
-            // printf("%s",linesArray[(int)i]);
-        //   printf("%d",max_local[i]);
+    int myID =  *((int*) rank);
+
+    int startPos = ((long) myID) * (numLines / numThreads); // (numLines / numThreads) gives the number of lines each MPI process should handle
+														      // (int) myID) identifies which process we are dealing with
+														      // say numLines = 1000, each process handles 1000/4 or 250 lines
+														      // More specifically process with rank 0 handles lines 0 to 249, process 1 handles lines 250 to 499, and so on
+    int endPos = startPos + (numLines / numThreads); // Number of lines per thread
+
+    printf("myID = %d startPos = %d endPos = %d \n", myID, startPos, endPos); fflush(stdout);
+
+	// Allocate rankMax[] to hold max for each of my lines for this rank
+    rankMax = (int*)calloc(sizeof(int), (numLines / numThreads));
+    
+    if (rankMax == NULL) {
+        perror("Allocation Failed");
+        exit(EXIT_FAILURE);
     }
-   
-        return 0;
+
+    for (int i = startPos; i < endPos; i++) // for all of the lines this process is handling
+    {
+	    int lineMax = 0;		//set max to 0
+	    off_t startingByte = lineOff[i]; // starting byte for this line
+	    off_t endingByte;
+	    if (i == numLines - 1) // on the last line of the file
+	    {
+		    endingByte = fSize; // lineOff[numLines] doesn't work, would be out of bounds
+	    }
+	    else
+	    {
+		    endingByte = lineOff[i + 1]; // the ending byte of this line is the starting byte of the next line
+	    }
+
+	    for (off_t n = startingByte; n < endingByte; n++) // for each byte of this line
+	    {
+		    if((int)mFile[n] > lineMax) // mFile or memory mapped I/O is indexed by bytes
+		    {
+			    lineMax = (int)mFile[n];
+		    }
+
+	    }
+	    rankMax[i - startPos] = lineMax; // i is global line index, rankMax just goes from 0 to numLines / numThreads - 1
+    }
+    return NULL;
 }
 
-int read_file(FILE* fd,char linesArray[][MAX_STRING_SIZE]) {
-
-    
-    char buffer[MAX_STRING_SIZE];
-    int count = 0;
-    size_t len;
-
-        while (count <BATCH_SIZE && fgets(buffer, MAX_STRING_SIZE, fd) ) {
-       
-            buffer[strcspn(buffer, "\n")] = 0;
-            
-            // linesArray[count] = strdup(buffer);
-            snprintf(linesArray[count], MAX_STRING_SIZE,"%s",buffer);
-            
-            count++;
-        }
-        total_read +=count;
-        return count;        
-}
-
-int main(int argc, char **argv)
+void print_results()
 {
-     int  myid;
-     int ntasks;
-     int rounds = 0;
-     int read_lines = 10;
-     int total_lines = 0;
-    //  int max_local[BATCH_SIZE/10];
-   
-    MPI_Status status;
-    MPI_Init(&argc, &argv);
-    MPI_Comm_size(MPI_COMM_WORLD, &ntasks);
-    MPI_Comm_rank(MPI_COMM_WORLD, &myid);
-    // char ** lines = (char **)calloc(BATCH_SIZE,  sizeof(char *));
-    
-    if(argc < 2) 
+	//int limit = numLines > 10 ? 10 : numLines;
+	for (int m = 0; m < numLines; m++ )
 	{
-		printf("%s <file> <cores>", argv[0]);
+		printf("%d: %d\n", m, max_ascii[m]);
+	}
+}
+
+int main(int argc, char* argv[]) 
+{
+    if (argc < 2) 
+	{
+		printf("%s <file> <lines>", argv[0]);
 		return EXIT_FAILURE;
 	}
 
@@ -110,109 +138,108 @@ int main(int argc, char **argv)
 
     for (size_t i = 0; filename[i] != '\0'; i++) 
 	{
-        if (filename[i] == 60 ||filename[i] == 62 ||filename[i] == 58 ||filename[i] == 34 ||filename[i] == 92 ||filename[i] == 124 ||filename[i] == 63 ||filename[i] == 42)
+        if (filename[i] == 60 || filename[i] == 62 || filename[i] == 58 ||
+            filename[i] == 34 || filename[i] == 92 || filename[i] == 124 ||
+            filename[i] == 63 || filename[i] == 42 || filename[i] < 31 ||
+            i > 255)
+        {
+            printf("%s is an invalid file name\n", filename);
             return EXIT_FAILURE;
-
-		if(filename[i] < 31)
-			return EXIT_FAILURE;
-
-		if(i > 255)
-			return EXIT_FAILURE;
+        }
     }
-    
-    FILE* fd;
 
-    if (fd == NULL) 
+    numReq = argv[2];
+
+    if(numReq > LINE_MAX || numThreads < 10)
     {
-        perror("fopen Failed: ");
+        printf("%d is an invalid number of lines\n", numReq);
         return EXIT_FAILURE;
     }
-    
-    double t1 = MPI_Wtime();
 
-    if(myid == 0){
+	int rc;
+	int numtasks, rank;
 
-        char lines [BATCH_SIZE][MAX_STRING_SIZE];
-          fd = fopen( "/homes/dan/625/wiki_dump.txt", "r" );
-            if (!fd) {
-                perror("Error opening file");
-                exit(1);
-            }
+	rc = MPI_Init(&argc,&argv); // initialize MPI
+	if (rc != MPI_SUCCESS) 
+	{
+	    printf ("Error withMPI_Init.\n");
+        MPI_Abort(MPI_COMM_WORLD, rc); // Terminates all MPI processes associated with the communicator
     }
-    while(total_lines < BATCH_SIZE * 1000 ){
 
-    if(myid == 0){
+    MPI_Comm_size(MPI_COMM_WORLD,&numtasks); // represents the number of MPI tasks available to your application, get number of tasks
+    MPI_Comm_rank(MPI_COMM_WORLD,&rank); // Returns the rank of the calling MPI process within the specified communicator, get my rank
 
-        char lines [BATCH_SIZE][MAX_STRING_SIZE];
-          
-        read_lines = read_file(fd,lines);
-        total_lines += read_lines;
-        printf("total lines %d\n",total_lines);
-               
-        int index,i;
-        int elements_per_process;
-		elements_per_process = BATCH_SIZE / (ntasks-1);
+	numThreads = numtasks;
+	//printf("I am %d of %d\n", rank, numtasks);
+	//fflush(stdout);
 
-        for (i = 1; i < ntasks; i++) {
-            index = (i -1 ) * elements_per_process;
-
-            MPI_Send(&elements_per_process,
-                    1, MPI_INT, i, 0,
-                    MPI_COMM_WORLD);
-            
-            MPI_Send(&lines[index],
-                    elements_per_process * MAX_STRING_SIZE,
-                    MPI_CHAR, i, 0,
-                    MPI_COMM_WORLD);
-        }
-        printf("done sending\n");
-
-		int buffer[elements_per_process] ;
-        memset(buffer,0,sizeof(buffer));
-		for (i = 1; i < ntasks; i++) {
-			MPI_Recv(&buffer, elements_per_process,MPI_INT,
-					i, 0,
-					MPI_COMM_WORLD,
-					&status);
-                printf("received results\n");
-                int offset = (i - 1) * PROCESS_PARTITION + (BATCH_SIZE * rounds);
-                print_results(buffer, offset, PROCESS_PARTITION);
-		}       
-    }
-    else{
-    
-        static char receivedLines[PROCESS_PARTITION][MAX_STRING_SIZE];
-        int max_local[PROCESS_PARTITION];
-
-       int num_of_elements_recieved = 0;
-       MPI_Recv(&num_of_elements_recieved,
-				1, MPI_INT, 0, 0,
-				MPI_COMM_WORLD,
-				&status);
-
-        MPI_Recv(&receivedLines, num_of_elements_recieved * MAX_STRING_SIZE,
-				MPI_CHAR, 0, 0,
-				MPI_COMM_WORLD,
-				&status);
-	    kernel(myid, receivedLines, max_local);
-         MPI_Send(&max_local, PROCESS_PARTITION, MPI_INT,
-				0, 0, MPI_COMM_WORLD);
-         printf("finised sending my id is %d\n",myid);
+	if ( rank == 0 ) 
+    {
+		read_file();
+        max_ascii = (int*)calloc(sizeof(int), numLines);
         
+        if (max_ascii == NULL) 
+        {
+            perror("Allocation Failed");
+            exit(EXIT_FAILURE);
+        }
+	}
+	
+    MPI_Bcast(&numLines, 1, MPI_INT, 0, MPI_COMM_WORLD);
+
+    long fSize_long = (long)fSize;
+    MPI_Bcast(&fSize_long, 1, MPI_LONG, 0, MPI_COMM_WORLD);
+
+    MPI_Bcast(lineOff, numLines, MPI_LONG, 0, MPI_COMM_WORLD);
+
+    if (rank != 0) // rank 0 already has its local copy of fSize defined, because it was defined in read_file()
+                   // we have to reset fSize to the off_t type because every other rank does not have the fSize defined in read_file() as an off_t
+    {
+        fSize = (off_t)fSize_long;
+
+        // open file
+	    int fd = open("/homes/dan/625/wiki_dump.txt", O_RDONLY);
+
+        if (fd == -1) {
+            perror("Error opening file");
+            exit(EXIT_FAILURE);
+        }
+
+        // map file into memory for each rank other than rank 0, this was done above in read_file() for rank 0
+        mFile = mmap(NULL, fSize, PROT_READ, MAP_PRIVATE, fd, 0);
+        if (mFile == MAP_FAILED) 
+        {
+            perror("mmap failed");
+            exit(EXIT_FAILURE);
+        }
+
+        close(fd);
     }
-    rounds += 1;
+    
+	max_per_line(&rank); // do analysis work to find max ASCII per line
 
-    }
-        double t2 = MPI_Wtime();
+    // gather back all the results from all the ranks into rank 0
+    MPI_Gather(rankMax, numLines / numThreads, MPI_INT, max_ascii, numLines / numThreads, MPI_INT, 0, MPI_COMM_WORLD);
+    
+    /////////////////////////////
 
-	double walltime = t2 - t1;
-	// Print the timings
-	// printf("Mandelbrot set computed in %.3lf s, at %.3lf Mpix/s\n",
-	//        walltime, h * w * 1e-6 / walltime );
-    // }
-    printf("Process %d finished in %.3lf s\n", myid, t2-t1);
+	if ( rank == 0 ) {
+		print_results();
+        free(max_ascii);
+	}
 
-    MPI_Finalize();
+    free(rankMax);
 
-    return 0;
+    int unmapResult = munmap(mFile, fSize);
+	if (unmapResult != 0)
+	{
+		perror("munmap failed");
+        exit(EXIT_FAILURE);
+	}
+
+	printf("Main: program completed. Exiting.\n");
+
+    // done with MPI
+	MPI_Finalize(); // Terminates the MPI execution environment
+	return 0;
 }

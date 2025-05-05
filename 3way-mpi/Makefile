@@ -17,8 +17,8 @@ CC        = mpicc
 # Modify TOPDIR if you use your own include files and library files
 #
 
-PROGRAM   = pt2		# name of the binary
-SRCS      = pt2.c		# source file
+PROGRAM   = mpi-imp		# name of the binary
+SRCS      = mpi-imp.c		# source file
 OBJS      = $(SRCS:.c=.o)		# object file
 
 #
