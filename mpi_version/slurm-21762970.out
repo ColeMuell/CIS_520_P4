@@ -1,0 +1,1593 @@
+
+The following have been reloaded with a version change:
+  1) FFTW.MPI/3.3.10-gompi-2022a => FFTW.MPI/3.3.10-gompi-2023b
+  2) FFTW/3.3.10-GCC-11.3.0 => FFTW/3.3.10-GCC-13.2.0
+  3) FlexiBLAS/3.2.0-GCC-11.3.0 => FlexiBLAS/3.3.1-GCC-13.2.0
+  4) GCC/11.3.0 => GCC/13.2.0
+  5) GCCcore/11.3.0 => GCCcore/13.2.0
+  6) OpenBLAS/0.3.20-GCC-11.3.0 => OpenBLAS/0.3.24-GCC-13.2.0
+  7) OpenMPI/4.1.4-GCC-11.3.0 => OpenMPI/4.1.6-GCC-13.2.0
+  8) PMIx/4.1.2-GCCcore-11.3.0 => PMIx/4.2.6-GCCcore-13.2.0
+  9) ScaLAPACK/2.2.0-gompi-2022a-fb => ScaLAPACK/2.2.0-gompi-2023b-fb
+ 10) UCC/1.0.0-GCCcore-11.3.0 => UCC/1.2.0-GCCcore-13.2.0
+ 11) UCX/1.12.1-GCCcore-11.3.0 => UCX/1.15.0-GCCcore-13.2.0
+ 12) XZ/5.2.5-GCCcore-11.3.0 => XZ/5.4.4-GCCcore-13.2.0
+ 13) binutils/2.38-GCCcore-11.3.0 => binutils/2.40-GCCcore-13.2.0
+ 14) foss/2022a => foss/2023b
+ 15) gompi/2022a => gompi/2023b
+ 16) hwloc/2.7.1-GCCcore-11.3.0 => hwloc/2.9.2-GCCcore-13.2.0
+ 17) libevent/2.1.12-GCCcore-11.3.0 => libevent/2.1.12-GCCcore-13.2.0
+ 18) libfabric/1.15.1-GCCcore-11.3.0 => libfabric/1.19.0-GCCcore-13.2.0
+ 19) libpciaccess/0.16-GCCcore-11.3.0 => libpciaccess/0.17-GCCcore-13.2.0
+ 20) libxml2/2.9.13-GCCcore-11.3.0 => libxml2/2.11.5-GCCcore-13.2.0
+ 21) numactl/2.0.14-GCCcore-11.3.0 => numactl/2.0.16-GCCcore-13.2.0
+ 22) zlib/1.2.12-GCCcore-11.3.0 => zlib/1.2.13-GCCcore-13.2.0
+
+
+The following have been reloaded with a version change:
+  1) FFTW.MPI/3.3.10-gompi-2023b => FFTW.MPI/3.3.10-gompi-2022a
+  2) FFTW/3.3.10-GCC-13.2.0 => FFTW/3.3.10-GCC-11.3.0
+  3) FlexiBLAS/3.3.1-GCC-13.2.0 => FlexiBLAS/3.2.0-GCC-11.3.0
+  4) GCC/13.2.0 => GCC/11.3.0
+  5) GCCcore/13.2.0 => GCCcore/11.3.0
+  6) OpenBLAS/0.3.24-GCC-13.2.0 => OpenBLAS/0.3.20-GCC-11.3.0
+  7) OpenMPI/4.1.6-GCC-13.2.0 => OpenMPI/4.1.4-GCC-11.3.0
+  8) PMIx/4.2.6-GCCcore-13.2.0 => PMIx/4.1.2-GCCcore-11.3.0
+  9) ScaLAPACK/2.2.0-gompi-2023b-fb => ScaLAPACK/2.2.0-gompi-2022a-fb
+ 10) UCC/1.2.0-GCCcore-13.2.0 => UCC/1.0.0-GCCcore-11.3.0
+ 11) UCX/1.15.0-GCCcore-13.2.0 => UCX/1.12.1-GCCcore-11.3.0
+ 12) XZ/5.4.4-GCCcore-13.2.0 => XZ/5.2.5-GCCcore-11.3.0
+ 13) binutils/2.40-GCCcore-13.2.0 => binutils/2.38-GCCcore-11.3.0
+ 14) foss/2023b => foss/2022a
+ 15) gompi/2023b => gompi/2022a
+ 16) hwloc/2.9.2-GCCcore-13.2.0 => hwloc/2.7.1-GCCcore-11.3.0
+ 17) libevent/2.1.12-GCCcore-13.2.0 => libevent/2.1.12-GCCcore-11.3.0
+ 18) libfabric/1.19.0-GCCcore-13.2.0 => libfabric/1.15.1-GCCcore-11.3.0
+ 19) libpciaccess/0.17-GCCcore-13.2.0 => libpciaccess/0.16-GCCcore-11.3.0
+ 20) libxml2/2.11.5-GCCcore-13.2.0 => libxml2/2.9.13-GCCcore-11.3.0
+ 21) numactl/2.0.16-GCCcore-13.2.0 => numactl/2.0.14-GCCcore-11.3.0
+ 22) zlib/1.2.13-GCCcore-13.2.0 => zlib/1.2.12-GCCcore-11.3.0
+
+[dwarf17:4036740:0:4036740]       ud_ep.c:268  Fatal: UD endpoint 0x22b6c20 to <no debug data>: unhandled timeout error
+[dwarf17:4036739:0:4036739]       ud_ep.c:268  Fatal: UD endpoint 0x1c6ca30 to <no debug data>: unhandled timeout error
+[dwarf17:4036742:0:4036742]       ud_ep.c:268  Fatal: UD endpoint 0x1d7dc20 to <no debug data>: unhandled timeout error
+[dwarf17:4036741:0:4036741]       ud_ep.c:268  Fatal: UD endpoint 0x2233c20 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4036740) ====
+==== backtrace (tid:4036741) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4036741] *** Process received signal ***
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4036741] Signal: Aborted (6)
+[dwarf17:4036741] Signal code:  (-6)
+[dwarf17:4036740] *** Process received signal ***
+[dwarf17:4036740] Signal: Aborted (6)
+[dwarf17:4036740] Signal code:  (-6)
+[dwarf17:4036741] [ 0] [dwarf17:4036740] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f3866e3e730]
+/lib64/libc.so.6(+0x3e730)[0x7fe2d803e730]
+[dwarf17:4036741] [ 1] [dwarf17:4036740] /lib64/libc.so.6(+0x8b52c)[0x7fe2d808b52c]
+[dwarf17:4036741] [ 2] [ 1] /lib64/libc.so.6(raise+0x16)[0x7fe2d803e686]
+[dwarf17:4036741] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7fe2d8028833]
+[dwarf17:4036741] /lib64/libc.so.6(+0x8b52c)[0x7f3866e8b52c]
+[dwarf17:4036740] [ 2] [ 4] /lib64/libc.so.6(raise+0x16)[0x7f3866e3e686]
+[dwarf17:4036740] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f3866e28833]
+/opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7fe2d535548b]
+[dwarf17:4036741] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7fe2d5355561]
+[dwarf17:4036741] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7fe2d516bdcf]
+[dwarf17:4036741] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7fe2d534f563]
+[dwarf17:4036741] [ 8] [dwarf17:4036740] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7fe2d53f589a]
+/opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f386424148b]
+[dwarf17:4036740] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f3864241561]
+[dwarf17:4036740] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f3864057dcf]
+[dwarf17:4036740] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f386423b563]
+[dwarf17:4036740] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f38642e189a]
+[dwarf17:4036740] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7f386435b9ff]
+[dwarf17:4036740] [10] [dwarf17:4036741] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7f38671e5c85]
+[dwarf17:4036740] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4036740] [12] [ 9] /lib64/libc.so.6(+0x295d0)[0x7f3866e295d0]
+[dwarf17:4036740] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f3866e29680]
+/opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7fe2d546f9ff]
+[dwarf17:4036741] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7fe2d82fbc85]
+[dwarf17:4036741] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4036741] [dwarf17:4036740] [12] /lib64/libc.so.6(+0x295d0)[0x7fe2d80295d0]
+[dwarf17:4036741] [13] [14] /lib64/libc.so.6(__libc_start_main+0x80)[0x7fe2d8029680]
+[dwarf17:4036741] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4036741] *** End of error message ***
+/homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4036740] *** End of error message ***
+==== backtrace (tid:4036742) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4036742] *** Process received signal ***
+[dwarf17:4036742] Signal: Aborted (6)
+[dwarf17:4036742] Signal code:  (-6)
+[dwarf17:4036742] [ 0] /lib64/libc.so.6(+0x3e730)[0x7ff4eca3e730]
+[dwarf17:4036742] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7ff4eca8b52c]
+[dwarf17:4036742] [ 2] /lib64/libc.so.6(raise+0x16)[0x7ff4eca3e686]
+[dwarf17:4036742] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7ff4eca28833]
+[dwarf17:4036742] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7ff4e819648b]
+[dwarf17:4036742] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7ff4e8196561]
+[dwarf17:4036742] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7ff4e3fa7dcf]
+[dwarf17:4036742] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7ff4e8190563]
+[dwarf17:4036742] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7ff4ea1ba89a]
+[dwarf17:4036742] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7ff4ea2349ff]
+[dwarf17:4036742] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7ff4eccbdc85]
+[dwarf17:4036742] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4036742] [12] /lib64/libc.so.6(+0x295d0)[0x7ff4eca295d0]
+[dwarf17:4036742] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7ff4eca29680]
+[dwarf17:4036742] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4036742] *** End of error message ***
+==== backtrace (tid:4036739) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x0000000000006aae mca_pml_ucx_send()  ???:0
+ 6 0x0000000000087c7b MPI_Send()  ???:0
+ 7 0x000000000040156c main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4036739] *** Process received signal ***
+[dwarf17:4036739] Signal: Aborted (6)
+[dwarf17:4036739] Signal code:  (-6)
+[dwarf17:4036739] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f351f43e730]
+[dwarf17:4036739] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f351f48b52c]
+[dwarf17:4036739] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f351f43e686]
+[dwarf17:4036739] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f351f428833]
+[dwarf17:4036739] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f351c8b748b]
+[dwarf17:4036739] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f351c8b7561]
+[dwarf17:4036739] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f351c6cddcf]
+[dwarf17:4036739] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f351c8b1563]
+[dwarf17:4036739] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f351c95789a]
+[dwarf17:4036739] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_send+0x14e)[0x7f351c9d3aae]
+[dwarf17:4036739] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(PMPI_Send+0x11b)[0x7f351f863c7b]
+[dwarf17:4036739] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x40156c]
+[dwarf17:4036739] [12] /lib64/libc.so.6(+0x295d0)[0x7f351f4295d0]
+[dwarf17:4036739] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f351f429680]
+[dwarf17:4036739] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4036739] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 2 with PID 0 on node dwarf17 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+[dwarf17:4038862:0:4038862]       ud_ep.c:268  Fatal: UD endpoint 0x16c2190 to <no debug data>: unhandled timeout error
+[dwarf17:4038858:0:4038858]       ud_ep.c:268  Fatal: UD endpoint 0x1971e30 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4038858) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x0000000000006aae mca_pml_ucx_send()  ???:0
+ 6 0x0000000000087c7b MPI_Send()  ???:0
+ 7 0x000000000040156c main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4038858] *** Process received signal ***
+[dwarf17:4038858] Signal: Aborted (6)
+[dwarf17:4038858] Signal code:  (-6)
+[dwarf17:4038858] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f7b1803e730]
+[dwarf17:4038858] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f7b1808b52c]
+[dwarf17:4038858] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f7b1803e686]
+[dwarf17:4038858] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f7b18028833]
+[dwarf17:4038858] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f7b1540d48b]
+[dwarf17:4038858] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f7b1540d561]
+[dwarf17:4038858] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f7b15223dcf]
+[dwarf17:4038858] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f7b15407563]
+[dwarf17:4038858] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f7b154ad89a]
+[dwarf17:4038858] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_send+0x14e)[0x7f7b15529aae]
+[dwarf17:4038858] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(PMPI_Send+0x11b)[0x7f7b183b6c7b]
+[dwarf17:4038858] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x40156c]
+[dwarf17:4038858] [12] /lib64/libc.so.6(+0x295d0)[0x7f7b180295d0]
+[dwarf17:4038858] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f7b18029680]
+[dwarf17:4038858] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4038858] *** End of error message ***
+[dwarf17:4038860:0:4038860]       ud_ep.c:268  Fatal: UD endpoint 0x2644f30 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4038860) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4038860] *** Process received signal ***
+[dwarf17:4038860] Signal: Aborted (6)
+[dwarf17:4038860] Signal code:  (-6)
+[dwarf17:4038860] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f205d83e730]
+[dwarf17:4038860] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f205d88b52c]
+[dwarf17:4038860] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f205d83e686]
+[dwarf17:4038860] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f205d828833]
+[dwarf17:4038860] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f2056fa948b]
+[dwarf17:4038860] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f2056fa9561]
+[dwarf17:4038860] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f2054e70dcf]
+[dwarf17:4038860] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f2056fa3563]
+[dwarf17:4038860] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f20578b189a]
+[dwarf17:4038860] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7f205792b9ff]
+[dwarf17:4038860] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7f205db92c85]
+[dwarf17:4038860] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4038860] [12] /lib64/libc.so.6(+0x295d0)[0x7f205d8295d0]
+[dwarf17:4038860] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f205d829680]
+[dwarf17:4038860] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4038860] *** End of error message ***
+[dwarf17:4038864:0:4038864]       ud_ep.c:268  Fatal: UD endpoint 0xdc5190 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4038864) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4038864] *** Process received signal ***
+[dwarf17:4038864] Signal: Aborted (6)
+[dwarf17:4038864] Signal code:  (-6)
+[dwarf17:4038864] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f9fbfa3e730]
+[dwarf17:4038864] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f9fbfa8b52c]
+[dwarf17:4038864] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f9fbfa3e686]
+[dwarf17:4038864] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f9fbfa28833]
+[dwarf17:4038864] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f9fbcd9548b]
+[dwarf17:4038864] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f9fbcd95561]
+[dwarf17:4038864] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f9fbcbabdcf]
+[dwarf17:4038864] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f9fbcd8f563]
+[dwarf17:4038864] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f9fbce3589a]
+[dwarf17:4038864] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7f9fbceaf9ff]
+[dwarf17:4038864] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7f9fbfd39c85]
+[dwarf17:4038864] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4038864] [12] /lib64/libc.so.6(+0x295d0)[0x7f9fbfa295d0]
+[dwarf17:4038864] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f9fbfa29680]
+[dwarf17:4038864] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4038864] *** End of error message ***
+==== backtrace (tid:4038862) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4038862] *** Process received signal ***
+[dwarf17:4038862] Signal: Aborted (6)
+[dwarf17:4038862] Signal code:  (-6)
+[dwarf17:4038862] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f64eec3e730]
+[dwarf17:4038862] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f64eec8b52c]
+[dwarf17:4038862] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f64eec3e686]
+[dwarf17:4038862] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f64eec28833]
+[dwarf17:4038862] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f64e7fcf48b]
+[dwarf17:4038862] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f64e7fcf561]
+[dwarf17:4038862] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f64e6294dcf]
+[dwarf17:4038862] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f64e7fc9563]
+[dwarf17:4038862] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f64ec0ac89a]
+[dwarf17:4038862] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7f64ec1269ff]
+[dwarf17:4038862] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7f64eefb0c85]
+[dwarf17:4038862] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4038862] [12] /lib64/libc.so.6(+0x295d0)[0x7f64eec295d0]
+[dwarf17:4038862] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f64eec29680]
+[dwarf17:4038862] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4038862] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 1 with PID 0 on node dwarf17 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+[dwarf17:4041216:0:4041216]       ud_ep.c:268  Fatal: UD endpoint 0x1f25b70 to <no debug data>: unhandled timeout error
+[dwarf17:4041215:0:4041215]       ud_ep.c:268  Fatal: UD endpoint 0xf79f30 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4041215) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4041215] *** Process received signal ***
+[dwarf17:4041215] Signal: Aborted (6)
+[dwarf17:4041215] Signal code:  (-6)
+[dwarf17:4041215] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f6f93c3e730]
+[dwarf17:4041215] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f6f93c8b52c]
+[dwarf17:4041215] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f6f93c3e686]
+[dwarf17:4041215] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f6f93c28833]
+[dwarf17:4041215] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f6f90f0c48b]
+[dwarf17:4041215] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f6f90f0c561]
+[dwarf17:4041215] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f6f90d22dcf]
+[dwarf17:4041215] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f6f90f06563]
+[dwarf17:4041215] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f6f90fac89a]
+[dwarf17:4041215] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7f6f910269ff]
+[dwarf17:4041215] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7f6f93eb0c85]
+[dwarf17:4041215] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4041215] [12] /lib64/libc.so.6(+0x295d0)[0x7f6f93c295d0]
+[dwarf17:4041215] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f6f93c29680]
+[dwarf17:4041215] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4041215] *** End of error message ***
+[dwarf17:4041217:0:4041217]       ud_ep.c:268  Fatal: UD endpoint 0x21ec070 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4041217) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4041217] *** Process received signal ***
+[dwarf17:4041217] Signal: Aborted (6)
+[dwarf17:4041217] Signal code:  (-6)
+[dwarf17:4041217] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f76d183e730]
+[dwarf17:4041217] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f76d188b52c]
+[dwarf17:4041217] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f76d183e686]
+[dwarf17:4041217] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f76d1828833]
+[dwarf17:4041217] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f76cb83048b]
+[dwarf17:4041217] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f76cb830561]
+[dwarf17:4041217] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f76c8e93dcf]
+[dwarf17:4041217] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f76cb82a563]
+[dwarf17:4041217] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f76cb8d089a]
+[dwarf17:4041217] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7f76cb9429ff]
+[dwarf17:4041217] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7f76d1badc85]
+[dwarf17:4041217] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4041217] [12] /lib64/libc.so.6(+0x295d0)[0x7f76d18295d0]
+[dwarf17:4041217] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f76d1829680]
+[dwarf17:4041217] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4041217] *** End of error message ***
+==== backtrace (tid:4041216) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4041216] *** Process received signal ***
+[dwarf17:4041216] Signal: Aborted (6)
+[dwarf17:4041216] Signal code:  (-6)
+[dwarf17:4041216] [ 0] /lib64/libc.so.6(+0x3e730)[0x7fa0ebe3e730]
+[dwarf17:4041216] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7fa0ebe8b52c]
+[dwarf17:4041216] [ 2] /lib64/libc.so.6(raise+0x16)[0x7fa0ebe3e686]
+[dwarf17:4041216] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7fa0ebe28833]
+[dwarf17:4041216] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7fa0e921b48b]
+[dwarf17:4041216] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7fa0e921b561]
+[dwarf17:4041216] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7fa0e9031dcf]
+[dwarf17:4041216] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7fa0e9215563]
+[dwarf17:4041216] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7fa0e92bb89a]
+[dwarf17:4041216] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7fa0e93359ff]
+[dwarf17:4041216] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7fa0ec1bfc85]
+[dwarf17:4041216] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4041216] [12] /lib64/libc.so.6(+0x295d0)[0x7fa0ebe295d0]
+[dwarf17:4041216] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7fa0ebe29680]
+[dwarf17:4041216] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4041216] *** End of error message ***
+[dwarf17:4041214:0:4041214]       ud_ep.c:268  Fatal: UD endpoint 0x14d3190 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4041214) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x0000000000006aae mca_pml_ucx_send()  ???:0
+ 6 0x0000000000087c7b MPI_Send()  ???:0
+ 7 0x000000000040156c main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4041214] *** Process received signal ***
+[dwarf17:4041214] Signal: Aborted (6)
+[dwarf17:4041214] Signal code:  (-6)
+[dwarf17:4041214] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f2e25e3e730]
+[dwarf17:4041214] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f2e25e8b52c]
+[dwarf17:4041214] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f2e25e3e686]
+[dwarf17:4041214] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f2e25e28833]
+[dwarf17:4041214] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f2e1fe5448b]
+[dwarf17:4041214] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f2e1fe54561]
+[dwarf17:4041214] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f2e1d493dcf]
+[dwarf17:4041214] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f2e1fe4e563]
+[dwarf17:4041214] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f2e1fef489a]
+[dwarf17:4041214] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_send+0x14e)[0x7f2e1ff70aae]
+[dwarf17:4041214] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(PMPI_Send+0x11b)[0x7f2e261d7c7b]
+[dwarf17:4041214] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x40156c]
+[dwarf17:4041214] [12] /lib64/libc.so.6(+0x295d0)[0x7f2e25e295d0]
+[dwarf17:4041214] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f2e25e29680]
+[dwarf17:4041214] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4041214] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 3 with PID 0 on node dwarf17 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+[dwarf17:4043231:0:4043231]       ud_ep.c:268  Fatal: UD endpoint 0x1e11190 to <no debug data>: unhandled timeout error
+[dwarf17:4043227:0:4043227]       ud_ep.c:268  Fatal: UD endpoint 0xce2f30 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4043227) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4043227] *** Process received signal ***
+[dwarf17:4043227] Signal: Aborted (6)
+[dwarf17:4043227] Signal code:  (-6)
+[dwarf17:4043227] [ 0] /lib64/libc.so.6(+0x3e730)[0x7fc19223e730]
+[dwarf17:4043227] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7fc19228b52c]
+[dwarf17:4043227] [ 2] /lib64/libc.so.6(raise+0x16)[0x7fc19223e686]
+[dwarf17:4043227] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7fc192228833]
+[dwarf17:4043227] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7fc18ba1948b]
+[dwarf17:4043227] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7fc18ba19561]
+[dwarf17:4043227] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7fc189893dcf]
+[dwarf17:4043227] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7fc18ba13563]
+[dwarf17:4043227] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7fc18bab989a]
+[dwarf17:4043227] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7fc19000b9ff]
+[dwarf17:4043227] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7fc1925c3c85]
+[dwarf17:4043227] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4043227] [12] /lib64/libc.so.6(+0x295d0)[0x7fc1922295d0]
+[dwarf17:4043227] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7fc192229680]
+[dwarf17:4043227] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4043227] *** End of error message ***
+[dwarf17:4043229:0:4043229]       ud_ep.c:268  Fatal: UD endpoint 0x1b0c190 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4043229) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4043229] *** Process received signal ***
+[dwarf17:4043229] Signal: Aborted (6)
+[dwarf17:4043229] Signal code:  (-6)
+[dwarf17:4043229] [ 0] /lib64/libc.so.6(+0x3e730)[0x7fc0f203e730]
+[dwarf17:4043229] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7fc0f208b52c]
+[dwarf17:4043229] [ 2] /lib64/libc.so.6(raise+0x16)[0x7fc0f203e686]
+[dwarf17:4043229] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7fc0f2028833]
+[dwarf17:4043229] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7fc0eb7f048b]
+[dwarf17:4043229] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7fc0eb7f0561]
+[dwarf17:4043229] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7fc0e9688dcf]
+[dwarf17:4043229] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7fc0eb7ea563]
+[dwarf17:4043229] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7fc0eb89089a]
+[dwarf17:4043229] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7fc0eb90a9ff]
+[dwarf17:4043229] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7fc0f2395c85]
+[dwarf17:4043229] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4043229] [12] /lib64/libc.so.6(+0x295d0)[0x7fc0f20295d0]
+[dwarf17:4043229] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7fc0f2029680]
+[dwarf17:4043229] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4043229] *** End of error message ***
+==== backtrace (tid:4043231) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4043231] *** Process received signal ***
+[dwarf17:4043231] Signal: Aborted (6)
+[dwarf17:4043231] Signal code:  (-6)
+[dwarf17:4043231] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f95a7a3e730]
+[dwarf17:4043231] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f95a7a8b52c]
+[dwarf17:4043231] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f95a7a3e686]
+[dwarf17:4043231] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f95a7a28833]
+[dwarf17:4043231] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f95a4d0048b]
+[dwarf17:4043231] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f95a4d00561]
+[dwarf17:4043231] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f95a4b16dcf]
+[dwarf17:4043231] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f95a4cfa563]
+[dwarf17:4043231] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f95a4da089a]
+[dwarf17:4043231] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7f95a4e1a9ff]
+[dwarf17:4043231] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7f95a7ca8c85]
+[dwarf17:4043231] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4043231] [12] /lib64/libc.so.6(+0x295d0)[0x7f95a7a295d0]
+[dwarf17:4043231] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f95a7a29680]
+[dwarf17:4043231] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4043231] *** End of error message ***
+[dwarf17:4043226:0:4043226]       ud_ep.c:268  Fatal: UD endpoint 0x13b4190 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4043226) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x0000000000006aae mca_pml_ucx_send()  ???:0
+ 6 0x0000000000087c7b MPI_Send()  ???:0
+ 7 0x000000000040156c main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4043226] *** Process received signal ***
+[dwarf17:4043226] Signal: Aborted (6)
+[dwarf17:4043226] Signal code:  (-6)
+[dwarf17:4043226] [ 0] /lib64/libc.so.6(+0x3e730)[0x7fabf563e730]
+[dwarf17:4043226] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7fabf568b52c]
+[dwarf17:4043226] [ 2] /lib64/libc.so.6(raise+0x16)[0x7fabf563e686]
+[dwarf17:4043226] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7fabf5628833]
+[dwarf17:4043226] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7fabef63a48b]
+[dwarf17:4043226] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7fabef63a561]
+[dwarf17:4043226] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7fabecbeedcf]
+[dwarf17:4043226] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7fabef634563]
+[dwarf17:4043226] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7fabecd9189a]
+[dwarf17:4043226] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_send+0x14e)[0x7fabef6b1aae]
+[dwarf17:4043226] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(PMPI_Send+0x11b)[0x7fabf591bc7b]
+[dwarf17:4043226] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x40156c]
+[dwarf17:4043226] [12] /lib64/libc.so.6(+0x295d0)[0x7fabf56295d0]
+[dwarf17:4043226] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7fabf5629680]
+[dwarf17:4043226] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4043226] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 2 with PID 0 on node dwarf17 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+[dwarf17:4045254:0:4045254]       ud_ep.c:268  Fatal: UD endpoint 0x1498190 to <no debug data>: unhandled timeout error
+[dwarf17:4045248:0:4045248]       ud_ep.c:268  Fatal: UD endpoint 0x1eeaf30 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4045248) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x0000000000006aae mca_pml_ucx_send()  ???:0
+ 6 0x0000000000087c7b MPI_Send()  ???:0
+ 7 0x000000000040156c main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4045248] *** Process received signal ***
+[dwarf17:4045248] Signal: Aborted (6)
+[dwarf17:4045248] Signal code:  (-6)
+[dwarf17:4045248] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f8a0863e730]
+[dwarf17:4045248] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f8a0868b52c]
+[dwarf17:4045248] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f8a0863e686]
+[dwarf17:4045248] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f8a08628833]
+[dwarf17:4045248] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f8a042f248b]
+[dwarf17:4045248] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f8a042f2561]
+[dwarf17:4045248] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f8a04122dcf]
+[dwarf17:4045248] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f8a042ec563]
+[dwarf17:4045248] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f8a0439289a]
+[dwarf17:4045248] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_send+0x14e)[0x7f8a05fabaae]
+[dwarf17:4045248] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(PMPI_Send+0x11b)[0x7f8a08a37c7b]
+[dwarf17:4045248] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x40156c]
+[dwarf17:4045248] [12] /lib64/libc.so.6(+0x295d0)[0x7f8a086295d0]
+[dwarf17:4045248] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f8a08629680]
+[dwarf17:4045248] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4045248] *** End of error message ***
+[dwarf17:4045250:0:4045250]       ud_ep.c:268  Fatal: UD endpoint 0xe46190 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4045250) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4045250] *** Process received signal ***
+[dwarf17:4045250] Signal: Aborted (6)
+[dwarf17:4045250] Signal code:  (-6)
+[dwarf17:4045250] [ 0] /lib64/libc.so.6(+0x3e730)[0x7fe32e23e730]
+[dwarf17:4045250] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7fe32e28b52c]
+[dwarf17:4045250] [ 2] /lib64/libc.so.6(raise+0x16)[0x7fe32e23e686]
+[dwarf17:4045250] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7fe32e228833]
+[dwarf17:4045250] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7fe3279eb48b]
+[dwarf17:4045250] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7fe3279eb561]
+[dwarf17:4045250] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7fe325870dcf]
+[dwarf17:4045250] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7fe3279e5563]
+[dwarf17:4045250] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7fe327a8b89a]
+[dwarf17:4045250] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7fe327b059ff]
+[dwarf17:4045250] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7fe32e58ec85]
+[dwarf17:4045250] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4045250] [12] /lib64/libc.so.6(+0x295d0)[0x7fe32e2295d0]
+[dwarf17:4045250] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7fe32e229680]
+[dwarf17:4045250] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4045250] *** End of error message ***
+[dwarf17:4045252:0:4045252]       ud_ep.c:268  Fatal: UD endpoint 0x245a190 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4045252) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4045252] *** Process received signal ***
+[dwarf17:4045252] Signal: Aborted (6)
+[dwarf17:4045252] Signal code:  (-6)
+[dwarf17:4045252] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f085e23e730]
+[dwarf17:4045252] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f085e28b52c]
+[dwarf17:4045252] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f085e23e686]
+[dwarf17:4045252] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f085e228833]
+[dwarf17:4045252] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f08579fd48b]
+[dwarf17:4045252] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f08579fd561]
+[dwarf17:4045252] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f0855893dcf]
+[dwarf17:4045252] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f08579f7563]
+[dwarf17:4045252] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f0857a9d89a]
+[dwarf17:4045252] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7f0857b179ff]
+[dwarf17:4045252] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7f085e5a4c85]
+[dwarf17:4045252] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4045252] [12] /lib64/libc.so.6(+0x295d0)[0x7f085e2295d0]
+[dwarf17:4045252] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f085e229680]
+[dwarf17:4045252] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4045252] *** End of error message ***
+==== backtrace (tid:4045254) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4045254] *** Process received signal ***
+[dwarf17:4045254] Signal: Aborted (6)
+[dwarf17:4045254] Signal code:  (-6)
+[dwarf17:4045254] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f69efe3e730]
+[dwarf17:4045254] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f69efe8b52c]
+[dwarf17:4045254] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f69efe3e686]
+[dwarf17:4045254] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f69efe28833]
+[dwarf17:4045254] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f69ed1e748b]
+[dwarf17:4045254] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f69ed1e7561]
+[dwarf17:4045254] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f69ecffddcf]
+[dwarf17:4045254] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f69ed1e1563]
+[dwarf17:4045254] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f69ed28789a]
+[dwarf17:4045254] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7f69ed3019ff]
+[dwarf17:4045254] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7f69f018bc85]
+[dwarf17:4045254] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4045254] [12] /lib64/libc.so.6(+0x295d0)[0x7f69efe295d0]
+[dwarf17:4045254] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f69efe29680]
+[dwarf17:4045254] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4045254] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node dwarf17 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+[dwarf17:4047303:0:4047303]       ud_ep.c:268  Fatal: UD endpoint 0x1f84b70 to <no debug data>: unhandled timeout error
+[dwarf17:4047302:0:4047302]       ud_ep.c:268  Fatal: UD endpoint 0xa5f200 to <no debug data>: unhandled timeout error
+[dwarf17:4047301:0:4047301]       ud_ep.c:268  Fatal: UD endpoint 0x1c4ef30 to <no debug data>: unhandled timeout error
+[dwarf17:4047300:0:4047300]       ud_ep.c:268  Fatal: UD endpoint 0x77b2b0 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4047303) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4047303] *** Process received signal ***
+[dwarf17:4047303] Signal: Aborted (6)
+[dwarf17:4047303] Signal code:  (-6)
+[dwarf17:4047303] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f5bbde3e730]
+[dwarf17:4047303] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f5bbde8b52c]
+[dwarf17:4047303] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f5bbde3e686]
+[dwarf17:4047303] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f5bbde28833]
+[dwarf17:4047303] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f5bb7eea48b]
+[dwarf17:4047303] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f5bb7eea561]
+[dwarf17:4047303] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f5bb5493dcf]
+[dwarf17:4047303] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f5bb7ee4563]
+[dwarf17:4047303] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f5bb7f8a89a]
+[dwarf17:4047303] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7f5bbc0069ff]
+[dwarf17:4047303] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7f5bbe26ac85]
+[dwarf17:4047303] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4047303] [12] /lib64/libc.so.6(+0x295d0)[0x7f5bbde295d0]
+[dwarf17:4047303] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f5bbde29680]
+[dwarf17:4047303] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4047303] *** End of error message ***
+==== backtrace (tid:4047301) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+==== backtrace (tid:4047302) ====
+10 0x0000000000401155 _start()  ???:0
+=================================
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+[dwarf17:4047301] *** Process received signal ***
+[dwarf17:4047301] Signal: Aborted (6)
+[dwarf17:4047301] Signal code:  (-6)
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+[dwarf17:4047301] [ 0]  3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+/lib64/libc.so.6(+0x3e730)[0x7f195ba3e730]
+[dwarf17:4047301] [ 1]  4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+/lib64/libc.so.6(+0x8b52c)[0x7f195ba8b52c]
+[dwarf17:4047302] *** Process received signal ***
+[dwarf17:4047302] Signal: Aborted (6)
+[dwarf17:4047302] Signal code:  (-6)
+[dwarf17:4047301] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f195ba3e686]
+[dwarf17:4047301] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f195ba28833]
+[dwarf17:4047301] [ 4] [dwarf17:4047302] [ 0] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f1958e4948b]
+[dwarf17:4047301] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f1958e49561]
+[dwarf17:4047301] [ 6] /lib64/libc.so.6(+0x3e730)[0x7f4079a3e730]
+[dwarf17:4047302] [ 1] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f1958c5fdcf]
+[dwarf17:4047301] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f1958e43563]
+[dwarf17:4047301] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f1958ee989a]
+[dwarf17:4047301] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7f1958f639ff]
+[dwarf17:4047301] [10] /lib64/libc.so.6(+0x8b52c)[0x7f4079a8b52c]
+[dwarf17:4047302] [ 2] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7f195bdf0c85]
+[dwarf17:4047301] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4047301] [12] /lib64/libc.so.6(raise+0x16)[0x7f4079a3e686]
+[dwarf17:4047302] [ 3] /lib64/libc.so.6(+0x295d0)[0x7f195ba295d0]
+[dwarf17:4047301] [13] /lib64/libc.so.6(abort+0xd3)[0x7f4079a28833]
+[dwarf17:4047302] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f407399748b]
+[dwarf17:4047302] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f4073997561]
+[dwarf17:4047302] [ 6] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f195ba29680]
+[dwarf17:4047301] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4047301] *** End of error message ***
+/opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f4070fd4dcf]
+[dwarf17:4047302] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f4073991563]
+[dwarf17:4047302] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f4073e3b89a]
+[dwarf17:4047302] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7f4073eb59ff]
+[dwarf17:4047302] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7f4079d1bc85]
+[dwarf17:4047302] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4047302] [12] /lib64/libc.so.6(+0x295d0)[0x7f4079a295d0]
+[dwarf17:4047302] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f4079a29680]
+[dwarf17:4047302] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4047302] *** End of error message ***
+==== backtrace (tid:4047300) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x0000000000006aae mca_pml_ucx_send()  ???:0
+ 6 0x0000000000087c7b MPI_Send()  ???:0
+ 7 0x000000000040156c main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4047300] *** Process received signal ***
+[dwarf17:4047300] Signal: Aborted (6)
+[dwarf17:4047300] Signal code:  (-6)
+[dwarf17:4047300] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f6a6063e730]
+[dwarf17:4047300] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f6a6068b52c]
+[dwarf17:4047300] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f6a6063e686]
+[dwarf17:4047300] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f6a60628833]
+[dwarf17:4047300] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f6a5c32a48b]
+[dwarf17:4047300] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f6a5c32a561]
+[dwarf17:4047300] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f6a5c14bdcf]
+[dwarf17:4047300] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f6a5c324563]
+[dwarf17:4047300] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f6a5c39289a]
+[dwarf17:4047300] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_send+0x14e)[0x7f6a5dfcfaae]
+[dwarf17:4047300] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(PMPI_Send+0x11b)[0x7f6a60a5ec7b]
+[dwarf17:4047300] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x40156c]
+[dwarf17:4047300] [12] /lib64/libc.so.6(+0x295d0)[0x7f6a606295d0]
+[dwarf17:4047300] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f6a60629680]
+[dwarf17:4047300] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4047300] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 3 with PID 0 on node dwarf17 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+[dwarf17:4049312:0:4049312]       ud_ep.c:268  Fatal: UD endpoint 0x128cf30 to <no debug data>: unhandled timeout error
+[dwarf17:4049310:0:4049310]       ud_ep.c:268  Fatal: UD endpoint 0x1b05180 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4049310) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x0000000000006aae mca_pml_ucx_send()  ???:0
+ 6 0x0000000000087c7b MPI_Send()  ???:0
+ 7 0x000000000040156c main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4049310] *** Process received signal ***
+[dwarf17:4049310] Signal: Aborted (6)
+[dwarf17:4049310] Signal code:  (-6)
+[dwarf17:4049310] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f98e743e730]
+[dwarf17:4049310] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f98e748b52c]
+[dwarf17:4049310] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f98e743e686]
+[dwarf17:4049310] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f98e7428833]
+[dwarf17:4049310] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f98e483b48b]
+[dwarf17:4049310] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f98e483b561]
+[dwarf17:4049310] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f98e4651dcf]
+[dwarf17:4049310] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f98e4835563]
+[dwarf17:4049310] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f98e48db89a]
+[dwarf17:4049310] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_send+0x14e)[0x7f98e4957aae]
+[dwarf17:4049310] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(PMPI_Send+0x11b)[0x7f98e77e4c7b]
+[dwarf17:4049310] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x40156c]
+[dwarf17:4049310] [12] /lib64/libc.so.6(+0x295d0)[0x7f98e74295d0]
+[dwarf17:4049310] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f98e7429680]
+[dwarf17:4049310] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4049310] *** End of error message ***
+[dwarf17:4049316:0:4049316]       ud_ep.c:268  Fatal: UD endpoint 0x13f0190 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4049316) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4049316] *** Process received signal ***
+[dwarf17:4049316] Signal: Aborted (6)
+[dwarf17:4049316] Signal code:  (-6)
+[dwarf17:4049316] [ 0] /lib64/libc.so.6(+0x3e730)[0x7fef7923e730]
+[dwarf17:4049316] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7fef7928b52c]
+[dwarf17:4049316] [ 2] /lib64/libc.so.6(raise+0x16)[0x7fef7923e686]
+[dwarf17:4049316] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7fef79228833]
+[dwarf17:4049316] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7fef7312a48b]
+[dwarf17:4049316] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7fef7312a561]
+[dwarf17:4049316] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7fef7309bdcf]
+[dwarf17:4049316] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7fef73124563]
+[dwarf17:4049316] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7fef7319289a]
+[dwarf17:4049316] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7fef7365f9ff]
+[dwarf17:4049316] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7fef794c2c85]
+[dwarf17:4049316] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4049316] [12] /lib64/libc.so.6(+0x295d0)[0x7fef792295d0]
+[dwarf17:4049316] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7fef79229680]
+[dwarf17:4049316] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4049316] *** End of error message ***
+[dwarf17:4049314:0:4049314]       ud_ep.c:268  Fatal: UD endpoint 0x25de190 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4049314) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4049314] *** Process received signal ***
+[dwarf17:4049314] Signal: Aborted (6)
+[dwarf17:4049314] Signal code:  (-6)
+[dwarf17:4049314] [ 0] /lib64/libc.so.6(+0x3e730)[0x7ffb2003e730]
+[dwarf17:4049314] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7ffb2008b52c]
+[dwarf17:4049314] [ 2] /lib64/libc.so.6(raise+0x16)[0x7ffb2003e686]
+[dwarf17:4049314] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7ffb20028833]
+[dwarf17:4049314] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7ffb1d42148b]
+[dwarf17:4049314] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7ffb1d421561]
+[dwarf17:4049314] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7ffb1d237dcf]
+[dwarf17:4049314] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7ffb1d41b563]
+[dwarf17:4049314] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7ffb1d4c189a]
+[dwarf17:4049314] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7ffb1d53b9ff]
+[dwarf17:4049314] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7ffb203c8c85]
+[dwarf17:4049314] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4049314] [12] /lib64/libc.so.6(+0x295d0)[0x7ffb200295d0]
+[dwarf17:4049314] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7ffb20029680]
+[dwarf17:4049314] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4049314] *** End of error message ***
+==== backtrace (tid:4049312) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4049312] *** Process received signal ***
+[dwarf17:4049312] Signal: Aborted (6)
+[dwarf17:4049312] Signal code:  (-6)
+[dwarf17:4049312] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f7fdf43e730]
+[dwarf17:4049312] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f7fdf48b52c]
+[dwarf17:4049312] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f7fdf43e686]
+[dwarf17:4049312] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f7fdf428833]
+[dwarf17:4049312] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f7fdc80d48b]
+[dwarf17:4049312] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f7fdc80d561]
+[dwarf17:4049312] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f7fdc623dcf]
+[dwarf17:4049312] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f7fdc807563]
+[dwarf17:4049312] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f7fdc8ad89a]
+[dwarf17:4049312] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7f7fdc9279ff]
+[dwarf17:4049312] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7f7fdf7b1c85]
+[dwarf17:4049312] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4049312] [12] /lib64/libc.so.6(+0x295d0)[0x7f7fdf4295d0]
+[dwarf17:4049312] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f7fdf429680]
+[dwarf17:4049312] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4049312] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node dwarf17 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+[dwarf17:4051372:0:4051372]       ud_ep.c:268  Fatal: UD endpoint 0x13c1ef0 to <no debug data>: unhandled timeout error
+[dwarf17:4051370:0:4051370]       ud_ep.c:268  Fatal: UD endpoint 0xd7f850 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4051372) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4051372] *** Process received signal ***
+[dwarf17:4051372] Signal: Aborted (6)
+[dwarf17:4051372] Signal code:  (-6)
+[dwarf17:4051372] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f313ac3e730]
+[dwarf17:4051372] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f313ac8b52c]
+[dwarf17:4051372] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f313ac3e686]
+[dwarf17:4051372] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f313ac28833]
+[dwarf17:4051372] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f313232a48b]
+[dwarf17:4051372] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f313232a561]
+[dwarf17:4051372] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f3132198dcf]
+[dwarf17:4051372] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f3132324563]
+[dwarf17:4051372] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f313239289a]
+[dwarf17:4051372] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7f313802e9ff]
+[dwarf17:4051372] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7f313aeb8c85]
+[dwarf17:4051372] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4051372] [12] /lib64/libc.so.6(+0x295d0)[0x7f313ac295d0]
+[dwarf17:4051372] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f313ac29680]
+[dwarf17:4051372] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4051372] *** End of error message ***
+==== backtrace (tid:4051370) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4051370] *** Process received signal ***
+[dwarf17:4051370] Signal: Aborted (6)
+[dwarf17:4051370] Signal code:  (-6)
+[dwarf17:4051370] [ 0] /lib64/libc.so.6(+0x3e730)[0x7fc5cca3e730]
+[dwarf17:4051370] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7fc5cca8b52c]
+[dwarf17:4051370] [ 2] /lib64/libc.so.6(raise+0x16)[0x7fc5cca3e686]
+[dwarf17:4051370] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7fc5cca28833]
+[dwarf17:4051370] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7fc5c82f148b]
+[dwarf17:4051370] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7fc5c82f1561]
+[dwarf17:4051370] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7fc5c8121dcf]
+[dwarf17:4051370] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7fc5c82eb563]
+[dwarf17:4051370] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7fc5c839189a]
+[dwarf17:4051370] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7fc5ca3ae9ff]
+[dwarf17:4051370] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7fc5cce3ac85]
+[dwarf17:4051370] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4051370] [12] /lib64/libc.so.6(+0x295d0)[0x7fc5cca295d0]
+[dwarf17:4051370] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7fc5cca29680]
+[dwarf17:4051370] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4051370] *** End of error message ***
+[dwarf17:4051367:0:4051367]       ud_ep.c:268  Fatal: UD endpoint 0x1257c20 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4051367) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x0000000000006aae mca_pml_ucx_send()  ???:0
+ 6 0x0000000000087c7b MPI_Send()  ???:0
+ 7 0x000000000040156c main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4051367] *** Process received signal ***
+[dwarf17:4051367] Signal: Aborted (6)
+[dwarf17:4051367] Signal code:  (-6)
+[dwarf17:4051367] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f0eb403e730]
+[dwarf17:4051367] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f0eb408b52c]
+[dwarf17:4051367] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f0eb403e686]
+[dwarf17:4051367] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f0eb4028833]
+[dwarf17:4051367] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f0eb130848b]
+[dwarf17:4051367] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f0eb1308561]
+[dwarf17:4051367] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f0eb111edcf]
+[dwarf17:4051367] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f0eb1302563]
+[dwarf17:4051367] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f0eb13a889a]
+[dwarf17:4051367] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_send+0x14e)[0x7f0eb1424aae]
+[dwarf17:4051367] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(PMPI_Send+0x11b)[0x7f0eb42b2c7b]
+[dwarf17:4051367] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x40156c]
+[dwarf17:4051367] [12] /lib64/libc.so.6(+0x295d0)[0x7f0eb40295d0]
+[dwarf17:4051367] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f0eb4029680]
+[dwarf17:4051367] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4051367] *** End of error message ***
+[dwarf17:4051369:0:4051369]       ud_ep.c:268  Fatal: UD endpoint 0x133c810 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4051369) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x000000000002e1cb opal_progress()  ???:0
+ 6 0x0000000000004a6d mca_pml_ucx_recv()  ???:0
+ 7 0x0000000000082c85 PMPI_Recv()  ???:0
+ 8 0x0000000000401702 main()  ???:0
+ 9 0x00000000000295d0 __libc_start_call_main()  ???:0
+10 0x0000000000029680 __libc_start_main_alias_2()  :0
+11 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4051369] *** Process received signal ***
+[dwarf17:4051369] Signal: Aborted (6)
+[dwarf17:4051369] Signal code:  (-6)
+[dwarf17:4051369] [ 0] /lib64/libc.so.6(+0x3e730)[0x7fc6dd83e730]
+[dwarf17:4051369] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7fc6dd88b52c]
+[dwarf17:4051369] [ 2] /lib64/libc.so.6(raise+0x16)[0x7fc6dd83e686]
+[dwarf17:4051369] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7fc6dd828833]
+[dwarf17:4051369] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7fc6d78dc48b]
+[dwarf17:4051369] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7fc6d78dc561]
+[dwarf17:4051369] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7fc6d4e93dcf]
+[dwarf17:4051369] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7fc6d78d6563]
+[dwarf17:4051369] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7fc6d797c89a]
+[dwarf17:4051369] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libopen-pal.so.40(opal_progress+0x2b)[0x7fc6dda931cb]
+[dwarf17:4051369] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x18d)[0x7fc6d79f6a6d]
+[dwarf17:4051369] [11] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7fc6ddc5dc85]
+[dwarf17:4051369] [12] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4051369] [13] /lib64/libc.so.6(+0x295d0)[0x7fc6dd8295d0]
+[dwarf17:4051369] [14] /lib64/libc.so.6(__libc_start_main+0x80)[0x7fc6dd829680]
+[dwarf17:4051369] [15] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4051369] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node dwarf17 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+[dwarf17:4053402:0:4053402]       ud_ep.c:268  Fatal: UD endpoint 0x1db2810 to <no debug data>: unhandled timeout error
+[dwarf17:4053400:0:4053400]       ud_ep.c:268  Fatal: UD endpoint 0x1b8b820 to <no debug data>: unhandled timeout error
+[dwarf17:4053401:0:4053401]       ud_ep.c:268  Fatal: UD endpoint 0x100c810 to <no debug data>: unhandled timeout error
+[dwarf17:4053399:0:4053399]       ud_ep.c:268  Fatal: UD endpoint 0x16bac20 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4053402) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+==== backtrace (tid:4053401) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+=================================
+==== backtrace (tid:4053400) ====
+[dwarf17:4053401] *** Process received signal ***
+[dwarf17:4053401] Signal: Aborted (6)
+[dwarf17:4053401] Signal code:  (-6)
+[dwarf17:4053402] *** Process received signal ***
+[dwarf17:4053402] Signal: Aborted (6)
+[dwarf17:4053402] Signal code:  (-6)
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+[dwarf17:4053401] [ 0] [dwarf17:4053402] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f7d30c3e730]
+[dwarf17:4053401] [ 1]  1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+/lib64/libc.so.6(+0x3e730)[0x7f7d9843e730]
+[dwarf17:4053402] [ 1]  2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+/lib64/libc.so.6(+0x8b52c)[0x7f7d30c8b52c]
+[dwarf17:4053401] [ 2] /lib64/libc.so.6(+0x8b52c)[0x7f7d9848b52c]
+[dwarf17:4053402] [ 2]  3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+/lib64/libc.so.6(raise+0x16)[0x7f7d30c3e686]
+[dwarf17:4053401] [ 3] /lib64/libc.so.6(raise+0x16)[0x7f7d9843e686]
+[dwarf17:4053402] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f7d30c28833]
+/lib64/libc.so.6(abort+0xd3)[0x7f7d98428833]
+[dwarf17:4053402] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f7d940c148b]
+[dwarf17:4053402] [ 5]  4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4053400] *** Process received signal ***
+[dwarf17:4053400] Signal: Aborted (6)
+[dwarf17:4053400] Signal code:  (-6)
+/opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f7d940c1561]
+[dwarf17:4053402] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f7d8fa93dcf]
+[dwarf17:4053402] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f7d940bb563]
+[dwarf17:4053402] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f7d9416189a]
+[dwarf17:4053402] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7f7d941d39ff]
+[dwarf17:4053402] [10] [dwarf17:4053401] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7f7d987e0c85]
+[dwarf17:4053402] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4053402] [dwarf17:4053400] [ 0] [12] /lib64/libc.so.6(+0x3e730)[0x7f988a63e730]
+[dwarf17:4053400] [ 1] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f7d2a40b48b]
+[dwarf17:4053401] /lib64/libc.so.6(+0x295d0)[0x7f7d984295d0]
+[ 5] /lib64/libc.so.6(+0x8b52c)[0x7f988a68b52c]
+[dwarf17:4053400] [ 2] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f7d2a40b561]
+[dwarf17:4053401] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f7d28293dcf]
+[dwarf17:4053401] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f7d2a405563]
+[dwarf17:4053401] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f7d2a4ab89a]
+[dwarf17:4053401] [ 9] /lib64/libc.so.6(raise+0x16)[0x7f988a63e686]
+[dwarf17:4053400] [ 3] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7f7d2a5259ff]
+[dwarf17:4053401] [10] [dwarf17:4053402] /lib64/libc.so.6(abort+0xd3)[0x7f988a628833]
+[dwarf17:4053400] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f988813448b]
+[dwarf17:4053400] [ 5] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7f7d30faec85]
+[dwarf17:4053401] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4053401] [12] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f9888134561]
+[dwarf17:4053400] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f988808bdcf]
+[dwarf17:4053400] /lib64/libc.so.6(+0x295d0)[0x7f7d30c295d0]
+[dwarf17:4053401] [13] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f988812e563]
+[dwarf17:4053400] [ 8] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f7d30c29680]
+[dwarf17:4053401] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4053401] *** End of error message ***
+/opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f98881d489a]
+[dwarf17:4053400] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7f988824e9ff]
+[dwarf17:4053400] [10] [13] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7f988a8b3c85]
+[dwarf17:4053400] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4053400] [12] /lib64/libc.so.6(+0x295d0)[0x7f988a6295d0]
+/lib64/libc.so.6(__libc_start_main+0x80)[0x7f7d98429680]
+[dwarf17:4053402] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4053402] *** End of error message ***
+[dwarf17:4053400] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f988a629680]
+[dwarf17:4053400] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4053400] *** End of error message ***
+==== backtrace (tid:4053399) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x0000000000006aae mca_pml_ucx_send()  ???:0
+ 6 0x0000000000087c7b MPI_Send()  ???:0
+ 7 0x000000000040156c main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4053399] *** Process received signal ***
+[dwarf17:4053399] Signal: Aborted (6)
+[dwarf17:4053399] Signal code:  (-6)
+[dwarf17:4053399] [ 0] /lib64/libc.so.6(+0x3e730)[0x7fd02503e730]
+[dwarf17:4053399] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7fd02508b52c]
+[dwarf17:4053399] [ 2] /lib64/libc.so.6(raise+0x16)[0x7fd02503e686]
+[dwarf17:4053399] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7fd025028833]
+[dwarf17:4053399] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7fd01e7a948b]
+[dwarf17:4053399] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7fd01e7a9561]
+[dwarf17:4053399] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7fd01c655dcf]
+[dwarf17:4053399] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7fd01e7a3563]
+[dwarf17:4053399] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7fd01f08d89a]
+[dwarf17:4053399] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_send+0x14e)[0x7fd01f109aae]
+[dwarf17:4053399] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(PMPI_Send+0x11b)[0x7fd025371c7b]
+[dwarf17:4053399] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x40156c]
+[dwarf17:4053399] [12] /lib64/libc.so.6(+0x295d0)[0x7fd0250295d0]
+[dwarf17:4053399] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7fd025029680]
+[dwarf17:4053399] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4053399] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 2 with PID 0 on node dwarf17 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+[dwarf17:4055755:0:4055755]       ud_ep.c:268  Fatal: UD endpoint 0x1609c20 to <no debug data>: unhandled timeout error
+[dwarf17:4055753:0:4055753]       ud_ep.c:268  Fatal: UD endpoint 0x1fb1810 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4055753) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x0000000000006aae mca_pml_ucx_send()  ???:0
+ 6 0x0000000000087c7b MPI_Send()  ???:0
+ 7 0x000000000040156c main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4055753] *** Process received signal ***
+[dwarf17:4055753] Signal: Aborted (6)
+[dwarf17:4055753] Signal code:  (-6)
+[dwarf17:4055753] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f327ee3e730]
+[dwarf17:4055753] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f327ee8b52c]
+[dwarf17:4055753] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f327ee3e686]
+[dwarf17:4055753] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f327ee28833]
+[dwarf17:4055753] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f327c1ef48b]
+[dwarf17:4055753] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f327c1ef561]
+[dwarf17:4055753] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f3277fd5dcf]
+[dwarf17:4055753] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f327c1e9563]
+[dwarf17:4055753] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f327c28f89a]
+[dwarf17:4055753] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_send+0x14e)[0x7f327c30baae]
+[dwarf17:4055753] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(PMPI_Send+0x11b)[0x7f327f19ac7b]
+[dwarf17:4055753] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x40156c]
+[dwarf17:4055753] [12] /lib64/libc.so.6(+0x295d0)[0x7f327ee295d0]
+[dwarf17:4055753] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f327ee29680]
+[dwarf17:4055753] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4055753] *** End of error message ***
+[dwarf17:4055754:0:4055754]       ud_ep.c:268  Fatal: UD endpoint 0x22b6830 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4055754) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4055754] *** Process received signal ***
+[dwarf17:4055754] Signal: Aborted (6)
+[dwarf17:4055754] Signal code:  (-6)
+[dwarf17:4055754] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f061ae3e730]
+[dwarf17:4055754] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f061ae8b52c]
+[dwarf17:4055754] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f061ae3e686]
+[dwarf17:4055754] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f061ae28833]
+[dwarf17:4055754] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f061821548b]
+[dwarf17:4055754] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f0618215561]
+[dwarf17:4055754] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f0613fd5dcf]
+[dwarf17:4055754] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f061820f563]
+[dwarf17:4055754] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f06182b589a]
+[dwarf17:4055754] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7f061832f9ff]
+[dwarf17:4055754] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7f061b1b9c85]
+[dwarf17:4055754] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4055754] [12] /lib64/libc.so.6(+0x295d0)[0x7f061ae295d0]
+[dwarf17:4055754] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f061ae29680]
+[dwarf17:4055754] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4055754] *** End of error message ***
+[dwarf17:4055756:0:4055756]       ud_ep.c:268  Fatal: UD endpoint 0x133a810 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4055756) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4055756] *** Process received signal ***
+[dwarf17:4055756] Signal: Aborted (6)
+[dwarf17:4055756] Signal code:  (-6)
+[dwarf17:4055756] [ 0] /lib64/libc.so.6(+0x3e730)[0x7fc21da3e730]
+[dwarf17:4055756] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7fc21da8b52c]
+[dwarf17:4055756] [ 2] /lib64/libc.so.6(raise+0x16)[0x7fc21da3e686]
+[dwarf17:4055756] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7fc21da28833]
+[dwarf17:4055756] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7fc21792a48b]
+[dwarf17:4055756] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7fc21792a561]
+[dwarf17:4055756] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7fc21789bdcf]
+[dwarf17:4055756] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7fc217924563]
+[dwarf17:4055756] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7fc21799289a]
+[dwarf17:4055756] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7fc217e649ff]
+[dwarf17:4055756] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7fc21dcc9c85]
+[dwarf17:4055756] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4055756] [12] /lib64/libc.so.6(+0x295d0)[0x7fc21da295d0]
+[dwarf17:4055756] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7fc21da29680]
+[dwarf17:4055756] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4055756] *** End of error message ***
+==== backtrace (tid:4055755) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4055755] *** Process received signal ***
+[dwarf17:4055755] Signal: Aborted (6)
+[dwarf17:4055755] Signal code:  (-6)
+[dwarf17:4055755] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f04f223e730]
+[dwarf17:4055755] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f04f228b52c]
+[dwarf17:4055755] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f04f223e686]
+[dwarf17:4055755] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f04f2228833]
+[dwarf17:4055755] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f04eb9d448b]
+[dwarf17:4055755] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f04eb9d4561]
+[dwarf17:4055755] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f04e9865dcf]
+[dwarf17:4055755] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f04eb9ce563]
+[dwarf17:4055755] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f04eba7489a]
+[dwarf17:4055755] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7f04ebaee9ff]
+[dwarf17:4055755] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7f04f2577c85]
+[dwarf17:4055755] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4055755] [12] /lib64/libc.so.6(+0x295d0)[0x7f04f22295d0]
+[dwarf17:4055755] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f04f2229680]
+[dwarf17:4055755] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4055755] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 3 with PID 0 on node dwarf17 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+[dwarf17:4058350:0:4058350]       ud_ep.c:268  Fatal: UD endpoint 0xcfe190 to <no debug data>: unhandled timeout error
+[dwarf17:4058349:0:4058349]       ud_ep.c:268  Fatal: UD endpoint 0x156a190 to <no debug data>: unhandled timeout error
+[dwarf17:4058348:0:4058348]       ud_ep.c:268  Fatal: UD endpoint 0x21d5f10 to <no debug data>: unhandled timeout error
+[dwarf17:4058347:0:4058347]       ud_ep.c:268  Fatal: UD endpoint 0x2223010 to <no debug data>: unhandled timeout error
+==== backtrace (tid:4058349) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+==== backtrace (tid:4058350) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+[dwarf17:4058350] *** Process received signal ***
+[dwarf17:4058350] Signal: Aborted (6)
+[dwarf17:4058350] Signal code:  (-6)
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+[dwarf17:4058350] [ 0]  9 0x0000000000029680 __libc_start_main_alias_2()  :0
+/lib64/libc.so.6(+0x3e730)[0x7f95e4e3e730]
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4058349] *** Process received signal ***
+[dwarf17:4058349] Signal: Aborted (6)
+[dwarf17:4058349] Signal code:  (-6)
+[dwarf17:4058350] [ 1] [dwarf17:4058349] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f9e0be3e730]
+/lib64/libc.so.6(+0x8b52c)[0x7f95e4e8b52c]
+[dwarf17:4058350] [ 2] [dwarf17:4058349] /lib64/libc.so.6(raise+0x16)[0x7f95e4e3e686]
+[dwarf17:4058350] [ 3] [ 1] /lib64/libc.so.6(abort+0xd3)[0x7f95e4e28833]
+[dwarf17:4058350] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f95de5ad48b]
+/lib64/libc.so.6(+0x8b52c)[0x7f9e0be8b52c]
+[dwarf17:4058349] [ 2] [dwarf17:4058350] [ 5] /lib64/libc.so.6(raise+0x16)[0x7f9e0be3e686]
+[dwarf17:4058349] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f9e0be28833]
+/opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f95de5ad561]
+[dwarf17:4058350] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f95dc446dcf]
+[dwarf17:4058350] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f95de5a7563]
+[dwarf17:4058350] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f95de64d89a]
+[dwarf17:4058350] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7f95de6c79ff]
+[dwarf17:4058350] [10] [dwarf17:4058349] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7f95e5155c85]
+[dwarf17:4058350] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4058350] [12] [ 4] /lib64/libc.so.6(+0x295d0)[0x7f95e4e295d0]
+[dwarf17:4058350] [13] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f9e0910c48b]
+[dwarf17:4058349] [ 5] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f95e4e29680]
+/opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f9e0910c561]
+[dwarf17:4058349] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f9e08f22dcf]
+[dwarf17:4058349] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f9e09106563]
+[dwarf17:4058349] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f9e091ac89a]
+[dwarf17:4058349] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7f9e092269ff]
+[dwarf17:4058349] [10] [dwarf17:4058350] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7f9e0c0b0c85]
+[dwarf17:4058349] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4058349] [12] [14] /lib64/libc.so.6(+0x295d0)[0x7f9e0be295d0]
+[dwarf17:4058349] [13] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+/lib64/libc.so.6(__libc_start_main+0x80)[0x7f9e0be29680]
+[dwarf17:4058349] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4058349] *** End of error message ***
+[dwarf17:4058350] *** End of error message ***
+==== backtrace (tid:4058348) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x00000000000049ff mca_pml_ucx_recv()  ???:0
+ 6 0x0000000000082c85 PMPI_Recv()  ???:0
+ 7 0x0000000000401702 main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4058348] *** Process received signal ***
+[dwarf17:4058348] Signal: Aborted (6)
+[dwarf17:4058348] Signal code:  (-6)
+[dwarf17:4058348] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f7cf303e730]
+[dwarf17:4058348] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f7cf308b52c]
+[dwarf17:4058348] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f7cf303e686]
+[dwarf17:4058348] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f7cf3028833]
+[dwarf17:4058348] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f7cf049848b]
+[dwarf17:4058348] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f7cf0498561]
+[dwarf17:4058348] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f7cf02aedcf]
+[dwarf17:4058348] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f7cf0492563]
+[dwarf17:4058348] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f7cf053889a]
+[dwarf17:4058348] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_recv+0x11f)[0x7f7cf05b29ff]
+[dwarf17:4058348] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(MPI_Recv+0x155)[0x7f7cf343dc85]
+[dwarf17:4058348] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401702]
+[dwarf17:4058348] [12] /lib64/libc.so.6(+0x295d0)[0x7f7cf30295d0]
+[dwarf17:4058348] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f7cf3029680]
+[dwarf17:4058348] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4058348] *** End of error message ***
+==== backtrace (tid:4058347) ====
+ 0 0x0000000000052dcf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x0000000000020563 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x000000000003789a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x000000000003789a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x000000000003789a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x0000000000006aae mca_pml_ucx_send()  ???:0
+ 6 0x0000000000087c7b MPI_Send()  ???:0
+ 7 0x000000000040156c main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[dwarf17:4058347] *** Process received signal ***
+[dwarf17:4058347] Signal: Aborted (6)
+[dwarf17:4058347] Signal code:  (-6)
+[dwarf17:4058347] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f9490e3e730]
+[dwarf17:4058347] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f9490e8b52c]
+[dwarf17:4058347] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f9490e3e686]
+[dwarf17:4058347] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f9490e28833]
+[dwarf17:4058347] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2648b)[0x7f948872948b]
+[dwarf17:4058347] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26561)[0x7f9488729561]
+[dwarf17:4058347] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x52dcf)[0x7f9488559dcf]
+[dwarf17:4058347] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x20563)[0x7f9488723563]
+[dwarf17:4058347] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f948879189a]
+[dwarf17:4058347] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_send+0x14e)[0x7f948b011aae]
+[dwarf17:4058347] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(PMPI_Send+0x11b)[0x7f9491279c7b]
+[dwarf17:4058347] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x40156c]
+[dwarf17:4058347] [12] /lib64/libc.so.6(+0x295d0)[0x7f9490e295d0]
+[dwarf17:4058347] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f9490e29680]
+[dwarf17:4058347] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[dwarf17:4058347] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 3 with PID 0 on node dwarf17 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+slurmstepd: error: *** JOB 21762970 ON dwarf17 CANCELLED AT 2025-05-04T22:32:56 DUE TO TIME LIMIT ***
+--------------------------------------------------------------------------
+ORTE has lost communication with a remote daemon.
+
+  HNP daemon   : [[30810,0],0] on node dwarf17
+  Remote daemon: [[30810,0],3] on node dwarf21
+
+This is usually due to either a failure of the TCP network
+connection to the node, or possibly an internal failure of
+the daemon itself. We cannot recover from this failure, and
+therefore will terminate the job.
+--------------------------------------------------------------------------

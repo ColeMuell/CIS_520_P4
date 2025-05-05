@@ -1,0 +1,384 @@
+
+The following have been reloaded with a version change:
+  1) FFTW.MPI/3.3.10-gompi-2022a => FFTW.MPI/3.3.10-gompi-2023b
+  2) FFTW/3.3.10-GCC-11.3.0 => FFTW/3.3.10-GCC-13.2.0
+  3) FlexiBLAS/3.2.0-GCC-11.3.0 => FlexiBLAS/3.3.1-GCC-13.2.0
+  4) GCC/11.3.0 => GCC/13.2.0
+  5) GCCcore/11.3.0 => GCCcore/13.2.0
+  6) OpenBLAS/0.3.20-GCC-11.3.0 => OpenBLAS/0.3.24-GCC-13.2.0
+  7) OpenMPI/4.1.4-GCC-11.3.0 => OpenMPI/4.1.6-GCC-13.2.0
+  8) PMIx/4.1.2-GCCcore-11.3.0 => PMIx/4.2.6-GCCcore-13.2.0
+  9) ScaLAPACK/2.2.0-gompi-2022a-fb => ScaLAPACK/2.2.0-gompi-2023b-fb
+ 10) UCC/1.0.0-GCCcore-11.3.0 => UCC/1.2.0-GCCcore-13.2.0
+ 11) UCX/1.12.1-GCCcore-11.3.0 => UCX/1.15.0-GCCcore-13.2.0
+ 12) XZ/5.2.5-GCCcore-11.3.0 => XZ/5.4.4-GCCcore-13.2.0
+ 13) binutils/2.38-GCCcore-11.3.0 => binutils/2.40-GCCcore-13.2.0
+ 14) foss/2022a => foss/2023b
+ 15) gompi/2022a => gompi/2023b
+ 16) hwloc/2.7.1-GCCcore-11.3.0 => hwloc/2.9.2-GCCcore-13.2.0
+ 17) libevent/2.1.12-GCCcore-11.3.0 => libevent/2.1.12-GCCcore-13.2.0
+ 18) libfabric/1.15.1-GCCcore-11.3.0 => libfabric/1.19.0-GCCcore-13.2.0
+ 19) libpciaccess/0.16-GCCcore-11.3.0 => libpciaccess/0.17-GCCcore-13.2.0
+ 20) libxml2/2.9.13-GCCcore-11.3.0 => libxml2/2.11.5-GCCcore-13.2.0
+ 21) numactl/2.0.14-GCCcore-11.3.0 => numactl/2.0.16-GCCcore-13.2.0
+ 22) zlib/1.2.12-GCCcore-11.3.0 => zlib/1.2.13-GCCcore-13.2.0
+
+
+The following have been reloaded with a version change:
+  1) FFTW.MPI/3.3.10-gompi-2023b => FFTW.MPI/3.3.10-gompi-2022a
+  2) FFTW/3.3.10-GCC-13.2.0 => FFTW/3.3.10-GCC-11.3.0
+  3) FlexiBLAS/3.3.1-GCC-13.2.0 => FlexiBLAS/3.2.0-GCC-11.3.0
+  4) GCC/13.2.0 => GCC/11.3.0
+  5) GCCcore/13.2.0 => GCCcore/11.3.0
+  6) OpenBLAS/0.3.24-GCC-13.2.0 => OpenBLAS/0.3.20-GCC-11.3.0
+  7) OpenMPI/4.1.6-GCC-13.2.0 => OpenMPI/4.1.4-GCC-11.3.0
+  8) PMIx/4.2.6-GCCcore-13.2.0 => PMIx/4.1.2-GCCcore-11.3.0
+  9) ScaLAPACK/2.2.0-gompi-2023b-fb => ScaLAPACK/2.2.0-gompi-2022a-fb
+ 10) UCC/1.2.0-GCCcore-13.2.0 => UCC/1.0.0-GCCcore-11.3.0
+ 11) UCX/1.15.0-GCCcore-13.2.0 => UCX/1.12.1-GCCcore-11.3.0
+ 12) XZ/5.4.4-GCCcore-13.2.0 => XZ/5.2.5-GCCcore-11.3.0
+ 13) binutils/2.40-GCCcore-13.2.0 => binutils/2.38-GCCcore-11.3.0
+ 14) foss/2023b => foss/2022a
+ 15) gompi/2023b => gompi/2022a
+ 16) hwloc/2.9.2-GCCcore-13.2.0 => hwloc/2.7.1-GCCcore-11.3.0
+ 17) libevent/2.1.12-GCCcore-13.2.0 => libevent/2.1.12-GCCcore-11.3.0
+ 18) libfabric/1.19.0-GCCcore-13.2.0 => libfabric/1.15.1-GCCcore-11.3.0
+ 19) libpciaccess/0.17-GCCcore-13.2.0 => libpciaccess/0.16-GCCcore-11.3.0
+ 20) libxml2/2.11.5-GCCcore-13.2.0 => libxml2/2.9.13-GCCcore-11.3.0
+ 21) numactl/2.0.16-GCCcore-13.2.0 => numactl/2.0.14-GCCcore-11.3.0
+ 22) zlib/1.2.13-GCCcore-13.2.0 => zlib/1.2.12-GCCcore-11.3.0
+
+[warlock05:2793615:0:2793615]       ud_ep.c:268  Fatal: UD endpoint 0x1efc500 to <no debug data>: unhandled timeout error
+==== backtrace (tid:2793615) ====
+ 0 0x00000000000538bf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x00000000000202d7 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x0000000000037b8a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x0000000000037b8a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x0000000000037b8a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x000000000002e573 opal_progress()  ???:0
+ 6 0x0000000000006c25 mca_pml_ucx_send()  ???:0
+ 7 0x0000000000087643 MPI_Send()  ???:0
+ 8 0x000000000040156c main()  ???:0
+ 9 0x00000000000295d0 __libc_start_call_main()  ???:0
+10 0x0000000000029680 __libc_start_main_alias_2()  :0
+11 0x0000000000401155 _start()  ???:0
+=================================
+[warlock05:2793615] *** Process received signal ***
+[warlock05:2793615] Signal: Aborted (6)
+[warlock05:2793615] Signal code:  (-6)
+[warlock05:2793615] [ 0] /lib64/libc.so.6(+0x3e730)[0x7fd512a3e730]
+[warlock05:2793615] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7fd512a8b52c]
+[warlock05:2793615] [ 2] /lib64/libc.so.6(raise+0x16)[0x7fd512a3e686]
+[warlock05:2793615] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7fd512a28833]
+[warlock05:2793615] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2633b)[0x7fd51029d33b]
+[warlock05:2793615] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26411)[0x7fd51029d411]
+[warlock05:2793615] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x538bf)[0x7fd51007e8bf]
+[warlock05:2793615] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x202d7)[0x7fd5102972d7]
+[warlock05:2793615] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7fd51033eb8a]
+[warlock05:2793615] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libopen-pal.so.40(opal_progress+0x33)[0x7fd512c44573]
+[warlock05:2793615] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_send+0x1b5)[0x7fd5103bcc25]
+[warlock05:2793615] [11] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(PMPI_Send+0x123)[0x7fd512e17643]
+[warlock05:2793615] [12] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x40156c]
+[warlock05:2793615] [13] /lib64/libc.so.6(+0x295d0)[0x7fd512a295d0]
+[warlock05:2793615] [14] /lib64/libc.so.6(__libc_start_main+0x80)[0x7fd512a29680]
+[warlock05:2793615] [15] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[warlock05:2793615] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node warlock05 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+[warlock05:2805827:0:2805827]       ud_ep.c:268  Fatal: UD endpoint 0x16a4c10 to <no debug data>: unhandled timeout error
+==== backtrace (tid:2805827) ====
+ 0 0x00000000000538bf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x00000000000202d7 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x0000000000037b8a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x0000000000037b8a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x0000000000037b8a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x0000000000006bbe mca_pml_ucx_send()  ???:0
+ 6 0x0000000000087643 MPI_Send()  ???:0
+ 7 0x000000000040156c main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[warlock05:2805827] *** Process received signal ***
+[warlock05:2805827] Signal: Aborted (6)
+[warlock05:2805827] Signal code:  (-6)
+[warlock05:2805827] [ 0] /lib64/libc.so.6(+0x3e730)[0x7ff47323e730]
+[warlock05:2805827] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7ff47328b52c]
+[warlock05:2805827] [ 2] /lib64/libc.so.6(raise+0x16)[0x7ff47323e686]
+[warlock05:2805827] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7ff473228833]
+[warlock05:2805827] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2633b)[0x7ff47062333b]
+[warlock05:2805827] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26411)[0x7ff470623411]
+[warlock05:2805827] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x538bf)[0x7ff4704048bf]
+[warlock05:2805827] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x202d7)[0x7ff47061d2d7]
+[warlock05:2805827] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7ff4706c4b8a]
+[warlock05:2805827] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_send+0x14e)[0x7ff470742bbe]
+[warlock05:2805827] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(PMPI_Send+0x123)[0x7ff4735c3643]
+[warlock05:2805827] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x40156c]
+[warlock05:2805827] [12] /lib64/libc.so.6(+0x295d0)[0x7ff4732295d0]
+[warlock05:2805827] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7ff473229680]
+[warlock05:2805827] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[warlock05:2805827] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node warlock05 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+[warlock05:2815004:0:2815004]       ud_ep.c:268  Fatal: UD endpoint 0xd1c700 to <no debug data>: unhandled timeout error
+==== backtrace (tid:2815004) ====
+ 0 0x00000000000538bf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x00000000000202d7 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x0000000000037b8a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x0000000000037b8a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x0000000000037b8a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x0000000000006bbe mca_pml_ucx_send()  ???:0
+ 6 0x0000000000087643 MPI_Send()  ???:0
+ 7 0x000000000040156c main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[warlock05:2815004] *** Process received signal ***
+[warlock05:2815004] Signal: Aborted (6)
+[warlock05:2815004] Signal code:  (-6)
+[warlock05:2815004] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f9310e3e730]
+[warlock05:2815004] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f9310e8b52c]
+[warlock05:2815004] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f9310e3e686]
+[warlock05:2815004] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f9310e28833]
+[warlock05:2815004] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2633b)[0x7f930858b33b]
+[warlock05:2815004] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26411)[0x7f930858b411]
+[warlock05:2815004] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x538bf)[0x7f930836c8bf]
+[warlock05:2815004] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x202d7)[0x7f93085852d7]
+[warlock05:2815004] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f930862cb8a]
+[warlock05:2815004] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_send+0x14e)[0x7f93086aabbe]
+[warlock05:2815004] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(PMPI_Send+0x123)[0x7f93110a6643]
+[warlock05:2815004] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x40156c]
+[warlock05:2815004] [12] /lib64/libc.so.6(+0x295d0)[0x7f9310e295d0]
+[warlock05:2815004] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f9310e29680]
+[warlock05:2815004] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[warlock05:2815004] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node warlock05 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+[warlock05:2823043:0:2823043]       ud_ep.c:268  Fatal: UD endpoint 0xeba300 to <no debug data>: unhandled timeout error
+==== backtrace (tid:2823043) ====
+ 0 0x00000000000538bf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x00000000000202d7 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x0000000000037b8a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x0000000000037b8a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x0000000000037b8a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x0000000000006bbe mca_pml_ucx_send()  ???:0
+ 6 0x0000000000087643 MPI_Send()  ???:0
+ 7 0x000000000040156c main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[warlock05:2823043] *** Process received signal ***
+[warlock05:2823043] Signal: Aborted (6)
+[warlock05:2823043] Signal code:  (-6)
+[warlock05:2823043] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f60a683e730]
+[warlock05:2823043] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f60a688b52c]
+[warlock05:2823043] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f60a683e686]
+[warlock05:2823043] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f60a6828833]
+[warlock05:2823043] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2633b)[0x7f60a40d233b]
+[warlock05:2823043] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26411)[0x7f60a40d2411]
+[warlock05:2823043] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x538bf)[0x7f609ffd58bf]
+[warlock05:2823043] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x202d7)[0x7f60a40cc2d7]
+[warlock05:2823043] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f60a4173b8a]
+[warlock05:2823043] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_send+0x14e)[0x7f60a41f1bbe]
+[warlock05:2823043] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(PMPI_Send+0x123)[0x7f60a6c4c643]
+[warlock05:2823043] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x40156c]
+[warlock05:2823043] [12] /lib64/libc.so.6(+0x295d0)[0x7f60a68295d0]
+[warlock05:2823043] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f60a6829680]
+[warlock05:2823043] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[warlock05:2823043] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node warlock05 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+[warlock05:2832047:0:2832047]       ud_ep.c:268  Fatal: UD endpoint 0x27d1cc0 to <no debug data>: unhandled timeout error
+==== backtrace (tid:2832047) ====
+ 0 0x00000000000538bf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x00000000000202d7 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x0000000000037b8a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x0000000000037b8a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x0000000000037b8a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x0000000000006bbe mca_pml_ucx_send()  ???:0
+ 6 0x0000000000087643 MPI_Send()  ???:0
+ 7 0x000000000040156c main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[warlock05:2832047] *** Process received signal ***
+[warlock05:2832047] Signal: Aborted (6)
+[warlock05:2832047] Signal code:  (-6)
+[warlock05:2832047] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f28d1a3e730]
+[warlock05:2832047] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f28d1a8b52c]
+[warlock05:2832047] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f28d1a3e686]
+[warlock05:2832047] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f28d1a28833]
+[warlock05:2832047] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2633b)[0x7f28cb99633b]
+[warlock05:2832047] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26411)[0x7f28cb996411]
+[warlock05:2832047] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x538bf)[0x7f28c8fae8bf]
+[warlock05:2832047] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x202d7)[0x7f28cb9902d7]
+[warlock05:2832047] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f28cbe47b8a]
+[warlock05:2832047] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_send+0x14e)[0x7f28cbec5bbe]
+[warlock05:2832047] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(PMPI_Send+0x123)[0x7f28d1d1f643]
+[warlock05:2832047] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x40156c]
+[warlock05:2832047] [12] /lib64/libc.so.6(+0x295d0)[0x7f28d1a295d0]
+[warlock05:2832047] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f28d1a29680]
+[warlock05:2832047] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[warlock05:2832047] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node warlock05 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+[warlock05:2839974:0:2839974]       ud_ep.c:268  Fatal: UD endpoint 0x10d2440 to <no debug data>: unhandled timeout error
+==== backtrace (tid:2839974) ====
+ 0 0x00000000000538bf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x00000000000202d7 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x0000000000037b8a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x0000000000037b8a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x0000000000037b8a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x0000000000006bbe mca_pml_ucx_send()  ???:0
+ 6 0x0000000000087643 MPI_Send()  ???:0
+ 7 0x000000000040156c main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[warlock05:2839974] *** Process received signal ***
+[warlock05:2839974] Signal: Aborted (6)
+[warlock05:2839974] Signal code:  (-6)
+[warlock05:2839974] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f779f83e730]
+[warlock05:2839974] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f779f88b52c]
+[warlock05:2839974] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f779f83e686]
+[warlock05:2839974] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f779f828833]
+[warlock05:2839974] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2633b)[0x7f779cc1233b]
+[warlock05:2839974] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26411)[0x7f779cc12411]
+[warlock05:2839974] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x538bf)[0x7f779c9f38bf]
+[warlock05:2839974] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x202d7)[0x7f779cc0c2d7]
+[warlock05:2839974] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f779ccb3b8a]
+[warlock05:2839974] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_send+0x14e)[0x7f779cd31bbe]
+[warlock05:2839974] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(PMPI_Send+0x123)[0x7f779fbb2643]
+[warlock05:2839974] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x40156c]
+[warlock05:2839974] [12] /lib64/libc.so.6(+0x295d0)[0x7f779f8295d0]
+[warlock05:2839974] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f779f829680]
+[warlock05:2839974] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[warlock05:2839974] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node warlock05 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+[warlock05:2849118:0:2849118]       ud_ep.c:268  Fatal: UD endpoint 0x146ea80 to <no debug data>: unhandled timeout error
+==== backtrace (tid:2849118) ====
+ 0 0x00000000000538bf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x00000000000202d7 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x0000000000037b8a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x0000000000037b8a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x0000000000037b8a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x0000000000006bbe mca_pml_ucx_send()  ???:0
+ 6 0x0000000000087643 MPI_Send()  ???:0
+ 7 0x000000000040156c main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[warlock05:2849118] *** Process received signal ***
+[warlock05:2849118] Signal: Aborted (6)
+[warlock05:2849118] Signal code:  (-6)
+[warlock05:2849118] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f66c1c3e730]
+[warlock05:2849118] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f66c1c8b52c]
+[warlock05:2849118] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f66c1c3e686]
+[warlock05:2849118] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f66c1c28833]
+[warlock05:2849118] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2633b)[0x7f66bbf2833b]
+[warlock05:2849118] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26411)[0x7f66bbf28411]
+[warlock05:2849118] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x538bf)[0x7f66bbe768bf]
+[warlock05:2849118] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x202d7)[0x7f66bbf222d7]
+[warlock05:2849118] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f66bbf90b8a]
+[warlock05:2849118] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_send+0x14e)[0x7f66c0071bbe]
+[warlock05:2849118] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(PMPI_Send+0x123)[0x7f66c1ecb643]
+[warlock05:2849118] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x40156c]
+[warlock05:2849118] [12] /lib64/libc.so.6(+0x295d0)[0x7f66c1c295d0]
+[warlock05:2849118] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f66c1c29680]
+[warlock05:2849118] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[warlock05:2849118] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node warlock05 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+[warlock05:2858294:0:2858294]       ud_ep.c:268  Fatal: UD endpoint 0x23b8af0 to <no debug data>: unhandled timeout error
+==== backtrace (tid:2858294) ====
+ 0 0x00000000000538bf uct_ud_ep_deferred_timeout_handler()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/ib/ud/base/ud_ep.c:268
+ 1 0x00000000000202d7 ucs_callbackq_slow_proxy()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.c:404
+ 2 0x0000000000037b8a ucs_callbackq_dispatch()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucs/datastruct/callbackq.h:211
+ 3 0x0000000000037b8a uct_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/uct/api/uct.h:2589
+ 4 0x0000000000037b8a ucp_worker_progress()  /tmp/easybuild/UCX/1.12.1/GCCcore-11.3.0/ucx-1.12.1/src/ucp/core/ucp_worker.c:2636
+ 5 0x0000000000006bbe mca_pml_ucx_send()  ???:0
+ 6 0x0000000000087643 MPI_Send()  ???:0
+ 7 0x000000000040156c main()  ???:0
+ 8 0x00000000000295d0 __libc_start_call_main()  ???:0
+ 9 0x0000000000029680 __libc_start_main_alias_2()  :0
+10 0x0000000000401155 _start()  ???:0
+=================================
+[warlock05:2858294] *** Process received signal ***
+[warlock05:2858294] Signal: Aborted (6)
+[warlock05:2858294] Signal code:  (-6)
+[warlock05:2858294] [ 0] /lib64/libc.so.6(+0x3e730)[0x7f43a9e3e730]
+[warlock05:2858294] [ 1] /lib64/libc.so.6(+0x8b52c)[0x7f43a9e8b52c]
+[warlock05:2858294] [ 2] /lib64/libc.so.6(raise+0x16)[0x7f43a9e3e686]
+[warlock05:2858294] [ 3] /lib64/libc.so.6(abort+0xd3)[0x7f43a9e28833]
+[warlock05:2858294] [ 4] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x2633b)[0x7f43a39cf33b]
+[warlock05:2858294] [ 5] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x26411)[0x7f43a39cf411]
+[warlock05:2858294] [ 6] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/ucx/libuct_ib.so.0(+0x538bf)[0x7f43a14248bf]
+[warlock05:2858294] [ 7] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucs.so.0(+0x202d7)[0x7f43a39c92d7]
+[warlock05:2858294] [ 8] /opt/software/software/UCX/1.12.1-GCCcore-11.3.0/lib/libucp.so.0(ucp_worker_progress+0x5a)[0x7f43a3e90b8a]
+[warlock05:2858294] [ 9] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/openmpi/mca_pml_ucx.so(mca_pml_ucx_send+0x14e)[0x7f43a3f0ebbe]
+[warlock05:2858294] [10] /opt/software/software/OpenMPI/4.1.4-GCC-11.3.0/lib/libmpi.so.40(PMPI_Send+0x123)[0x7f43aa168643]
+[warlock05:2858294] [11] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x40156c]
+[warlock05:2858294] [12] /lib64/libc.so.6(+0x295d0)[0x7f43a9e295d0]
+[warlock05:2858294] [13] /lib64/libc.so.6(__libc_start_main+0x80)[0x7f43a9e29680]
+[warlock05:2858294] [14] /homes/sekabanj/CIS_520_P4/mpi_version/mpi_version[0x401155]
+[warlock05:2858294] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node warlock05 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+slurmstepd: error: *** JOB 21762997 ON warlock05 CANCELLED AT 2025-05-04T22:33:55 DUE TO TIME LIMIT ***
+--------------------------------------------------------------------------
+ORTE has lost communication with a remote daemon.
+
+  HNP daemon   : [[42214,0],0] on node warlock05
+  Remote daemon: [[42214,0],3] on node warlock08
+
+This is usually due to either a failure of the TCP network
+connection to the node, or possibly an internal failure of
+the daemon itself. We cannot recover from this failure, and
+therefore will terminate the job.
+--------------------------------------------------------------------------
