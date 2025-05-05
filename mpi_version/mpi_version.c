@@ -153,7 +153,7 @@ int main(int argc, char **argv)
 					&status);
                 // printf("received results\n");
                 int offset = (i - 1) * PROCESS_PARTITION + (BATCH_SIZE * rounds);
-                print_results(buffer, offset, PROCESS_PARTITION);
+                //print_results(buffer, offset, PROCESS_PARTITION);
 		}       
     }
     else{
@@ -187,7 +187,7 @@ int main(int argc, char **argv)
 	// printf("Mandelbrot set computed in %.3lf s, at %.3lf Mpix/s\n",
 	//        walltime, h * w * 1e-6 / walltime );
     // }
-    printf("Process %d finished in %.3lf s\n", myid, t2-t1);
+    printf("%lf, ", t2-t1);
 
     MPI_Finalize();
 

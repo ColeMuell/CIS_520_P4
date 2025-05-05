@@ -54,7 +54,7 @@ int main(int argc, char **argv) {
 
     if (argc < 1) 
 	{
-		printf("%s <file> <core>", argv[0]);
+		printf("%s <file>", argv[0]);
 		return EXIT_FAILURE;
 	}
 
@@ -97,7 +97,7 @@ int main(int argc, char **argv) {
 
     while ((read_lines = read_file(fd, lines)) > 0) {
         kernel(lines, max_local, read_lines);
-        print_results(max_local, total_lines, read_lines);
+        //print_results(max_local, total_lines, read_lines);
         total_lines += read_lines;
     }
 
