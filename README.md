@@ -14,6 +14,7 @@ For MPI, in order to run the command on your own machine, you need run the follo
 For OpenMP, in order to run the command on your own machine, you need to run the following command: export OMP_NUM_THREADS=$x
    ./openmp-imp /homes/dan/625/wiki_dump.txt $i $batches $batchSize, where $x and $i are the intended number of threads, $batchsize is the size of the batch required, and $batches is the number of batches required, usually 100000/batchSize.
 
+For CUDA, you can't run the command on your own machine as it is GPU based, so you will have to run it on using the submission script for it, which is run-once.sh.
 
 
 
