@@ -6,58 +6,41 @@
 
 #define MAX_STRING_SIZE 2200
 #define BATCH_SIZE 1000
-#define THREADS_PER_BLOCK 256
+
 int total_read = 0;
 
-// Prints results. The param offset says how far off of 0 the batched lines are
-void print_results(int max_ascii[], int offset, int count) {
-    for (int i = 0; i < count; i++) {
-        printf("Line %d: %d\n", i + offset, max_ascii[i]);
+// Function to check CUDA errors
+void checkCUDAError(cudaError_t err, const char *msg) {
+    if (err != cudaSuccess) {
+        fprintf(stderr, "CUDA error: %s: %s\n", msg, cudaGetErrorString(err));
+        exit(EXIT_FAILURE);
     }
 }
 
-// Host function to find the max ascii value in a given line
-char find_max_host(const char* line, int length) {
-    int max_int = -1;
-    
-    int len = strnlen(line, length);
-    for (int i = 0; i < len; i++) {
-        if (line[i] > max_int) {
-            max_int = line[i];
+// Kernel function to find the max ASCII character per line
+__global__ void findMaxASCII(int *d_out, char *d_in, int lines, int max_string_size) {
+    int idx = blockIdx.x * blockDim.x + threadIdx.x;
+    if (idx >= lines) return;
+
+    char *line = &d_in[idx * max_string_size];
+    int local_max = -1;
+
+    for (int i = 0; i < max_string_size; i++) {
+        char c = line[i];
+        if (c == '\0') break;
+        if (c > local_max) {
+            local_max = c;
         }
     }
-    return max_int;
+
+    d_out[idx] = local_max;
 }
 
-// kernal for finding max value in a line
-__global__ void find_max_kernel(char* d_lines, int* d_max, int count, int max_string_size) {
-    int line_idx = blockIdx.x * blockDim.x + threadIdx.x;
-    
-    if (line_idx < count) {
-        char* line = &d_lines[line_idx * max_string_size];
-        int max_int = -1;
-    
-        int len = 0;
-        while (len < max_string_size && line[len] != '\0') {
-            len++;
-        }
-        
-        // Find max ASCII value in this line
-        for (int i = 0; i < len; i++) {
-            if (line[i] > max_int) {
-                max_int = line[i];
-            }
-        }
-        
-        d_max[line_idx] = max_int;
-    }
-}
-
-// Reads a batch of lines from file
-int read_file(FILE* fd, char linesArray[][MAX_STRING_SIZE]) {
+// Reads a batch of lines from a file
+int readFile(FILE* fd, char linesArray[][MAX_STRING_SIZE]) {
     char buffer[MAX_STRING_SIZE];
     int count = 0;
-    
+
     while (count < BATCH_SIZE && fgets(buffer, MAX_STRING_SIZE, fd)) {
         buffer[strcspn(buffer, "\n")] = 0;
         snprintf(linesArray[count], MAX_STRING_SIZE, "%s", buffer);
@@ -67,96 +50,70 @@ int read_file(FILE* fd, char linesArray[][MAX_STRING_SIZE]) {
     return count;
 }
 
-// Check CUDA errors
-void checkCudaError(cudaError_t err, const char* msg) {
-    if (err != cudaSuccess) {
-        fprintf(stderr, "%s failed: %s\n", msg, cudaGetErrorString(err));
-        exit(EXIT_FAILURE);
+// Prints results
+void printResults(int* results, int totalLines) {
+    for (int i = 0; i < totalLines; i++) {
+        printf("Line %d: %d\n", i, results[i]);
     }
 }
 
-int main(int argc, char **argv) {
+// Main function with dynamic thread/block configuration
+int main(int argc, char *argv[]) {
 
-    
+    int threads_per_block = atoi(argv[1]);
+    int blocks_per_grid = atoi(argv[2]);
+
     FILE* fd = fopen("/homes/dan/625/wiki_dump.txt", "r");
-    
-    if (fd == NULL) {
-        perror("fopen Failed: ");
-        return EXIT_FAILURE;
-    }
-    
-    // allocate all the host memory
-    char (*h_lines)[MAX_STRING_SIZE] = (char(*)[MAX_STRING_SIZE])malloc(sizeof(char) * BATCH_SIZE * MAX_STRING_SIZE);
-    int *h_max = (int*)malloc(sizeof(int) * BATCH_SIZE);
-    
-    //checking to see if the host memory fails
-    if (h_lines == NULL || h_max == NULL) {
-        fprintf(stderr, "Host memory allocation failed!\n");
-        exit(EXIT_FAILURE);
-    }
-    
-    // allocate all the device memory
+
+    char (*h_lines)[MAX_STRING_SIZE] = (char(*)[MAX_STRING_SIZE])malloc(BATCH_SIZE * MAX_STRING_SIZE * sizeof(char));
+    int *h_max = (int*)malloc(BATCH_SIZE * sizeof(int));
+
     char *d_lines;
     int *d_max;
-    
-    checkCudaError(cudaMalloc((void**)&d_lines, sizeof(char) * BATCH_SIZE * MAX_STRING_SIZE), 
-                  "cudaMalloc for d_lines");
-    checkCudaError(cudaMalloc((void**)&d_max, sizeof(int) * BATCH_SIZE), 
-                  "cudaMalloc for d_max");
-    
-    int total_lines = 0;
-    int read_lines;
-    
-    // Record timing
+
+    checkCUDAError(cudaMalloc((void**)&d_lines, BATCH_SIZE * MAX_STRING_SIZE * sizeof(char)), "malloc");
+    checkCUDAError(cudaMalloc((void**)&d_max, BATCH_SIZE * sizeof(int)), "malloc");
+
     cudaEvent_t start, stop;
     cudaEventCreate(&start);
     cudaEventCreate(&stop);
     cudaEventRecord(start);
 
-    //important note to self, threads go into blocks, blocks go into grids. Usually want multiples of 32 threads, as that matches nicely with the GPU stuff
+    dim3 dimBlock(threads_per_block);
+    dim3 dimGrid(blocks_per_grid);
+
+    int totalLines = 0, readLines;
     
-    while ((read_lines = read_file(fd, h_lines)) > 0) {
-        // cpoy the batch from host to device
-        checkCudaError(cudaMemcpy(d_lines, h_lines, sizeof(char) * read_lines * MAX_STRING_SIZE, 
-                               cudaMemcpyHostToDevice), "cudaMemcpy h_lines to d_lines");
-        
-        // calculate number of blocks based on batch size
-        int blocks = (read_lines + THREADS_PER_BLOCK - 1) / THREADS_PER_BLOCK;
-        
-        // Launch kernel, the execution config is how many blocks and how many threads
-        find_max_kernel<<<blocks, THREADS_PER_BLOCK>>>(d_lines, d_max, read_lines, MAX_STRING_SIZE);
-        
-        // Check for kernel errors
-        checkCudaError(cudaGetLastError(), "CUDA kernel launch");
-        checkCudaError(cudaDeviceSynchronize(), "cudaDeviceSynchronize");
-        
-        // reuslsts to host
-        checkCudaError(cudaMemcpy(h_max, d_max, sizeof(int) * read_lines, cudaMemcpyDeviceToHost), 
-                      "cudaMemcpy d_max to h_max");
-        
-        // print reuslts
-        print_results(h_max, total_lines, read_lines);
-        total_lines += read_lines;
+    while ((readLines = readFile(fd, h_lines)) > 0) {
+        checkCUDAError(cudaMemcpy(d_lines, h_lines, readLines * MAX_STRING_SIZE * sizeof(char), cudaMemcpyHostToDevice), "memcpy");
+        findMaxASCII<<<dimGrid, dimBlock>>>(d_max, d_lines, readLines, MAX_STRING_SIZE);
+        checkCUDAError(cudaGetLastError(), "kernal");
+        checkCUDAError(cudaDeviceSynchronize(), "synchronize");
+
+        checkCUDAError(cudaMemcpy(h_max, d_max, readLines * sizeof(int), cudaMemcpyDeviceToHost), "memcpy");
+        //printResults(h_max, readLines);
+        totalLines += readLines;
     }
-    
-    // Record end time and calculate elapsed time
+
+    // records end times
     cudaEventRecord(stop);
     cudaEventSynchronize(stop);
     
     float milliseconds = 0;
     cudaEventElapsedTime(&milliseconds, start, stop);
-    
-    printf("Total lines processed: %d\n", total_lines);
-    printf("Program finished in %.3f seconds.\n", milliseconds / 1000.0);
-    
-    // Clean up
+
+  //  printf("Total lines processed: %d\n", totalLines);
+    //printf("Program finished in %.3f seconds.\n", milliseconds / 1000.0);
+    printf("%.f", milliseconds / 1000.0);
+
+    // Cleanup
     cudaEventDestroy(start);
     cudaEventDestroy(stop);
     cudaFree(d_lines);
     cudaFree(d_max);
-    fclose(fd);
     free(h_lines);
     free(h_max);
-    
+    fclose(fd);
+
     return 0;
 }
