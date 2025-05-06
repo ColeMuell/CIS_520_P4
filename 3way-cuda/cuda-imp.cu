@@ -9,7 +9,7 @@
 
 int total_read = 0;
 
-// Function to check CUDA errors
+// checks errors
 void checkCUDAError(cudaError_t err, const char *msg) {
     if (err != cudaSuccess) {
         fprintf(stderr, "CUDA error: %s: %s\n", msg, cudaGetErrorString(err));
@@ -17,7 +17,7 @@ void checkCUDAError(cudaError_t err, const char *msg) {
     }
 }
 
-// Kernel function to find the max ASCII character per line
+// finds maax ascii
 __global__ void findMaxASCII(int *d_out, char *d_in, int lines, int max_string_size) {
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
     if (idx >= lines) return;
@@ -51,13 +51,12 @@ int readFile(FILE* fd, char linesArray[][MAX_STRING_SIZE]) {
 }
 
 // Prints results
-void printResults(int* results, int totalLines) {
+void printResults(int* results, int totalLines,int offsetNum, FILE* fout) {
     for (int i = 0; i < totalLines; i++) {
-        printf("Line %d: %d\n", i, results[i]);
+        fprintf( fout, "Line %d: %d\n", offsetNum + i + 1, results[i]);
     }
 }
 
-// Main function with dynamic thread/block configuration
 int main(int argc, char *argv[]) {
 
     int threads_per_block = atoi(argv[1]);
@@ -83,7 +82,16 @@ int main(int argc, char *argv[]) {
     dim3 dimGrid(blocks_per_grid);
 
     int totalLines = 0, readLines;
-    
+
+    FILE* fout = fopen("./CudaOut.txt", "w");
+
+    if (fout == NULL) 
+    {
+        printf("./OpenMPOut.txt");
+        perror("fopen Failed for : ");
+        return EXIT_FAILURE;
+    }
+
     while ((readLines = readFile(fd, h_lines)) > 0) {
         checkCUDAError(cudaMemcpy(d_lines, h_lines, readLines * MAX_STRING_SIZE * sizeof(char), cudaMemcpyHostToDevice), "memcpy");
         findMaxASCII<<<dimGrid, dimBlock>>>(d_max, d_lines, readLines, MAX_STRING_SIZE);
@@ -91,7 +99,7 @@ int main(int argc, char *argv[]) {
         checkCUDAError(cudaDeviceSynchronize(), "synchronize");
 
         checkCUDAError(cudaMemcpy(h_max, d_max, readLines * sizeof(int), cudaMemcpyDeviceToHost), "memcpy");
-        //printResults(h_max, readLines);
+        printResults(h_max, readLines,totalLines, fout);
         totalLines += readLines;
     }
 
@@ -102,9 +110,9 @@ int main(int argc, char *argv[]) {
     float milliseconds = 0;
     cudaEventElapsedTime(&milliseconds, start, stop);
 
-  //  printf("Total lines processed: %d\n", totalLines);
-    //printf("Program finished in %.3f seconds.\n", milliseconds / 1000.0);
-    printf("%.f", milliseconds / 1000.0);
+    fprintf(fout, "Total lines processed: %d\n", totalLines);
+    fprintf(fout, "Program finished in %.6f seconds.\n", milliseconds / 1000.0);
+    printf("%.6f", milliseconds / 1000.0);
 
     // Cleanup
     cudaEventDestroy(start);
