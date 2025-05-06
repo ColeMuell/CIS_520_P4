@@ -33,7 +33,7 @@ char find_max(const char* line, int length) {
 void kernel(char linesArray[][MAX_STRING_SIZE], int max_local[], int count) 
 {
     #pragma omp parallel for schedule(guided) num_threads(numThreads)
-        for (int i = omp_get_thread_num(); i < count; i += numThreads) 
+        for (int i = 0; i < count; i++) 
         {      
             max_local[i] = find_max(linesArray[i], MAX_STRING_SIZE);
         }

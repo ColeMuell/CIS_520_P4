@@ -7,13 +7,14 @@
 #include <sys/mman.h>  
 #include <unistd.h> 
 
-int numThreads;
-
 #define LINE_MAX 1000001
+
+int numThreads;
 int numLines = 0;
+
 char* mFile;
-off_t fSize;
-off_t lineOff[LINE_MAX];
+size_t fSize;
+size_t lineOff[LINE_MAX];
 
 int* max_ascii;
 int* rankMax;
@@ -25,23 +26,24 @@ void read_file() {
 	int fd = open("/homes/dan/625/wiki_dump.txt", O_RDONLY);
 
     if (fd == -1) {
-        perror("Error opening file");
+        perror("open failed: ");
         exit(EXIT_FAILURE);
     }
 
 	// get file info using fstat()
     struct stat sb;
-    if (fstat(fd, &sb) == -1) {
-        perror("fstat failed");
+    if (fstat(fd, &sb) == -1) 
+    {
+        perror("fstat failed: ");
         exit(EXIT_FAILURE);
     }
+
     fSize = sb.st_size;
 
-	// map file into memory
-	// had to rework logic from previous 'line-by-line' code
     mFile = mmap(NULL, fSize, PROT_READ, MAP_PRIVATE, fd, 0);
-    if (mFile == MAP_FAILED) {
-        perror("mmap failed");
+    if (mFile == MAP_FAILED) 
+    {
+        perror("mmap failed: ");
         exit(EXIT_FAILURE);
     }
 
@@ -70,17 +72,12 @@ void read_file() {
     close(fd);
 }
 
-void *max_per_line(void *rank)
+void max_per_line(int rank)
 {
-    int myID =  *((int*) rank);
+    int startPos = ((long) rank) * (numLines / numThreads); // Start at rank based a multiple of lines per thread
+    int endPos = startPos + (numLines / numThreads);        // Increment the number of lines per thread
 
-    int startPos = ((long) myID) * (numLines / numThreads); // (numLines / numThreads) gives the number of lines each MPI process should handle
-														      // (int) myID) identifies which process we are dealing with
-														      // say numLines = 1000, each process handles 1000/4 or 250 lines
-														      // More specifically process with rank 0 handles lines 0 to 249, process 1 handles lines 250 to 499, and so on
-    int endPos = startPos + (numLines / numThreads); // Number of lines per thread
-
-    printf("myID = %d startPos = %d endPos = %d \n", myID, startPos, endPos); fflush(stdout);
+    //printf("rank: %d start: %d end: %d \n", rank, startPos, endPos); fflush(stdout);
 
 	// Allocate rankMax[] to hold max for each of my lines for this rank
     rankMax = (int*)calloc(sizeof(int), (numLines / numThreads));
@@ -114,16 +111,27 @@ void *max_per_line(void *rank)
 	    }
 	    rankMax[i - startPos] = lineMax; // i is global line index, rankMax just goes from 0 to numLines / numThreads - 1
     }
-    return NULL;
 }
 
 void print_results()
 {
+    // Opens the file for output
+    FILE* fout = fopen("./MPIOut.txt", "w");
+
+    if (fout == NULL) 
+    {
+        printf("./PthreadOut.txt");
+        perror("fopen Failed for : ");
+        exit(EXIT_FAILURE);
+    }
+
 	//int limit = numLines > 10 ? 10 : numLines;
 	for (int m = 0; m < numLines; m++ )
 	{
-		printf("%d: %d\n", m, max_ascii[m]);
+		fprintf(fout, "%d: %d\n", m, max_ascii[m]);
 	}
+
+    fclose(fout);
 }
 
 int main(int argc, char* argv[]) 
@@ -150,7 +158,7 @@ int main(int argc, char* argv[])
 
     numReq = atoi(argv[2]);
 
-    if(numReq > LINE_MAX || numThreads < 10)
+    if(numReq > LINE_MAX || numReq < 10)
     {
         printf("%d is an invalid number of lines\n", numReq);
         return EXIT_FAILURE;
@@ -169,6 +177,8 @@ int main(int argc, char* argv[])
     MPI_Comm_size(MPI_COMM_WORLD,&numtasks); // represents the number of MPI tasks available to your application, get number of tasks
     MPI_Comm_rank(MPI_COMM_WORLD,&rank); // Returns the rank of the calling MPI process within the specified communicator, get my rank
 
+    double t1 = MPI_Wtime();
+
 	numThreads = numtasks;
 	//printf("I am %d of %d\n", rank, numtasks);
 	//fflush(stdout);
@@ -177,7 +187,6 @@ int main(int argc, char* argv[])
 
 	if ( rank == 0 ) 
     {
-		
         max_ascii = (int*)calloc(sizeof(int), numLines);
         
         if (max_ascii == NULL) 
@@ -189,19 +198,18 @@ int main(int argc, char* argv[])
 	
     MPI_Bcast(&numLines, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
-    long fSize_long = (long)fSize;
-    MPI_Bcast(&fSize_long, 1, MPI_LONG, 0, MPI_COMM_WORLD);
-
     MPI_Bcast(lineOff, numLines, MPI_LONG, 0, MPI_COMM_WORLD);
     
-	max_per_line(&rank); // do analysis work to find max ASCII per line
+	max_per_line(rank); // do analysis work to find max ASCII per line
 
     // gather back all the results from all the ranks into rank 0
     MPI_Gather(rankMax, numLines / numThreads, MPI_INT, max_ascii, numLines / numThreads, MPI_INT, 0, MPI_COMM_WORLD);
     
-    /////////////////////////////
-
+    MPI_Barrier(MPI_COMM_WORLD);
 	if ( rank == 0 ) {
+        double t2 = MPI_Wtime();
+        printf("%lf, ", t2 - t1);
+
 		print_results();
         free(max_ascii);
 	}
@@ -214,8 +222,6 @@ int main(int argc, char* argv[])
 		perror("munmap failed");
         exit(EXIT_FAILURE);
 	}
-
-	printf("Main: program completed. Exiting.\n");
 
     // done with MPI
 	MPI_Finalize(); // Terminates the MPI execution environment
