@@ -7,9 +7,9 @@
 #include <sys/mman.h>  
 #include <unistd.h> 
 
-#define LINE_MAX 1000001
-
 int numThreads;
+
+#define LINE_MAX 1000001
 int numLines = 0;
 char* mFile;
 off_t fSize;
@@ -173,9 +173,11 @@ int main(int argc, char* argv[])
 	//printf("I am %d of %d\n", rank, numtasks);
 	//fflush(stdout);
 
+    read_file();
+
 	if ( rank == 0 ) 
     {
-		read_file();
+		
         max_ascii = (int*)calloc(sizeof(int), numLines);
         
         if (max_ascii == NULL) 
@@ -191,30 +193,6 @@ int main(int argc, char* argv[])
     MPI_Bcast(&fSize_long, 1, MPI_LONG, 0, MPI_COMM_WORLD);
 
     MPI_Bcast(lineOff, numLines, MPI_LONG, 0, MPI_COMM_WORLD);
-
-    if (rank != 0) // rank 0 already has its local copy of fSize defined, because it was defined in read_file()
-                   // we have to reset fSize to the off_t type because every other rank does not have the fSize defined in read_file() as an off_t
-    {
-        fSize = (off_t)fSize_long;
-
-        // open file
-	    int fd = open("/homes/dan/625/wiki_dump.txt", O_RDONLY);
-
-        if (fd == -1) {
-            perror("Error opening file");
-            exit(EXIT_FAILURE);
-        }
-
-        // map file into memory for each rank other than rank 0, this was done above in read_file() for rank 0
-        mFile = mmap(NULL, fSize, PROT_READ, MAP_PRIVATE, fd, 0);
-        if (mFile == MAP_FAILED) 
-        {
-            perror("mmap failed");
-            exit(EXIT_FAILURE);
-        }
-
-        close(fd);
-    }
     
 	max_per_line(&rank); // do analysis work to find max ASCII per line
 

@@ -14,4 +14,4 @@ threads=10
 batches=1000
 batchSize=1000
 
-mpirun --oversubscribe -np 4 ./mpi-imp /homes/dan/625/wiki_dump.txt 10000
+mpirun --oversubscribe -np 4 ./mpi-imp /homes/dan/625/wiki_dump.txt 1000
