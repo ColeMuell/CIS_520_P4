@@ -91,6 +91,7 @@ void *count_array(void *myID) {
     // Add local maxes into the global arrays
     pthread_mutex_lock(&mutexmax);
 
+    //Gets the local max values into the global array.
     for (i = 0; i < segment_size; i++) 
         max_ascii[startPos + i] = local_max[i];
 
@@ -99,6 +100,7 @@ void *count_array(void *myID) {
     pthread_exit(NULL);
 }
 
+//frees the memory of all the local lines array.
 void free_lines() 
 {
     int i;
@@ -124,7 +126,7 @@ void free_lines()
 
  }
 
-
+//main function that controls the logic of the program
 int main(int argc, char **argv) {
 
     if (argc < 2) 
@@ -132,9 +134,10 @@ int main(int argc, char **argv) {
 		printf("%s <file> <cores> <batches> <batchsize>", argv[0]);
 		return EXIT_FAILURE;
 	}
-
+    //gets the filename as the first argument
     char* filename = argv[1];
 
+    //ensures the filename doesn't contain an invalid character
     for (size_t i = 0; filename[i] != '\0'; i++) 
 	{
         if (filename[i] == 60 || filename[i] == 62 || filename[i] == 58 ||
@@ -146,7 +149,7 @@ int main(int argc, char **argv) {
             return EXIT_FAILURE;
         }
     }
-
+    //gets the requested number of threads as the second argument
     numThreads = atoi(argv[2]);
 
     if(numThreads > 100 || numThreads < 1)
@@ -155,6 +158,7 @@ int main(int argc, char **argv) {
         return EXIT_FAILURE;
     }
 
+    //gets the number of batches for the third argument and checks
     batches = atoi(argv[3]);
 
     if(batches > 1000 || batches < 1)
@@ -163,6 +167,7 @@ int main(int argc, char **argv) {
         return EXIT_FAILURE;
     }
 
+    //gets the batch size as the fourth argument and checks
     batchSize = atoi(argv[4]);
 
     if(batchSize > 10000 || batchSize < 10)
@@ -171,6 +176,7 @@ int main(int argc, char **argv) {
         return EXIT_FAILURE;   
     }
 
+    //mallocs the local lines array and an array for storing it all
     lines = malloc(batchSize*sizeof(char*)); 
     max_ascii = malloc(batchSize*sizeof(int));
 
@@ -207,7 +213,7 @@ int main(int argc, char **argv) {
         return EXIT_FAILURE;
     }
     
-    /* Initialize and set thread detached attribute */
+    // initializes and sets the detached state
     pthread_attr_init(&attr);
     pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
     
@@ -255,9 +261,10 @@ int main(int argc, char **argv) {
     }
 
     clock_t timeTwo = clock();
-
+    //calculates the time difference
     long double timeDiff = (long double)(timeTwo - timeOne);
     
+    //cleans the memory and resets everything
     fclose(fd);
     fclose(fout);
     free(lines);

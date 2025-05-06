@@ -21,6 +21,7 @@ int* rankMax;
 
 int numReq = -1;
 
+///reads in the intend file of the wikidump, 
 void read_file() {
 	// open file
 	int fd = open("/homes/dan/625/wiki_dump.txt", O_RDONLY);
@@ -133,7 +134,7 @@ void print_results()
 
     fclose(fout);
 }
-
+//main function, deals with the main process and splitting off into child processes.
 int main(int argc, char* argv[]) 
 {
     if (argc < 2) 
@@ -155,7 +156,7 @@ int main(int argc, char* argv[])
             return EXIT_FAILURE;
         }
     }
-
+    //gets in the second argument, which is the number of lines required.
     numReq = atoi(argv[2]);
 
     if(numReq > LINE_MAX || numReq < 10)

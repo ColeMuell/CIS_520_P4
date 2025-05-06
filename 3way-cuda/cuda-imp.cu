@@ -40,7 +40,7 @@ __global__ void findMaxASCII(int *d_out, char *d_in, int lines, int max_string_s
 int readFile(FILE* fd, char linesArray[][MAX_STRING_SIZE]) {
     char buffer[MAX_STRING_SIZE];
     int count = 0;
-
+    //only reads in the number up to batchsizes, cleans out any newlines
     while (count < BATCH_SIZE && fgets(buffer, MAX_STRING_SIZE, fd)) {
         buffer[strcspn(buffer, "\n")] = 0;
         snprintf(linesArray[count], MAX_STRING_SIZE, "%s", buffer);
@@ -50,13 +50,14 @@ int readFile(FILE* fd, char linesArray[][MAX_STRING_SIZE]) {
     return count;
 }
 
-// Prints results
+// Prints results, offsetnum to deal with batching
 void printResults(int* results, int totalLines,int offsetNum, FILE* fout) {
     for (int i = 0; i < totalLines; i++) {
         fprintf( fout, "Line %d: %d\n", offsetNum + i + 1, results[i]);
     }
 }
 
+//main file, reads in the given threads per block and block per grids, opens up the file, and then processes them.
 int main(int argc, char *argv[]) {
 
     int threads_per_block = atoi(argv[1]);
@@ -72,17 +73,19 @@ int main(int argc, char *argv[]) {
 
     checkCUDAError(cudaMalloc((void**)&d_lines, BATCH_SIZE * MAX_STRING_SIZE * sizeof(char)), "malloc");
     checkCUDAError(cudaMalloc((void**)&d_max, BATCH_SIZE * sizeof(int)), "malloc");
-
+    //creates timing events
     cudaEvent_t start, stop;
     cudaEventCreate(&start);
     cudaEventCreate(&stop);
     cudaEventRecord(start);
 
+
+    //sets up the dimensions.
     dim3 dimBlock(threads_per_block);
     dim3 dimGrid(blocks_per_grid);
 
     int totalLines = 0, readLines;
-
+    //opens up an output file
     FILE* fout = fopen("./CudaOut.txt", "w");
 
     if (fout == NULL) 
@@ -91,7 +94,7 @@ int main(int argc, char *argv[]) {
         perror("fopen Failed for : ");
         return EXIT_FAILURE;
     }
-
+    //while there are still lines to read, splits of the calculation of max-ascii to it's child processes, collects them, and repeates.
     while ((readLines = readFile(fd, h_lines)) > 0) {
         checkCUDAError(cudaMemcpy(d_lines, h_lines, readLines * MAX_STRING_SIZE * sizeof(char), cudaMemcpyHostToDevice), "memcpy");
         findMaxASCII<<<dimGrid, dimBlock>>>(d_max, d_lines, readLines, MAX_STRING_SIZE);
